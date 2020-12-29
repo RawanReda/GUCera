@@ -63,11 +63,11 @@ namespace GUCera
             {
                 //To send response data to the client side (HTML)
                 Response.Write("Passed");
-
                 /*ASP.NET session state enables you to store and retrieve values for a user
                 as the user navigates ASP.NET pages in a Web application.
                 This is how we store a value in the session*/
                 //Session["field1"] = "HIIII";
+
 
             }
             else
