@@ -67,13 +67,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddCreditCard.aspx" />
+    <Content Include="AllCourses.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="StudentHome.aspx" />
     <Content Include="StudentRegistration.aspx" />
+    <Content Include="StudentViewMyProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCreditCard.aspx.cs">
+      <DependentUpon>AddCreditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCreditCard.aspx.designer.cs">
+      <DependentUpon>AddCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllCourses.aspx.cs">
+      <DependentUpon>AllCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllCourses.aspx.designer.cs">
+      <DependentUpon>AllCourses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="instructorHome.aspx.cs">
       <DependentUpon>instructorHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,12 +114,26 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentHome.aspx.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentHome.aspx.designer.cs">
+      <DependentUpon>StudentHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentRegistration.aspx.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentRegistration.aspx.designer.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViewMyProfile.aspx.cs">
+      <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentViewMyProfile.aspx.designer.cs">
+      <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
