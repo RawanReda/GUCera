@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+  <%--  Hi Hadeer--%>
 </head>
 <body>
     <form id="form1" runat="server">
-        Welcome to our GUCera website : )<br />
+        Welcome to our GUCera website :) <br />
         <br />
         Please Log In <br />
         <br />
