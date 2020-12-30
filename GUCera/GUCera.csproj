@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="instructorHome.aspx.cs">
+      <DependentUpon>instructorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructorHome.aspx.designer.cs">
+      <DependentUpon>instructorHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InstructorRegistration.aspx.cs">
       <DependentUpon>InstructorRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

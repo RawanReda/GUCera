@@ -46,7 +46,6 @@ namespace GUCera
             SqlParameter sucess = loginproc.Parameters.Add("@Success", SqlDbType.Int);
             sucess.Direction = ParameterDirection.Output;
 
-
             SqlParameter type = loginproc.Parameters.Add("@Type", SqlDbType.Int);
             type.Direction = ParameterDirection.Output;
 
@@ -58,7 +57,6 @@ namespace GUCera
             loginproc.ExecuteNonQuery();
             conn.Close();
 
-
             if (sucess.Value.ToString().Equals("1"))
             {
                 //To send response data to the client side (HTML)
@@ -66,7 +64,20 @@ namespace GUCera
                 /*ASP.NET session state enables you to store and retrieve values for a user
                 as the user navigates ASP.NET pages in a Web application.
                 This is how we store a value in the session*/
-                //Session["field1"] = "HIIII";
+                
+                Session["field1"] = id;
+
+                if (type.Value.ToString().Equals("1"))
+                {
+                    // Response.Redirect("adminHome.aspx", true);
+                }
+                else if (type.Value.ToString().Equals("0"))
+                {
+                    Response.Redirect("instructorHome.aspx", true);
+                }
+                else if (type.Value.ToString().Equals("2")) {
+                    // Response.Redirect("studentHome.aspx", true);
+                }
 
 
             }
