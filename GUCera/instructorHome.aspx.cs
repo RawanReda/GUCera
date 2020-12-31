@@ -15,13 +15,13 @@ namespace GUCera
         protected void Page_Load(object sender, EventArgs e)
         {
             //Get the information of the connection to the database
-           
+
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand("ViewInstructorProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@instrId", (int) Session["field1"]));
+            cmd.Parameters.Add(new SqlParameter("@instrId", (int)Session["field1"]));
 
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -31,8 +31,8 @@ namespace GUCera
                 string Firstn = rdr.GetString(rdr.GetOrdinal("firstName"));
                 string Lastn = rdr.GetString(rdr.GetOrdinal("lastName"));
                 string Name = Firstn + " " + Lastn;
-                
-                Name1.Text = "Hello, " + Name + "!" ;
+
+                Name1.Text = "Hello, " + Name + "!";
             }
 
             conn.Close();
@@ -40,7 +40,8 @@ namespace GUCera
         }
 
 
-        protected void addCourse(object sender, EventArgs e) {
+        protected void addCourse(object sender, EventArgs e)
+        {
             //Get the information of the connection to the database
             int usr = (int)Session["field1"];
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
@@ -53,12 +54,12 @@ namespace GUCera
             String Course_name = cname.Text;
             int CrHrs = int.Parse(chours.Text);
             decimal pri = decimal.Parse(price.Text);
-            int isID = (int) Session["field1"];
+            int isID = (int)Session["field1"];
 
-            cmd.Parameters.Add(new SqlParameter("@creditHourse",CrHrs));
-            cmd.Parameters.Add(new SqlParameter("@name",Course_name));
-            cmd.Parameters.Add(new SqlParameter("@price",pri));
-            cmd.Parameters.Add(new SqlParameter("@instructorId",isID));
+            cmd.Parameters.Add(new SqlParameter("@creditHourse", CrHrs));
+            cmd.Parameters.Add(new SqlParameter("@name", Course_name));
+            cmd.Parameters.Add(new SqlParameter("@price", pri));
+            cmd.Parameters.Add(new SqlParameter("@instructorId", isID));
 
 
 
@@ -74,7 +75,7 @@ namespace GUCera
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand("InstructorViewAcceptedCoursesByAdmin", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@instructorId", (int)Session["field1"]));
+            cmd.Parameters.Add(new SqlParameter("@instrId", (int) Session["field1"]));
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -90,7 +91,7 @@ namespace GUCera
                 title.Text = "<h3> My Courses </h3>";
 
                 Panel card = new Panel();
-               
+
                 Button MyButton = new Button();
                 //MyButton.UseSubmitBehavior = false;
                 //MyButton.PostBackUrl = "UpdateCourse.aspx?pid=" + cid.ToString();
@@ -99,7 +100,7 @@ namespace GUCera
                 lbl_cid.Text = "<h4 style='" +
                                                     "margin-left: 40px;" +
                                                     "font-weight: 700;" +
-                                                    "font-size: 18px;'>" + cid+ "</h4>";
+                                                    "font-size: 18px;'>" + cid + "</h4>";
                 card.Controls.Add(lbl_cid);
 
                 Label lbl_cname = new Label();
@@ -118,4 +119,5 @@ namespace GUCera
 
 
         }
+    }
 }
