@@ -26,14 +26,11 @@
         <asp:Button ID="signin" runat="server" OnClick="login" Text="log in" />
         <br />
         <br />
-        If you are a student and don&#39;t have an account, click here<br />
+
+        <asp:Button ID="Button1" runat="server" OnClick="StudentReg" Text="Register as an Instructor" />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="StudentReg" Text="sign up" />
-        <br />
-        <br />
-        If you are an instructor and don&#39;t have an account, click here<br />
-        <br />
-        <asp:Button ID="Button2" runat="server" OnClick="InstructorReg" Text="sign up" />
+        <br/>
+        <asp:Button ID="Button2" runat="server" OnClick="InstructorReg" Text="Register as an Student" />
         <br />
         <br />
         <br />
