@@ -20,6 +20,8 @@ namespace GUCera
             SqlConnection conn = new SqlConnection(connStr);
 
 
+
+
         }
 
 

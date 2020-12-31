@@ -4,44 +4,54 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Register</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            Sign Up page for students <br />
-            <br />
-            First Name :<br />
-            <br />
-            <asp:TextBox ID="firstname" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Last Name :<br />
-            <br />
-            <asp:TextBox ID="lastname" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Password :<br />
-            <br />
-            <asp:TextBox ID="password" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Email :<br />
-            <br />
-            <asp:TextBox ID="email" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Gender (F/M:<br />
-            <br />
-            <asp:TextBox ID="gender" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Address :<br />
-            <br />
-            <asp:TextBox ID="address" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Registration" Text="sign up" />
+            Sign Up as a Student <br />
+           
+              <br />
+
+				<div>
+                <table cellpadding="2" >
+	            <tbody>
+		            <tr>
+			            <td><asp:Label ID="Label1" runat="server" Text="First Name:"  ></asp:Label>  </td>
+			            <td> <asp:TextBox ID="firstname" runat="server"   ></asp:TextBox> <br /> </td>
+		            </tr>
+					<tr>
+			            <td><asp:Label ID="Label2" runat="server" Text="Last Name:"  ></asp:Label>  </td>
+			            <td> <asp:TextBox ID="lastname" runat="server"   ></asp:TextBox> <br /> </td>
+		            </tr>
+		            <tr>
+			            <td> <asp:Label ID="lbl_password" runat="server" Text="Password:"  ></asp:Label> </td>
+			            <td>   <asp:TextBox ID="password" runat="server" TextMode="Password"  ></asp:TextBox><br /></td>
+		            </tr>
+		            <tr>
+			            <td><asp:Label ID="lbl_email" runat="server" Text="Email:"  ></asp:Label> </td>
+			            <td> <asp:TextBox ID="email" runat="server"   ></asp:TextBox> <br /></td>
+		            </tr>
+		            <tr>
+			            <td><asp:Label ID="lbl_g" runat="server" Text="Gender(M/F):"  ></asp:Label></td>
+			            <td> <asp:TextBox ID="gender" runat="server"   ></asp:TextBox> <br /></td>
+						
+		            </tr>
+					<tr>
+			            <td><asp:Label ID="lbl_add" runat="server" Text="Address:"  ></asp:Label> </td>
+			            <td> <asp:TextBox ID="address" runat="server"  ></asp:TextBox> <br /></td>
+		            </tr>
+					
+					
+		            <tr>
+			            <td> <asp:Button ID="Button1" runat="server" OnClick="Registration" Text="sign-up" /></td>
+			            <td> </td>
+		            </tr>
+	            </tbody>
+            </table>
+
+
+            </div>
         </div>
     </form>
 </body>
