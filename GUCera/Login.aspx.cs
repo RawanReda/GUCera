@@ -76,7 +76,7 @@ namespace GUCera
                     Response.Redirect("instructorHome.aspx", true);
                 }
                 else if (type.Value.ToString().Equals("2")) {
-                    // Response.Redirect("studentHome.aspx", true);
+                    Response.Redirect("StudentHome.aspx", true);
                 }
 
 
