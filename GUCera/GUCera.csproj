@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Accept Course.aspx" />
     <Content Include="AddCreditCard.aspx" />
+    <Content Include="Admin Page.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
@@ -78,12 +80,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accept Course.aspx.cs">
+      <DependentUpon>Accept Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accept Course.aspx.designer.cs">
+      <DependentUpon>Accept Course.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddCreditCard.aspx.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Page.aspx.cs">
+      <DependentUpon>Admin Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin Page.aspx.designer.cs">
+      <DependentUpon>Admin Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllCourses.aspx.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>

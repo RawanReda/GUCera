@@ -39,14 +39,14 @@ namespace GUCera
 
 
             //pass parameters to the stored procedure
-            loginproc.Parameters.Add(new SqlParameter("@ID", id));
+            loginproc.Parameters.Add(new SqlParameter("@id", id));
             loginproc.Parameters.Add(new SqlParameter("@password", password));
 
             //Save the output from the procedure
-            SqlParameter sucess = loginproc.Parameters.Add("@Success", SqlDbType.Int);
+            SqlParameter sucess = loginproc.Parameters.Add("@success", SqlDbType.Int);
             sucess.Direction = ParameterDirection.Output;
 
-            SqlParameter type = loginproc.Parameters.Add("@Type", SqlDbType.Int);
+            SqlParameter type = loginproc.Parameters.Add("@type", SqlDbType.Int);
             type.Direction = ParameterDirection.Output;
 
 
@@ -69,7 +69,7 @@ namespace GUCera
 
                 if (type.Value.ToString().Equals("1"))
                 {
-                    // Response.Redirect("adminHome.aspx", true);
+                     Response.Redirect("Admin Page.aspx", true);
                 }
                 else if (type.Value.ToString().Equals("0"))
                 {
