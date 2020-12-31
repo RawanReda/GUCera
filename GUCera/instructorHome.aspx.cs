@@ -106,7 +106,7 @@ namespace GUCera
                 lbl_cname.Text = "<div >" + cname + "</div>";
                 card.Controls.Add(lbl_cname);
                 Label lbl_crs = new Label();
-                lbl_crs.Text = "<div class='des'>" + "Unit Price: EGP" + ch + "</div>";
+                lbl_crs.Text = "<div>" + ch + "</div>";
                 card.Controls.Add(lbl_crs);
 
                 card.Controls.Add(MyButton);
