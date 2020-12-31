@@ -56,7 +56,7 @@ namespace GUCera
             decimal pri = decimal.Parse(price.Text);
             int isID = (int)Session["field1"];
 
-            cmd.Parameters.Add(new SqlParameter("@creditHourse", CrHrs));
+            cmd.Parameters.Add(new SqlParameter("@creditHours", CrHrs));
             cmd.Parameters.Add(new SqlParameter("@name", Course_name));
             cmd.Parameters.Add(new SqlParameter("@price", pri));
             cmd.Parameters.Add(new SqlParameter("@instructorId", isID));
