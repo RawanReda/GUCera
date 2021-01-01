@@ -50,17 +50,29 @@ namespace GUCera
             cmd.Parameters.Add(new SqlParameter("@insID", id));
             DateTime date = DateTime.Now;
             cmd.Parameters.Add(new SqlParameter("@issueDate", date));
-            try
+           
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            SqlCommand cmd2 = new SqlCommand("SELECT * FROM StudentCertifyCourse WHERE sid =" + student , conn);
+            cmd2.CommandType = CommandType.StoredProcedure;
+
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+
+            if (rdr.Read())
             {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
                 msg.Text = "Certified!";
             }
-            catch
+            else
             {
-                msg.Text = "Error!";
+                msg.Text = "Can't Certify";
             }
+
+
+
+
 
 
         }
