@@ -12,7 +12,7 @@
             Welcome
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">View All Courses</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminAllCourses.aspx">View All Courses</asp:HyperLink>
             <br />
             <br />
             <asp:HyperLink ID="HyperLink2" runat="server">View Non-accepted Courses</asp:HyperLink>

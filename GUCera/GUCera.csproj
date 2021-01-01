@@ -70,6 +70,7 @@
     <Content Include="Accept Course.aspx" />
     <Content Include="AddCreditCard.aspx" />
     <Content Include="Admin Page.aspx" />
+    <Content Include="AdminAllCourses.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="Admin Page.aspx.designer.cs">
       <DependentUpon>Admin Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAllCourses.aspx.cs">
+      <DependentUpon>AdminAllCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAllCourses.aspx.designer.cs">
+      <DependentUpon>AdminAllCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllCourses.aspx.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>
