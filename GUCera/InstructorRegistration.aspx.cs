@@ -39,15 +39,7 @@ namespace GUCera
             instructorreg.Parameters.Add(new SqlParameter("@last_name", lastn));
             instructorreg.Parameters.Add(new SqlParameter("@password", pass));
             instructorreg.Parameters.Add(new SqlParameter("@email", em));
-            if (g == "F")
-            {
-
-                instructorreg.Parameters.Add(new SqlParameter("@gender", 1));
-            }
-            else
-            {
-                instructorreg.Parameters.Add(new SqlParameter("@gender", 0));
-            }
+            instructorreg.Parameters.Add(new SqlParameter("@gender", ((g == "F") ? 1 : 0)));
             instructorreg.Parameters.Add(new SqlParameter("@address", add));
 
             conn.Open();

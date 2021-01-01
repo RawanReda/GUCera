@@ -69,31 +69,31 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// ViewAssign control.
+        /// ViewAssign1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ViewAssign;
+        protected global::System.Web.UI.WebControls.Button ViewAssign1;
 
         /// <summary>
-        /// SubmitAssign control.
+        /// SubmitAssign1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitAssign;
+        protected global::System.Web.UI.WebControls.Button SubmitAssign1;
 
         /// <summary>
-        /// CheckGrade control.
+        /// CheckGrade1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CheckGrade;
+        protected global::System.Web.UI.WebControls.Button CheckGrade1;
 
         /// <summary>
         /// CourseFeedback control.

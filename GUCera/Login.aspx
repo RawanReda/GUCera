@@ -7,14 +7,11 @@
     <title></title>
   <%--Hi Hadeer--%>
 </head>
-
 <body>
     <form id="form1" runat="server">
         <div>
             <h3>Welcome to our GUCera website :) </h3> <br />
-           
               Please Log In 
-
 				<div>
                 <table cellpadding="2" >
 	            <tbody>

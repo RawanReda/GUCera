@@ -51,19 +51,34 @@ namespace GUCera
 
         }
 
-        protected void SubmitAssign(object sender, EventArgs e)
+        protected void ViewAssign(object sender, EventArgs e)
         {
 
         }
 
-        protected void ViewAssign(object sender, EventArgs e)
+        protected void SubmitAssign(object sender, EventArgs e)
         {
-            Response.Redirect("StudentViewAssignments.aspx", true);
+
         }
 
         protected void CheckGrade(object sender, EventArgs e)
         {
 
         }
+
+        //protected void SubmitAssign(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //protected void ViewAssign(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("StudentViewAssignments.aspx", true);
+        //}
+
+        //protected void CheckGrade(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
