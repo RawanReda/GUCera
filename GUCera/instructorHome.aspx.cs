@@ -32,7 +32,7 @@ namespace GUCera
                 string Lastn = rdr.GetString(rdr.GetOrdinal("lastName"));
                 string Name = Firstn + " " + Lastn;
 
-                Name1.Text = "Hello, " + Name + "!";
+                Name1.Text = "<h2> Hello, " + Name + "! </h2>";
             }
 
             conn.Close();
@@ -95,6 +95,7 @@ namespace GUCera
                 title.Text = "<h3> My Courses </h3>";
 
                 Panel card = new Panel();
+                card.CssClass = "cards";
 
                 Button MyButtonF = new Button();
                 MyButtonF.UseSubmitBehavior = false;
