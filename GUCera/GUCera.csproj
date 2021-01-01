@@ -79,6 +79,7 @@
     <Content Include="Login.aspx" />
     <Content Include="StudentHome.aspx" />
     <Content Include="StudentRegistration.aspx" />
+    <Content Include="StudentViewAssignments.aspx" />
     <Content Include="StudentViewMyProfile.aspx" />
     <Content Include="vFeedback.aspx" />
     <Content Include="Web.config" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="StudentRegistration.aspx.designer.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViewAssignments.aspx.cs">
+      <DependentUpon>StudentViewAssignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentViewAssignments.aspx.designer.cs">
+      <DependentUpon>StudentViewAssignments.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentViewMyProfile.aspx.cs">
       <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>

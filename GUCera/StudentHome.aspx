@@ -40,6 +40,29 @@
             <asp:Button ID="Button5" runat="server" Onclick="promocodes" Text="promocodes" />
             <br />
             <br />
+
+           <%-- Rawan --%>
+            Vew Assignments:<br />
+            <asp:Button ID="ViewAssign" runat="server" Onclick="ViewAssign" Text="Check Assignments" />
+            <br />
+            <br />
+            Submit Assignment:<br />
+&nbsp;<asp:Button ID="SubmitAssign" runat="server" Onclick="SubmitAssign" Text="Submit Assignment" />
+            <br />
+            <br />
+            Check Assignment grade:<br />
+            <asp:Button ID="CheckGrade" runat="server" Onclick="CheckGrade" Text="Check Grade" />
+            <br />
+            <br />
+            Add Course Feedback:<br />
+            <asp:Button ID="CourseFeedback" runat="server" Onclick="Feedback" Text="Add Feedback" />
+            <br />
+            <br />
+            Check obtained Certificates:<br />
+            <asp:Button ID="CheckCertificates" runat="server" Onclick="Certificates" Text="Check Certificates" />
+            <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>
