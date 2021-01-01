@@ -63,6 +63,7 @@ namespace GUCera
 
             if (rdr.Read())
             {
+                
                 msg.Text = "Certified!";
             }
             else

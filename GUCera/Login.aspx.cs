@@ -47,9 +47,6 @@ namespace GUCera
             SqlParameter type = loginproc.Parameters.Add("@type", SqlDbType.Int);
             type.Direction = ParameterDirection.Output;
 
-
-
-
             //Executing the SQLCommand
             conn.Open();
             loginproc.ExecuteNonQuery();
@@ -81,22 +78,19 @@ namespace GUCera
             }
             else
             {
-                Response.Write("Failed");
+                error.Text = "<p style='color:red;'> UserID or Password don't match our records. </p>";
+        
+
             }
         }
 
         protected void StudentReg(object sender, EventArgs e)
         {
             Response.Redirect("StudentRegistration.aspx", true);
-
-
         }
-
         protected void InstructorReg(object sender, EventArgs e)
         {
-
             Response.Redirect("InstructorRegistration.aspx", true);
-
         }
     }
 }

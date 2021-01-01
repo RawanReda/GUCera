@@ -37,9 +37,13 @@
 			            <td><asp:Button ID="Button1" runat="server" OnClick="InstructorReg" Text="Register as an Instructor" /></td>
 			            <td> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as an Student" /><br /></td>
 		            </tr>
+                    
 					
 	            </tbody>
+
             </table>
+
+					<asp:Literal ID="error" runat="server"></asp:Literal>
 
 
             </div>
