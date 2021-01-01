@@ -57,19 +57,18 @@ namespace GUCera
                     String courseName = rdr.GetString(rdr.GetOrdinal("name"));
                     conn.Close();
 
+                    title.Text = "<h2>"+ courseName + "</h2>";
 
                     Literal fb = new Literal();
 
 
-                    fb.Text = 
+                    fb.Text =
+
                        "<div >" +
-                       "<h4>" +
-                       "Course: " + courseName + "</h4>" +
-                       "<div >"+
-                       "<p> Feedback Number: " + feedbackN + "</p>" +
+                       "<p> Feedback #" + feedbackN + "</p>" +
                        "<p> Comment: " + comment + "</p>" +
                        "<p> Number of Likes: " + likes + "</p>" +
-                       "</div>" +
+                       "<hr>" +
                        "</div>";
 
                     form1.Controls.Add(fb);

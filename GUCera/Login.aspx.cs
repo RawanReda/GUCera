@@ -17,8 +17,6 @@ namespace GUCera
 
         }
 
-       
-
         protected void login(object sender, EventArgs e)
         {
             //Get the information of the connection to the database
@@ -89,7 +87,7 @@ namespace GUCera
 
         protected void StudentReg(object sender, EventArgs e)
         {
-
+            Response.Redirect("StudentRegistration.aspx", true);
 
 
         }
@@ -97,7 +95,7 @@ namespace GUCera
         protected void InstructorReg(object sender, EventArgs e)
         {
 
-
+            Response.Redirect("InstructorRegistration.aspx", true);
 
         }
     }

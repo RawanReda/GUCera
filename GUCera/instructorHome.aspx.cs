@@ -96,22 +96,33 @@ namespace GUCera
 
                 Panel card = new Panel();
 
-                Button MyButton = new Button();
-                MyButton.UseSubmitBehavior = false;
-                MyButton.PostBackUrl = "vFeedback.aspx?cid=" + cid.ToString();
-                MyButton.Text = "View Feedback";
+                Button MyButtonF = new Button();
+                MyButtonF.UseSubmitBehavior = false;
+                MyButtonF.PostBackUrl = "vFeedback.aspx?cid=" + cid.ToString();
+                MyButtonF.Text = "View Feedback";
+
+
+                Button MyButtonA = new Button();
+                MyButtonA.UseSubmitBehavior = false;
+                MyButtonA.PostBackUrl = "InstructorAssignments.aspx?cid=" + cid.ToString();
+                MyButtonA.Text = "Assignments";
+
+
                 Label lbl_cid = new Label();
-                lbl_cid.Text = "<h4 style='" + "'>" + "ID: " + cid + "</h4>";
+                lbl_cid.Text = "<h4>" + "Course ID " + cid + "</h4>";
                 card.Controls.Add(lbl_cid);
                 Label lbl_cname = new Label();
                 lbl_cname.Text = "<div > Name: " + cname + "</div>";
                 card.Controls.Add(lbl_cname);
                 Label lbl_crs = new Label();
-                lbl_crs.Text = "<div> Credit Hours: " + ch + "</div>";
+                lbl_crs.Text = "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
                 card.Controls.Add(lbl_crs);
                 Label line = new Label();
                 line.Text = "<hr>";
-                card.Controls.Add(MyButton);
+
+
+                card.Controls.Add(MyButtonA);
+                card.Controls.Add(MyButtonF);
                 card.Controls.Add(line);
                 CourseList.Controls.Add(card);
 

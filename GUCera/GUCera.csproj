@@ -71,6 +71,7 @@
     <Content Include="AddCreditCard.aspx" />
     <Content Include="Admin Page.aspx" />
     <Content Include="AllCourses.aspx" />
+    <Content Include="InstructorAssignments.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="AllCourses.aspx.designer.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorAssignments.aspx.cs">
+      <DependentUpon>InstructorAssignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructorAssignments.aspx.designer.cs">
+      <DependentUpon>InstructorAssignments.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructorHome.aspx.cs">
       <DependentUpon>instructorHome.aspx</DependentUpon>

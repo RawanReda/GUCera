@@ -29,9 +29,7 @@
 		            <tr>
 			            <td><asp:Label ID="Label3" runat="server" Text="Price:"></asp:Label> </td>
 			            <td> <asp:TextBox ID="price" runat="server"></asp:TextBox> </td>
-		            </tr>
-		           
-		            
+		            </tr> 
                      <tr>
 			            <td><asp:Button ID="Button1" runat="server" Text="Add Course" OnClick="addCourse"/></td>
 			            <td></td>
