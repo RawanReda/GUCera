@@ -85,8 +85,6 @@ namespace GUCera
 
 
             while (rdr.Read())
-
-
             {
                 int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
                 string cname = rdr.GetString(rdr.GetOrdinal("name"));
@@ -109,9 +107,9 @@ namespace GUCera
                 MyButtonA.Text = "Assignments";
 
                 Button MyButtonC = new Button();
-                MyButtonA.UseSubmitBehavior = false;
-                MyButtonA.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
-                MyButtonA.Text = "Issue Certificate to a Student";
+                MyButtonC.UseSubmitBehavior = false;
+                MyButtonC.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
+                MyButtonC.Text = "Issue Certificate to a Student";
 
 
                 Label lbl_cid = new Label();
@@ -126,9 +124,9 @@ namespace GUCera
                 Label line = new Label();
                 line.Text = "<hr>";
 
-
-                card.Controls.Add(MyButtonA);
                 card.Controls.Add(MyButtonF);
+                card.Controls.Add(MyButtonA);
+                card.Controls.Add(MyButtonC);
                 card.Controls.Add(line);
                 CourseList.Controls.Add(card);
 
