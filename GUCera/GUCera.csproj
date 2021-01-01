@@ -77,6 +77,7 @@
     <Content Include="StudentHome.aspx" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="StudentViewMyProfile.aspx" />
+    <Content Include="vFeedback.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="StudentViewMyProfile.aspx.designer.cs">
       <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vFeedback.aspx.cs">
+      <DependentUpon>vFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vFeedback.aspx.designer.cs">
+      <DependentUpon>vFeedback.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

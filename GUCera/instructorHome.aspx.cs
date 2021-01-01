@@ -97,8 +97,8 @@ namespace GUCera
                 Panel card = new Panel();
 
                 Button MyButton = new Button();
-                //MyButton.UseSubmitBehavior = false;
-                //MyButton.PostBackUrl = "UpdateCourse.aspx?pid=" + cid.ToString();
+                MyButton.UseSubmitBehavior = false;
+                MyButton.PostBackUrl = "vFeedback.aspx?cid=" + cid.ToString();
                 MyButton.Text = "View Feedback";
                 Label lbl_cid = new Label();
                 lbl_cid.Text = "<h4 style='" + "'>" + "ID: " + cid + "</h4>";
