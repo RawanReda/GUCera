@@ -72,12 +72,15 @@
     <Content Include="Admin Page.aspx" />
     <Content Include="AdminAllCourses.aspx" />
     <Content Include="AllCourses.aspx" />
+    <Content Include="InstructorAssignments.aspx" />
+    <Content Include="InstructorCertifies.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="StudentHome.aspx" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="StudentViewMyProfile.aspx" />
+    <Content Include="vFeedback.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +118,20 @@
     </Compile>
     <Compile Include="AllCourses.aspx.designer.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorAssignments.aspx.cs">
+      <DependentUpon>InstructorAssignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructorAssignments.aspx.designer.cs">
+      <DependentUpon>InstructorAssignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorCertifies.aspx.cs">
+      <DependentUpon>InstructorCertifies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructorCertifies.aspx.designer.cs">
+      <DependentUpon>InstructorCertifies.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructorHome.aspx.cs">
       <DependentUpon>instructorHome.aspx</DependentUpon>
@@ -158,6 +175,13 @@
     </Compile>
     <Compile Include="StudentViewMyProfile.aspx.designer.cs">
       <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vFeedback.aspx.cs">
+      <DependentUpon>vFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vFeedback.aspx.designer.cs">
+      <DependentUpon>vFeedback.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

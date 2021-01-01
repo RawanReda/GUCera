@@ -5,6 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Instructor Home</title>
+
+	<style>
+	    .cards {
+
+			background-color: lightgray;
+	    }
+
+	</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,9 +37,7 @@
 		            <tr>
 			            <td><asp:Label ID="Label3" runat="server" Text="Price:"></asp:Label> </td>
 			            <td> <asp:TextBox ID="price" runat="server"></asp:TextBox> </td>
-		            </tr>
-		           
-		            
+		            </tr> 
                      <tr>
 			            <td><asp:Button ID="Button1" runat="server" Text="Add Course" OnClick="addCourse"/></td>
 			            <td></td>
@@ -41,8 +47,12 @@
 
         </div>
 
+		<hr>
+
 		<div>
+
 			<asp:Button ID="Button2" runat="server" Text="View my Courses" OnClick="viewmyCourses"/>
+
 			<br>
 			<br>
 			<asp:Literal ID="title" runat="server" Text=""></asp:Literal>
