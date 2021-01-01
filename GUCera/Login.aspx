@@ -7,36 +7,44 @@
     <title></title>
   <%--  Hi Hadeer--%>
 </head>
+
 <body>
     <form id="form1" runat="server">
-        Welcome to our GUCera website :) <br />
-        <br />
-        Please Log In <br />
-        <br />
-        ID :<br />
-        <br />
-        <asp:TextBox ID="ID" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Password :<br />
-        <br />
-        <asp:TextBox ID="Password" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Button ID="signin" runat="server" OnClick="login" Text="log in" />
-        <br />
-        <br />
+        <div>
+            <h3>Welcome to our GUCera website :) </h3> <br />
+           
+              Please Log In 
 
-        <asp:Button ID="Button1" runat="server" OnClick="StudentReg" Text="Register as an Instructor" />
-        <br />
-        <br/>
-        <asp:Button ID="Button2" runat="server" OnClick="InstructorReg" Text="Register as an Student" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <p>
-            &nbsp;</p>
+				<div>
+                <table cellpadding="2" >
+	            <tbody>
+		            <tr>
+			            <td><asp:Label ID="usrID" runat="server" Text="ID:"  ></asp:Label>  </td>
+			            <td> <asp:TextBox ID="ID" runat="server"></asp:TextBox> <br /> </td>
+		            </tr>
+					
+		            <tr>
+			            <td> <asp:Label ID="lbl_password" runat="server" Text="Password:"  ></asp:Label> </td>
+			            <td>   <asp:TextBox ID="Password" runat="server" TextMode="Password"  ></asp:TextBox><br /></td>
+		            </tr>
+		       	
+		            <tr>
+			            <td><asp:Button ID="signin" runat="server" OnClick="login" Text="Log in" /></td>
+			            <td> </td>
+		            </tr>
+					
+					<tr>
+			            <td><asp:Button ID="Button1" runat="server" OnClick="InstructorReg" Text="Register as an Instructor" /></td>
+			            <td> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as an Student" /><br /></td>
+		            </tr>
+					
+	            </tbody>
+            </table>
+
+
+            </div>
+        </div>
     </form>
 </body>
+
 </html>
