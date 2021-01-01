@@ -62,6 +62,9 @@ namespace GUCera
             cmd.Parameters.Add(new SqlParameter("@instructorId", isID));
 
 
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
 
         }
@@ -75,7 +78,8 @@ namespace GUCera
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand("InstructorViewAcceptedCoursesByAdmin", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@instrId", (int) Session["field1"]));
+            cmd.Parameters.Add(new SqlParameter("@instrId", (int)Session["field1"]));
+
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -95,27 +99,26 @@ namespace GUCera
                 Button MyButton = new Button();
                 //MyButton.UseSubmitBehavior = false;
                 //MyButton.PostBackUrl = "UpdateCourse.aspx?pid=" + cid.ToString();
-                MyButton.Text = "Update Course Details";
+                MyButton.Text = "View Feedback";
                 Label lbl_cid = new Label();
-                lbl_cid.Text = "<h4 style='" +
-                                                    "margin-left: 40px;" +
-                                                    "font-weight: 700;" +
-                                                    "font-size: 18px;'>" + cid + "</h4>";
+                lbl_cid.Text = "<h4 style='" + "'>" + "ID: " + cid + "</h4>";
                 card.Controls.Add(lbl_cid);
-
                 Label lbl_cname = new Label();
-                lbl_cname.Text = "<div >" + cname + "</div>";
+                lbl_cname.Text = "<div > Name: " + cname + "</div>";
                 card.Controls.Add(lbl_cname);
                 Label lbl_crs = new Label();
-                lbl_crs.Text = "<div>" + ch + "</div>";
+                lbl_crs.Text = "<div> Credit Hours: " + ch + "</div>";
                 card.Controls.Add(lbl_crs);
-
+                Label line = new Label();
+                line.Text = "<hr>";
                 card.Controls.Add(MyButton);
-
+                card.Controls.Add(line);
                 CourseList.Controls.Add(card);
 
 
             }
+
+
 
 
         }
