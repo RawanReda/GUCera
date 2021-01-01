@@ -72,6 +72,7 @@
     <Content Include="Admin Page.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="InstructorAssignments.aspx" />
+    <Content Include="InstructorCertifies.aspx" />
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="InstructorAssignments.aspx.designer.cs">
       <DependentUpon>InstructorAssignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorCertifies.aspx.cs">
+      <DependentUpon>InstructorCertifies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructorCertifies.aspx.designer.cs">
+      <DependentUpon>InstructorCertifies.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructorHome.aspx.cs">
       <DependentUpon>instructorHome.aspx</DependentUpon>

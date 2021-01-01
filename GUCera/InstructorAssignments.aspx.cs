@@ -15,6 +15,7 @@ namespace GUCera
 
         int courseID;
         SqlConnection conn;
+        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(Request.QueryString["cid"]))
@@ -27,8 +28,6 @@ namespace GUCera
 
                 SqlCommand cmd = new SqlCommand("select * from Course where id=" + courseID, conn);
                 cmd.CommandType = CommandType.Text;
-                conn.Close();
-                conn.Open();
 
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
@@ -59,8 +58,8 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            int id = (int)Session["field1"];
-            int num =int.Parse(ano.Text);
+            id = (int)Session["field1"];
+            int num = int.Parse(ano.Text);
             string type = ty.Text.ToString();
             int fullgrade = int.Parse(full.Text);
             decimal weight = decimal.Parse(wgt.Text);
@@ -101,10 +100,75 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("InstructorViewAssignmentsStudents", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
+            //inputs
+            cmd.Parameters.Add(new SqlParameter("@instrId", id));
+            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+
+
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rdr.Read())
+            {
+                int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
+                int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
+                if (cid == courseID)
+                {
+                    int asN = rdr.GetInt32(rdr.GetOrdinal("assignmentNumber"));
+                    string asT = rdr.GetString(rdr.GetOrdinal("assignmentType"));
+                    int gr = rdr.GetInt32(rdr.GetOrdinal("grade"));
+
+                    Literal1.Text = "";
+
+
+                    Literal a = new Literal();
+                    Panel c = new Panel();
+
+                    a.Text =
+
+                       "<div >" +
+                       "<p> StudentID " + sid + "</p>" +
+                       "<p> Assignment# " + asN + "</p>" +
+                       "<p> Assignment Type: " + asT + "</p>" +
+                       "<p> Student Grade: " + gr + "</p>" +
+                       "</div>";
+
+
+
+                    Button MyButtonA = new Button();
+                    MyButtonA.UseSubmitBehavior = false;
+                    //MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString();
+                    MyButtonA.Text = "Edit Grade";
+                    MyButtonA.OnClientClick = "editGrade";
+
+
+                    Literal line = new Literal();
+                    line.Text = "<hr>";
+
+                    c.Controls.Add(a);
+                    c.Controls.Add(MyButtonA);
+                    c.Controls.Add(line);
+
+
+                    slist.Controls.Add(c);
+
+
+                }
+
+            }
+            if (!rdr.Read())
+            {
+                Literal1.Text = " No submissions for this course yet";
+            }
 
 
 
         }
 
+        protected void editGrade(object sender, EventArgs e)
+        {
+            Response.Write("Edit");
+
+        }
+
     }
-}
+ }

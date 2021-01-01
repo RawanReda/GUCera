@@ -39,8 +39,12 @@
 
         </div>
 
+		<hr>
+
 		<div>
+
 			<asp:Button ID="Button2" runat="server" Text="View my Courses" OnClick="viewmyCourses"/>
+
 			<br>
 			<br>
 			<asp:Literal ID="title" runat="server" Text=""></asp:Literal>

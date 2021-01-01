@@ -12,10 +12,6 @@
 		<br>
 		<br>
 
-        <asp:Button ID="Button1" runat="server" Text="View Submissions" OnClick="viewSubmissions" />
-
-		<hr>
-
         <details>
         <summary>Define an Assignment of a Certain Type</summary>
         <p>
@@ -64,6 +60,19 @@
 
         </p>
         </details>
+
+		<hr>
+		
+        <asp:Button ID="Button1" runat="server" Text="View Student Submissions" OnClick="viewSubmissions" />
+        <br>
+		<asp:Literal ID="Literal1" runat="server"></asp:Literal>
+		<div id="slist" runat="server">
+
+
+		</div>
+
+	
+
 
        
     </form>

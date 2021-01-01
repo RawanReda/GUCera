@@ -107,6 +107,11 @@ namespace GUCera
                 MyButtonA.PostBackUrl = "InstructorAssignments.aspx?cid=" + cid.ToString();
                 MyButtonA.Text = "Assignments";
 
+                Button MyButtonC = new Button();
+                MyButtonA.UseSubmitBehavior = false;
+                MyButtonA.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
+                MyButtonA.Text = "Issue Certificate to a Student";
+
 
                 Label lbl_cid = new Label();
                 lbl_cid.Text = "<h4>" + "Course ID " + cid + "</h4>";
