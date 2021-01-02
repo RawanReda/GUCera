@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <div>
             Sign Up as an Instructor <br />
+            <asp:Literal ID="txt" runat="server"></asp:Literal>
            
               <br />
 
@@ -56,3 +57,7 @@
     </form>
 </body>
 </html>
+
+
+
+
