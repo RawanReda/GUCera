@@ -64,7 +64,7 @@ namespace GUCera
 
                     fb.Text =
 
-                       "<div >" +
+                       "<div style='background-color:lightgrey; margin:4px;padding-left: 8px;'>" +
                        "<p> Feedback #" + feedbackN + "</p>" +
                        "<p> Comment: " + comment + "</p>" +
                        "<p> Number of Likes: " + likes + "</p>" +

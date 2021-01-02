@@ -23,6 +23,8 @@ namespace GUCera
 
                 //If courseid can be obtained from the request
                 //take it from the request and store it
+                string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+                conn = new SqlConnection(connStr);
                 int s = Int32.Parse((String)Request.QueryString["cid"]);
                 courseID = s;
 
@@ -34,6 +36,8 @@ namespace GUCera
 
                 if (rdr.Read())
                 {
+                    conn.Close();
+                    conn.Open();
                     rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
                     rdr.Read();
                     String courseName = rdr.GetString(rdr.GetOrdinal("name"));
@@ -43,6 +47,7 @@ namespace GUCera
 
                 }
             }
+            else Response.Redirect("No Course Data was found");
         }
 
 
@@ -111,26 +116,25 @@ namespace GUCera
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
                 int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
-                if (cid == courseID)
-                {
-                    int asN = rdr.GetInt32(rdr.GetOrdinal("assignmentNumber"));
-                    string asT = rdr.GetString(rdr.GetOrdinal("assignmentType"));
-                    int gr = rdr.GetInt32(rdr.GetOrdinal("grade"));
 
-                    Literal1.Text = "";
+                int asN = rdr.GetInt32(rdr.GetOrdinal("assignmentNumber"));
+                string asT = rdr.GetString(rdr.GetOrdinal("assignmenttype"));
+                int gr = rdr.GetInt32(rdr.GetOrdinal("grade"));
+
+                Literal1.Text = "";
 
 
-                    Literal a = new Literal();
-                    Panel c = new Panel();
+                Literal a = new Literal();
+                Panel c = new Panel();
 
                     a.Text =
 
-                       "<div >" +
-                       "<p> StudentID " + sid + "</p>" +
-                       "<p> Assignment# " + asN + "</p>" +
-                       "<p> Assignment Type: " + asT + "</p>" +
-                       "<p> Student Grade: " + gr + "</p>" +
-                       "</div>";
+                    "<div >" +
+                    "<p> StudentID " + sid + "</p>" +
+                    "<p> Assignment# " + asN + "</p>" +
+                    "<p> Assignment Type: " + asT + "</p>" +
+                    "<p> Student Grade: " + gr + "</p>" +
+                    "</div>";
 
 
 
@@ -147,18 +151,23 @@ namespace GUCera
                     c.Controls.Add(a);
                     c.Controls.Add(MyButtonA);
                     c.Controls.Add(line);
+                    c.CssClass = "card";
 
 
                     slist.Controls.Add(c);
 
 
-                }
+                
 
             }
+
             if (!rdr.Read())
             {
-                Literal1.Text = " No submissions for this course yet";
+                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
             }
+
+
+            //conn.Close();
 
 
 

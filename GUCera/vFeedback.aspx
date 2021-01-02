@@ -5,6 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Feedback</title>
+    <style>
+	    .card {
+
+			background-color: lightgray;
+	    }
+
+	</style>
+</head>
+
 </head>
 <body>
     <form id="form1" runat="server">

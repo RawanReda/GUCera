@@ -90,10 +90,18 @@ namespace GUCera
                 string cname = rdr.GetString(rdr.GetOrdinal("name"));
                 int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
 
+
                 title.Text = "<h3> My Courses </h3>";
 
                 Panel card = new Panel();
                 card.CssClass = "cards";
+
+
+                Button MyButtonU = new Button();
+                MyButtonU.UseSubmitBehavior = false;
+                MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
+                MyButtonU.Text = "Update Course description/content";
+
 
                 Button MyButtonF = new Button();
                 MyButtonF.UseSubmitBehavior = false;
@@ -121,9 +129,15 @@ namespace GUCera
                 Label lbl_crs = new Label();
                 lbl_crs.Text = "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
                 card.Controls.Add(lbl_crs);
+
+                //Label lbl_desc = new Label();
+                //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + ch + "</div>";
+                //card.Controls.Add(lbl_desc);
+    
                 Label line = new Label();
                 line.Text = "<hr>";
 
+                card.Controls.Add(MyButtonU);
                 card.Controls.Add(MyButtonF);
                 card.Controls.Add(MyButtonA);
                 card.Controls.Add(MyButtonC);

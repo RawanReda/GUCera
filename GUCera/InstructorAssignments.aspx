@@ -4,7 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+    <title>Assignments</title>
+
+	<style>
+	    .card {
+	        background-color: lightgray;
+	    }
+	</style>
+</head>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,7 +48,9 @@
 					
 					<tr>
 			            <td> Deadline</td>
-			            <td>   <asp:TextBox ID="dead" runat="server" ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="dead" runat="server" ></asp:TextBox><br />
+
+                        </td>
 		            </tr>
 					
 					<tr>
@@ -66,6 +77,7 @@
         <asp:Button ID="Button1" runat="server" Text="View Student Submissions" OnClick="viewSubmissions" />
         <br>
 		<asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
 		<div id="slist" runat="server">
 
 
