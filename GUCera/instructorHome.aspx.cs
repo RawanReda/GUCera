@@ -78,7 +78,7 @@ namespace GUCera
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand("InstructorViewAcceptedCoursesByAdmin", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-
+                
             cmd.Parameters.Add(new SqlParameter("@instrId", (int)Session["field1"]));
 
             conn.Open();

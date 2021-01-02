@@ -10,6 +10,8 @@
 	    .cards {
 
 			background-color: lightgray;
+			margin: 4px;
+
 	    }
 
 	</style>
