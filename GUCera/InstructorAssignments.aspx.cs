@@ -140,7 +140,7 @@ namespace GUCera
 
                     Button MyButtonA = new Button();
                     MyButtonA.UseSubmitBehavior = false;
-                    //MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString();
+                    MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString(); +"&assignmentNumber="+asN.toString();+"&type="+asT.toSring();
                     MyButtonA.Text = "Edit Grade";
                     MyButtonA.OnClientClick = "editGrade";
 
