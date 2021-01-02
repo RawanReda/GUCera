@@ -83,6 +83,7 @@
     <Content Include="StudentViewAssignments.aspx" />
     <Content Include="StudentViewMyProfile.aspx" />
     <Content Include="vFeedback.aspx" />
+    <Content Include="ViewMyPromoCodes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="vFeedback.aspx.designer.cs">
       <DependentUpon>vFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMyPromoCodes.aspx.cs">
+      <DependentUpon>ViewMyPromoCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewMyPromoCodes.aspx.designer.cs">
+      <DependentUpon>ViewMyPromoCodes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

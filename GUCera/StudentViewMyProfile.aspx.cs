@@ -20,9 +20,6 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            //To read the input from the user
-          //  int sid = Int16.Parse(input.Text);
-
             /*create a new SQL command which takes as parameters the name of the stored procedure and
              the SQLconnection name*/
             SqlCommand myprofile = new SqlCommand("viewMyProfile", conn);
@@ -42,9 +39,7 @@ namespace GUCera
 
                 int id1 = rdr.GetInt32(rdr.GetOrdinal("id"));
 
-            //    float gpa = rdr.GetFloat(rdr.GetOrdinal("gpa"));
-
-                int id2 = rdr.GetInt32(rdr.GetOrdinal("id"));
+               Decimal gpa = rdr.GetDecimal(rdr.GetOrdinal("gpa"));
 
                 string fn = rdr.GetString(rdr.GetOrdinal("firstName"));
 
@@ -52,25 +47,45 @@ namespace GUCera
 
                 string pass = rdr.GetString(rdr.GetOrdinal("password"));
 
-           //     int gender = rdr.GetInt16(rdr.GetOrdinal("gender"));
+          //      Boolean g = rdr.GetBoolean(rdr.GetOrdinal("gender"));
 
-           //     string email = rdr.GetString(rdr.GetOrdinal("email"));
+                string email = rdr.GetString(rdr.GetOrdinal("email"));
 
-            //    string address = rdr.GetString(rdr.GetOrdinal("address"));
+               string address = rdr.GetString(rdr.GetOrdinal("address"));
 
                 Label lbl_id1 = new Label();
                 lbl_id1.Text = "ID : " +id1 ;
                 form1.Controls.Add(lbl_id1);
+
+                Label lbl_fn = new Label();
+                lbl_fn.Text = "   First Name : " + fn;
+                form1.Controls.Add(lbl_fn);
+
+                Label lbl_ln = new Label();
+                lbl_ln.Text = "   Last Name : " + ln;
+                form1.Controls.Add(lbl_ln);
+
+                Label lbl_pass = new Label();
+                lbl_pass.Text = "   Password : " + pass;
+                form1.Controls.Add(lbl_pass);
+
+                Label lbl_e = new Label();
+                lbl_e.Text = "   Email : " + email;
+                form1.Controls.Add(lbl_e);
+
+                Label lbl_add = new Label();
+                lbl_add.Text = "   Address : " + address;
+                form1.Controls.Add(lbl_add);
+
+                Label lbl_gpa = new Label();
+                lbl_gpa.Text = "   GPA : " + gpa;
+                form1.Controls.Add(lbl_gpa);
+
             }
 
-       //     string field1 = (string)(Session["field1"]);
-        //    Response.Write(field1);
+    
         }
 
-        protected void enter(object sender, EventArgs e)
-        {
-           
-
-        }
+      
     }
 }
