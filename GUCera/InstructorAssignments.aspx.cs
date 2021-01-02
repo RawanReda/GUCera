@@ -106,20 +106,20 @@ namespace GUCera
             cmd.CommandType = CommandType.StoredProcedure;
 
             //inputs
-            cmd.Parameters.Add(new SqlParameter("@instrId", id));
+            cmd.Parameters.Add(new SqlParameter("@instrId", 1));
             cmd.Parameters.Add(new SqlParameter("@cid", courseID));
 
 
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
             while (rdr.Read())
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
                 int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
-
                 int asN = rdr.GetInt32(rdr.GetOrdinal("assignmentNumber"));
                 string asT = rdr.GetString(rdr.GetOrdinal("assignmenttype"));
-                int gr = rdr.GetInt32(rdr.GetOrdinal("grade"));
+                Decimal gr = rdr.GetDecimal(rdr.GetOrdinal("grade"));
 
                 Literal1.Text = "";
 
@@ -155,19 +155,17 @@ namespace GUCera
 
 
                     slist.Controls.Add(c);
-
+                    
 
                 
 
             }
 
-            if (!rdr.Read())
-            {
-                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
-            }
+            //if (!rdr.Read())
+            //{
+            //    Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
+            //}
 
-
-            //conn.Close();
 
 
 
