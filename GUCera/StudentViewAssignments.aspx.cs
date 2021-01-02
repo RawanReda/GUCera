@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +13,61 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+            SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
 
+            SqlCommand cmd = new SqlCommand("viewAssign", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("@courseId", Session["AssignCourseId"]));
+            cmd.Parameters.Add(new SqlParameter("@Sid", (Session["field1"]).ToString()));
+            conn.Open();
+
+            //IF the output is a table, then we can read the records one at a time
+            SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+           
+            while (rdr.Read())
+            {
+                //Get the value of the attribute name in the Company table
+                int AssignNo = rdr.GetOrdinal("number");
+                //Get the value of the attribute field in the Company table
+                string AssignType = rdr.GetString(rdr.GetOrdinal("type"));
+                int fullGrade = rdr.GetOrdinal("fullgrade");
+               int weight = rdr.GetOrdinal("weight");
+                DateTime deadline = rdr.GetDateTime(rdr.GetOrdinal("deadline"));
+                string content = rdr.GetString(rdr.GetOrdinal("content"));
+
+                //Create a new label and add it to the HTML form
+                Label AssignNo1 = new Label();
+                AssignNo1.Text = "Assignment Number: "+ AssignNo + " , ";
+                form1.Controls.Add(AssignNo1);
+
+                Label AssignType1 = new Label();
+                AssignType1.Text = "Assignment Type: " + AssignType + " , ";
+                form1.Controls.Add(AssignType1);
+
+                Label FG1 = new Label();
+                FG1.Text = "Full grade: " + fullGrade + " , ";
+                form1.Controls.Add(FG1);
+
+                Label W1 = new Label();
+                AssignType1.Text = "Full weight: "+weight + " , ";
+                form1.Controls.Add(W1);
+
+                Label D1 = new Label();
+                D1.Text = "Deadline: " + deadline + " , ";
+                form1.Controls.Add(D1);
+
+                Label C1 = new Label();
+                C1.Text = "Content: "+content + "  <br /> <br />";
+                form1.Controls.Add(C1);
+
+            }
+           
+           
         }
     }
+
+      
+    
 }

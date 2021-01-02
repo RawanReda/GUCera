@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorAssignments.aspx.cs" Inherits="GUCera.InstructorAssignments" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorAssignments.aspx.cs" Inherits="GUCera.InstructorAssignments" %>
 
 <!DOCTYPE html>
 
@@ -87,4 +87,4 @@
        
     </form>
 </body>
-</html>
+</html>--%>

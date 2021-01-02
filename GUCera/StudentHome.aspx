@@ -40,11 +40,17 @@
             <asp:Button ID="Button5" runat="server" Onclick="promocodes" Text="promocodes" />
             <br />
             <br />
-            Vew Assignments:<br />
+            To view Assignments for a certain course, please enter the course ID:<br />
+            Course Id: <asp:TextBox ID="course_Id" runat="server" Height="16px" Width="141px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
+             
+            <br />
             <asp:Button ID="ViewAssign1" runat="server" Onclick="ViewAssign" Text="Check Assignments" />
             <br />
             <br />
-            Submit Assignment:<br />
+            To submit an Assignment, please enter the required info:<br />
+           Assignment Type: <asp:TextBox ID="AssignType1" runat="server" Width="73px"  ></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assignment Number: <asp:TextBox ID="AssignNum1" runat="server" Width="73px"  ></asp:TextBox>
+            <br />
 &nbsp;<asp:Button ID="SubmitAssign1" runat="server" Onclick="SubmitAssign" Text="Submit Assignment" />
             <br />
             <br />

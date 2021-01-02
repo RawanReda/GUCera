@@ -69,6 +69,15 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
+        /// course_Id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox course_Id;
+
+        /// <summary>
         /// ViewAssign1 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,24 @@ namespace GUCera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ViewAssign1;
+
+        /// <summary>
+        /// AssignType1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AssignType1;
+
+        /// <summary>
+        /// AssignNum1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AssignNum1;
 
         /// <summary>
         /// SubmitAssign1 control.

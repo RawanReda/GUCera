@@ -53,7 +53,9 @@ namespace GUCera
 
         protected void ViewAssign(object sender, EventArgs e)
         {
-
+            int id1 = Int16.Parse(course_Id.Text);
+            Session["AssignCourseId"] = id1;
+            Response.Redirect("StudentViewAssignments.aspx", true);
         }
 
         protected void SubmitAssign(object sender, EventArgs e)
@@ -62,6 +64,16 @@ namespace GUCera
         }
 
         protected void CheckGrade(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void course_Id_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void course_Id_TextChanged1(object sender, EventArgs e)
         {
 
         }
