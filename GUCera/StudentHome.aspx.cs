@@ -26,7 +26,7 @@ namespace GUCera
 
         protected void enroll(object sender, EventArgs e)
         {
-
+            Response.Redirect("EnrollInACourse.aspx", true);
         }
 
         protected void creditcard(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace GUCera
 
         protected void promocodes(object sender, EventArgs e)
         {
-
+            Response.Redirect("ViewMyPromoCodes.aspx", true);
         }
 
      
