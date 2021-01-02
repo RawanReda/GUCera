@@ -9,12 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Please enter your ID :<br />
-            <br />
-            <asp:TextBox ID="input" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="enter" Text="Enter" />
+            <br />
+            <br />
         </div>
     </form>
 </body>

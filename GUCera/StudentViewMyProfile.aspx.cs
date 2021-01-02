@@ -31,7 +31,7 @@ namespace GUCera
 
 
 
-            myprofile.Parameters.Add(new SqlParameter("@id", Int16.Parse(input.Text)));
+            myprofile.Parameters.Add(new SqlParameter("@id", (int) Session["field1"]));
 
             //Executing the SQLCommand
             conn.Open();
@@ -40,31 +40,31 @@ namespace GUCera
             while (rdr.Read())
             {
 
-                int id1 = rdr.GetInt16(rdr.GetOrdinal("id"));
+                int id1 = rdr.GetInt32(rdr.GetOrdinal("id"));
 
-                float gpa = rdr.GetFloat(rdr.GetOrdinal("gpa"));
+            //    float gpa = rdr.GetFloat(rdr.GetOrdinal("gpa"));
 
-                int id2 = rdr.GetInt16(rdr.GetOrdinal("id"));
+                int id2 = rdr.GetInt32(rdr.GetOrdinal("id"));
 
                 string fn = rdr.GetString(rdr.GetOrdinal("firstName"));
 
                 string ln = rdr.GetString(rdr.GetOrdinal("lastName"));
 
-                string pass = rdr.GetString(rdr.GetOrdinal(" password"));
+                string pass = rdr.GetString(rdr.GetOrdinal("password"));
 
-                int gender = rdr.GetInt16(rdr.GetOrdinal("gender"));
+           //     int gender = rdr.GetInt16(rdr.GetOrdinal("gender"));
 
-                string email = rdr.GetString(rdr.GetOrdinal("email"));
+           //     string email = rdr.GetString(rdr.GetOrdinal("email"));
 
-                string address = rdr.GetString(rdr.GetOrdinal("address"));
+            //    string address = rdr.GetString(rdr.GetOrdinal("address"));
 
                 Label lbl_id1 = new Label();
-                lbl_id1.Text = id1 + "";
+                lbl_id1.Text = "ID : " +id1 ;
                 form1.Controls.Add(lbl_id1);
             }
 
-            string field1 = (string)(Session["field1"]);
-            Response.Write(field1);
+       //     string field1 = (string)(Session["field1"]);
+        //    Response.Write(field1);
         }
 
         protected void enter(object sender, EventArgs e)
