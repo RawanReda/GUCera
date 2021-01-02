@@ -161,10 +161,10 @@ namespace GUCera
 
             }
 
-            //if (!rdr.Read())
-            //{
-            //    Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
-            //}
+            if (!rdr.Read())
+            {
+                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
+            }
 
 
 
