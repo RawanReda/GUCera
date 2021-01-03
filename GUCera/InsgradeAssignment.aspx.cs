@@ -60,7 +60,7 @@ namespace GUCera
             cmd.CommandType = CommandType.StoredProcedure;
 
             id = (int)Session["field1"];
-            String gr = TextBox1.Text;
+            Decimal gr = Decimal.Parse(TextBox1.Text.ToString());
 
             cmd.Parameters.Add(new SqlParameter("@instrId", id));
             cmd.Parameters.Add(new SqlParameter("@sid", sid));
@@ -73,7 +73,6 @@ namespace GUCera
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-
 
                 msg.Text = "<p style='color: green'> Grade Updated Successfully</p>";
 
