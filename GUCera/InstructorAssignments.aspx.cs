@@ -21,6 +21,7 @@ namespace GUCera
             if (!string.IsNullOrEmpty(Request.QueryString["cid"]))
             {
 
+
                 //If courseid can be obtained from the request
                 //take it from the request and store it
                 string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
@@ -48,6 +49,7 @@ namespace GUCera
                 }
             }
             else Response.Redirect("No Course Data was found");
+            msg.Text = "";
         }
 
 
@@ -63,6 +65,7 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
+            
             id = (int)Session["field1"];
             int num = int.Parse(ano.Text);
             string type = ty.Text.ToString();
@@ -71,24 +74,42 @@ namespace GUCera
             DateTime deadline = DateTime.Parse(dead.Text.ToString());
             string content = cnt.Text.ToString();
 
+            if (num.ToString() == "" || type == "" || fullgrade.ToString() == "" || weight.ToString() == "" || deadline.ToString() == "" || content == "")
+            {
+                msg.Text = "<p style='color:red '> Please fill in all fields </p>";
+            }
+            else
+            {
 
-            //Add input of procedure
-            cmd.Parameters.Add(new SqlParameter("@instId", id));
-            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
-            cmd.Parameters.Add(new SqlParameter("@number", num));
-            cmd.Parameters.Add(new SqlParameter("@type", type));
-            cmd.Parameters.Add(new SqlParameter("@fullGrade", fullgrade));
-            cmd.Parameters.Add(new SqlParameter("@weight", weight));
-            cmd.Parameters.Add(new SqlParameter("@deadline", deadline));
-            cmd.Parameters.Add(new SqlParameter("@content", content));
+                //Add input of procedure
+                cmd.Parameters.Add(new SqlParameter("@instId", id));
+                cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+                cmd.Parameters.Add(new SqlParameter("@number", num));
+                cmd.Parameters.Add(new SqlParameter("@type", type));
+                cmd.Parameters.Add(new SqlParameter("@fullGrade", fullgrade));
+                cmd.Parameters.Add(new SqlParameter("@weight", weight));
+                cmd.Parameters.Add(new SqlParameter("@deadline", deadline));
+                cmd.Parameters.Add(new SqlParameter("@content", content));
+
+                try
+                {
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    msg.Text = "<p style='color:green '> Assignment#"+ num + "of type: "+type+" added Successfully! </p>";
 
 
+                }
+                catch (SqlException ex)
+                {
+                    msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+
+                }
 
 
+            }
 
         }
 

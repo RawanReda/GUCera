@@ -68,8 +68,12 @@
 	            </tbody>
             </table>
 
+
         </p>
+
         </details>
+					 <asp:Literal ID="msg" runat="server"></asp:Literal>
+
 
 		<hr>
 		
