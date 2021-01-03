@@ -11,7 +11,7 @@
         <div>
             Sign Up as an Instructor <br />
             <asp:Literal ID="txt" runat="server"></asp:Literal>
-           
+            <asp:Literal ID="redirect" runat="server"></asp:Literal>
               <br />
 
 				<div>

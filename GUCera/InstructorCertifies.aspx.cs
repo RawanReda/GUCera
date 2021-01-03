@@ -31,7 +31,7 @@ namespace GUCera
 
             }
 
-            Literal1.Text = "<a href='InstructorHome.aspx'> Back</a>";
+            Literal1.Text = "<a href='InstructorHome.aspx'> Home</a>";
 
         }
 
@@ -63,6 +63,8 @@ namespace GUCera
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                msg.Text = "<p style='color: green'> Certified! </p>";
+
 
                 SqlCommand cmd2 = new SqlCommand("SELECT * FROM StudentCertifyCourse WHERE sid =" + student, conn);
                 cmd2.CommandType = CommandType.StoredProcedure;

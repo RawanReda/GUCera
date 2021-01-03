@@ -19,7 +19,7 @@
 <body>
     <form id="form1" runat="server">
         <div style='text-align:center'>
-
+            <asp:Literal ID="redir" runat="server"></asp:Literal>
             <asp:Literal ID="title" runat="server"></asp:Literal>
             <div>
             <h4>Update Content</h4>

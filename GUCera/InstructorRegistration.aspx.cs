@@ -70,6 +70,8 @@ namespace GUCera
                         int uid = rdr.GetInt32(rdr.GetOrdinal("max"));
                         conn.Close();
                         txt.Text = ("<p style='color:green'> Registration Successful, UserID:  " + uid + "</p>");
+                        redirect.Text =  "<a href='Login.aspx'> Log-in</a>";
+
                         Session["field1"] = uid;
 
 

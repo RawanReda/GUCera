@@ -50,6 +50,8 @@ namespace GUCera
             }
             else Response.Redirect("No Course Data was found");
             msg.Text = "";
+            redir.Text = "<a href='instructorHome.aspx'> Home </a>";
+
         }
 
 
@@ -65,21 +67,21 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            
-            id = (int)Session["field1"];
-            int num = int.Parse(ano.Text);
-            string type = ty.Text.ToString();
-            int fullgrade = int.Parse(full.Text);
-            decimal weight = decimal.Parse(wgt.Text);
-            DateTime deadline = DateTime.Parse(dead.Text.ToString());
-            string content = cnt.Text.ToString();
-
-            if (num.ToString() == "" || type == "" || fullgrade.ToString() == "" || weight.ToString() == "" || deadline.ToString() == "" || content == "")
+            if (ano.Text == "" || ty.Text == "" || full.Text == "" || wgt.Text == "" || dead.Text == "" || cnt.Text == "")
             {
                 msg.Text = "<p style='color:red '> Please fill in all fields </p>";
             }
             else
             {
+                id = (int)Session["field1"];
+                int num = int.Parse(ano.Text);
+                string type = ty.Text.ToString();
+                int fullgrade = int.Parse(full.Text);
+                decimal weight = decimal.Parse(wgt.Text);
+                DateTime deadline = DateTime.Parse(dead.Text.ToString());
+                string content = cnt.Text.ToString();
+
+            
 
                 //Add input of procedure
                 cmd.Parameters.Add(new SqlParameter("@instId", id));

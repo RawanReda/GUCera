@@ -65,9 +65,9 @@ namespace GUCera
                     fb.Text =
 
                        "<div style='background-color:lightgrey; margin:4px;padding-left: 8px;'>" +
-                       "<p> Feedback #" + feedbackN + "</p>" +
-                       "<p> Comment: " + comment + "</p>" +
-                       "<p> Number of Likes: " + likes + "</p>" +
+                       "<h3> Feedback #" + feedbackN + "</h3>" +
+                       " Comment: " + comment +
+                       " Number of Likes: " + likes +
                        "<hr>" +
                        "</div>";
 
@@ -82,6 +82,7 @@ namespace GUCera
                 }
 
             }
+            redir.Text = "<a href='instructorHome.aspx'> Home</a>";
 
         }
     }

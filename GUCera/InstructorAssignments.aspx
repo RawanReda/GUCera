@@ -16,8 +16,9 @@
 
 <body>
     <form id="form1" runat="server">
+		<p style="background-color:darkgrey">
+        <asp:Literal ID="redir" runat="server"></asp:Literal></p>
         <asp:Literal ID="title" runat="server"></asp:Literal>
-		<br>
 		<br>
 
         <details>

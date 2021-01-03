@@ -24,7 +24,10 @@
         </div>
       
         <div>
-			<h3>Add a Course:</h3>
+			 <details>
+        <summary>Add a Course</summary>
+        <p>
+                 
                <table cellpadding="2" >
                              
 	            <tbody>
@@ -47,8 +50,13 @@
 	            </tbody>
             </table>
 
-        </div>
 
+        </p>
+
+        </details>
+
+        </div>
+        <asp:Literal ID="msg" runat="server"></asp:Literal>
 		<hr>
 
 		<div>

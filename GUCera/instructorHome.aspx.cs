@@ -50,27 +50,50 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("InstAddCourse", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-
-            String Course_name = cname.Text;
-            int CrHrs = int.Parse(chours.Text);
-            decimal pri = decimal.Parse(price.Text);
-            int isID = (int)Session["field1"];
-
-            cmd.Parameters.Add(new SqlParameter("@creditHours", CrHrs));
-            cmd.Parameters.Add(new SqlParameter("@name", Course_name));
-            cmd.Parameters.Add(new SqlParameter("@price", pri));
-            cmd.Parameters.Add(new SqlParameter("@instructorId", isID));
+            if (cname.Text == "" || chours.Text == "" || price.Text == "")
+            {
+                msg.Text = "<p style='color:red '> Please fill in all fields </p>";
 
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            }
+            else
+            {
+                try
+                {
+                    String Course_name = cname.Text;
+                    int CrHrs = int.Parse(chours.Text);
+                    decimal pri = decimal.Parse(price.Text);
+                    int isID = (int)Session["field1"];
+
+
+                    cmd.Parameters.Add(new SqlParameter("@creditHours", CrHrs));
+                    cmd.Parameters.Add(new SqlParameter("@name", Course_name));
+                    cmd.Parameters.Add(new SqlParameter("@price", pri));
+                    cmd.Parameters.Add(new SqlParameter("@instructorId", isID));
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    msg.Text = "<p style='color:green '> Course#" + Course_name +" added Successfully! Wait for Admin acceptance. </p>";
+
+                }
+                catch (SqlException ex) {
+                    msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+
+
+                }
+            }
+                
 
 
         }
 
         protected void viewmyCourses(object sender, EventArgs e)
+
         {
+            msg.Text = "";
+
             //Get the information of the connection to the database
             int usr = (int)Session["field1"];
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
@@ -90,7 +113,7 @@ namespace GUCera
                 int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
                 string cname = rdr.GetString(rdr.GetOrdinal("name"));
                 int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
-
+                //String des = "";
 
                 title.Text = "<h3> My Accepted Courses </h3>";
 
@@ -120,25 +143,22 @@ namespace GUCera
                 MyButtonC.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
                 MyButtonC.Text = "Issue a Certificate to a Student";
 
-
-                Label lbl_cid = new Label();
-                lbl_cid.Text = "<h4>" + "Course ID " + cid + "</h4>";
-                card.Controls.Add(lbl_cid);
-                Label lbl_cname = new Label();
-                lbl_cname.Text = "<div > Name: " + cname + "</div>";
-                card.Controls.Add(lbl_cname);
-                Label lbl_crs = new Label();
-                lbl_crs.Text = "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
-                card.Controls.Add(lbl_crs);
+                Literal l1 = new Literal();
+                
+                l1.Text = "<h4>" + "CourseID " + cid + "</h4>"+
+                 "<div > Name: " + cname + "</div>" +
+                 "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
+               
 
                 //Label lbl_desc = new Label();
-                //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + ch + "</div>";
+                //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + des + "</div>";
                 //card.Controls.Add(lbl_desc);
     
                 Label line = new Label();
                 line.Text = "<hr>";
-                
-                card.Controls.Add(MyButtonU);
+
+                //card.Controls.Add(MyButtonU);
+                card.Controls.Add(l1);
                 card.Controls.Add(MyButtonF);
                 card.Controls.Add(MyButtonA);
                 card.Controls.Add(MyButtonC);
