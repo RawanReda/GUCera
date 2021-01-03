@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorAssignments.aspx.cs" Inherits="GUCera.InstructorAssignments" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorAssignments.aspx.cs" Inherits="GUCera.InstructorAssignments" %>
 
 <!DOCTYPE html>
 
@@ -77,8 +77,8 @@
         <br>
 		<asp:Literal ID="Literal1" runat="server"></asp:Literal>
 
-		<%--<div id="slist" runat="server">
-		</div>--%>
+		<div id="slist" runat="server">
+		</div>
 	
 		 <asp:Panel ID="slist" runat="server"></asp:Panel>
 
@@ -87,4 +87,4 @@
        
     </form>
 </body>
-</html>--%>
+</html>

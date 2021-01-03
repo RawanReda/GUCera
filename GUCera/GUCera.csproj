@@ -74,6 +74,7 @@
     <Content Include="AllCourses.aspx" />
     <Content Include="EnrollInACourse.aspx" />
     <Content Include="inscourseUpdate.aspx" />
+    <Content Include="InsgradeAssignment.aspx" />
     <Content Include="InstructorAssignments.aspx" />
     <Content Include="InstructorCertifies.aspx" />
     <Content Include="instructorHome.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="inscourseUpdate.aspx.designer.cs">
       <DependentUpon>inscourseUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsgradeAssignment.aspx.cs">
+      <DependentUpon>InsgradeAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsgradeAssignment.aspx.designer.cs">
+      <DependentUpon>InsgradeAssignment.aspx</DependentUpon>
     </Compile>
     <Compile Include="InstructorAssignments.aspx.cs">
       <DependentUpon>InstructorAssignments.aspx</DependentUpon>

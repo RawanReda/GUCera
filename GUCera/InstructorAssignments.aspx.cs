@@ -127,37 +127,37 @@ namespace GUCera
                 Literal a = new Literal();
                 Panel c = new Panel();
 
-                    a.Text =
+                a.Text =
 
-                    "<div >" +
-                    "<p> StudentID " + sid + "</p>" +
-                    "<p> Assignment# " + asN + "</p>" +
-                    "<p> Assignment Type: " + asT + "</p>" +
-                    "<p> Student Grade: " + gr + "</p>" +
-                    "</div>";
-
-
-
-                    Button MyButtonA = new Button();
-                    MyButtonA.UseSubmitBehavior = false;
-                    //MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString() + "&assignmentNumber="+ asN.ToString() +"&type="+ asT.ToSring();
-                    MyButtonA.Text = "Edit Grade";
-                    MyButtonA.OnClientClick = "editGrade";
+                "<div >" +
+                "<p> StudentID " + sid + "</p>" +
+                "<p> Assignment# " + asN + "</p>" +
+                "<p> Assignment Type: " + asT + "</p>" +
+                "<p> Student Grade: " + gr + "</p>" +
+                "</div>";
 
 
-                    Literal line = new Literal();
-                    line.Text = "<hr>";
 
-                    c.Controls.Add(a);
-                    c.Controls.Add(MyButtonA);
-                    c.Controls.Add(line);
-                    c.CssClass = "card";
+                Button MyButtonA = new Button();
+                MyButtonA.UseSubmitBehavior = false;
+                MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString() + "&sid" + sid.ToString() + "&assignmentNumber=" + asN.ToString() + "&type=" + asT.ToString();
+                MyButtonA.Text = "Edit Grade";
+                MyButtonA.OnClientClick = "editGrade";
 
 
-                    slist.Controls.Add(c);
-                    
+                Literal line = new Literal();
+                line.Text = "<hr>";
 
-                
+                c.Controls.Add(a);
+                c.Controls.Add(MyButtonA);
+                c.Controls.Add(line);
+                c.CssClass = "card";
+
+
+                slist.Controls.Add(c);
+
+
+
 
             }
 
@@ -178,4 +178,4 @@ namespace GUCera
         }
 
     }
- }
+}
