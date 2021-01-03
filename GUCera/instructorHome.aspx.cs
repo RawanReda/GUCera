@@ -92,7 +92,7 @@ namespace GUCera
                 int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
 
 
-                title.Text = "<h3> My Courses </h3>";
+                title.Text = "<h3> My Accepted Courses </h3>";
 
                 Panel card = new Panel();
                 card.CssClass = "cards";
@@ -137,7 +137,7 @@ namespace GUCera
     
                 Label line = new Label();
                 line.Text = "<hr>";
-
+                
                 card.Controls.Add(MyButtonU);
                 card.Controls.Add(MyButtonF);
                 card.Controls.Add(MyButtonA);
