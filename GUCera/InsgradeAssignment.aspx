@@ -16,7 +16,7 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br>
             <br>
-            <asp:Button ID="Button1" runat="server" Text="Confirm" />
+            <asp:Button ID="Button1" runat="server" Text="Confirm" OnClick="Button1_Click" />
             <br>
            
             <asp:Literal ID="msg" runat="server"></asp:Literal>

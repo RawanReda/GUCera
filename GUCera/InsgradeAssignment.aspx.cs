@@ -48,7 +48,7 @@ namespace GUCera
         }
 
 
-        protected void Confirm(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
 
             //obtain connection info and create sql connection to database
@@ -89,6 +89,6 @@ namespace GUCera
 
         }
 
-
+       
     }
 }
