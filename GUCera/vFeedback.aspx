@@ -14,7 +14,6 @@
 	</style>
 </head>
 
-</head>
 <body>
     <form id="form1" runat="server">
       <h2>Feedbacks </h2>

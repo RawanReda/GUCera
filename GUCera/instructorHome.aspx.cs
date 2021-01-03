@@ -118,7 +118,7 @@ namespace GUCera
                 Button MyButtonC = new Button();
                 MyButtonC.UseSubmitBehavior = false;
                 MyButtonC.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
-                MyButtonC.Text = "Issue Certificate to a Student";
+                MyButtonC.Text = "Issue a Certificate to a Student";
 
 
                 Label lbl_cid = new Label();

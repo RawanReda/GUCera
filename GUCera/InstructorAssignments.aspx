@@ -46,7 +46,7 @@
 		            </tr>
 					
 					<tr>
-			            <td> Deadline</td>
+			            <td> Deadline (MM-dd-yyyy HH:mm:ss) </td>
 			            <td>   <asp:TextBox ID="dead" runat="server" ></asp:TextBox><br />
 
                         </td>
@@ -54,14 +54,14 @@
 					
 					<tr>
 			            <td> <asp:Label ID="lbl_content" runat="server" Text="Content"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="cnt" runat="server" Height="155px" Width="461px" ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="cnt" runat="server" Height="104px" Width="356px" ></asp:TextBox><br /></td>
 		            </tr>
 					
 					
 					
 		            <tr>
-			            <td><asp:Button ID="defAss" runat="server" OnClick="define" Text="Add Assignment" /></td>
-			            <td> </td>
+			            <td>&nbsp;</td>
+			            <td> <asp:Button ID="defAss" runat="server" OnClick="define" Text="Add Assignment" /> </td>
 		            </tr>
 					
 					
@@ -73,7 +73,7 @@
 
 		<hr>
 		
-        <asp:Button ID="Button1" runat="server" Text="View Student Submissions" OnClick="viewSubmissions" />
+        <asp:Button ID="Button1" runat="server" Text="View Student Submissions" OnClick="viewSubmissions" Width="462px" />
         <br>
 		<asp:Literal ID="Literal1" runat="server"></asp:Literal>
 

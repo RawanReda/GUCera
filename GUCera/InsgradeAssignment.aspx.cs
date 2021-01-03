@@ -39,9 +39,11 @@ namespace GUCera
 
                 head.Text =
                             "<p>CourseID " + courseID + "</p>" +
-                            "Assignment#" + assno + " of type:" + type +
+                            "Assignment#" + assno + " type: " + type +
                             "<p> Update Grade of: " +
                             "StudentID " + sid + "</p>";
+
+                Literal1.Text = "<a href='InstructorAssignments.aspx?cid="+courseID+"'>Back</a>";
             }
             else Response.Redirect("No Data was found");
 
@@ -60,29 +62,38 @@ namespace GUCera
             cmd.CommandType = CommandType.StoredProcedure;
 
             id = (int)Session["field1"];
-            Decimal gr = Decimal.Parse(TextBox1.Text.ToString());
+            
 
-            cmd.Parameters.Add(new SqlParameter("@instrId", id));
-            cmd.Parameters.Add(new SqlParameter("@sid", sid));
-            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
-            cmd.Parameters.Add(new SqlParameter("@assignmentNumber", assno));
-            cmd.Parameters.Add(new SqlParameter("@type", type));
-            cmd.Parameters.Add(new SqlParameter("@grade", gr));
-            try
+            if (TextBox1.Text == "") { msg.Text = "<p style='color: Red'> Please Enter a grade </p>"; }
+            else
             {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                Decimal gr = Decimal.Parse(TextBox1.Text.ToString());
 
-                msg.Text = "<p style='color: green'> Grade Updated Successfully</p>";
+                cmd.Parameters.Add(new SqlParameter("@instrId", id));
+                cmd.Parameters.Add(new SqlParameter("@sid", sid));
+                cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+                cmd.Parameters.Add(new SqlParameter("@assignmentNumber", assno));
+                cmd.Parameters.Add(new SqlParameter("@type", type));
+                cmd.Parameters.Add(new SqlParameter("@grade", gr));
 
-            }
+                try
+                {
 
-            catch (SqlException ex)
-            {
-                msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    msg.Text = "<p style='color: green'> Grade Updated Successfully</p>";
+                       
+
+                }
+
+                catch (SqlException ex)
+                {
+                    msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 
+                }
             }
 
 

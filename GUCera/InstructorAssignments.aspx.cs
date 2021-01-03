@@ -68,12 +68,12 @@ namespace GUCera
             string type = ty.Text.ToString();
             int fullgrade = int.Parse(full.Text);
             decimal weight = decimal.Parse(wgt.Text);
-            DateTime deadline = DateTime.Parse(dead.ToString());
+            DateTime deadline = DateTime.Parse(dead.Text.ToString());
             string content = cnt.Text.ToString();
 
 
             //Add input of procedure
-            cmd.Parameters.Add(new SqlParameter("@insId", id));
+            cmd.Parameters.Add(new SqlParameter("@instId", id));
             cmd.Parameters.Add(new SqlParameter("@cid", courseID));
             cmd.Parameters.Add(new SqlParameter("@number", num));
             cmd.Parameters.Add(new SqlParameter("@type", type));
