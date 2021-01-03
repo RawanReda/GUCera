@@ -55,7 +55,7 @@ namespace GUCera
                 }
                 catch (SqlException ex)
                 {
-                    SubmitAssignMssg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+                    SubmitAssignMssg.Text = ("<p style='color:red'> Not such assignment or assignment has already been submitted" );
 
 
                 }

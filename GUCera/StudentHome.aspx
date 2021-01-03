@@ -41,7 +41,7 @@
             <br />
             <br />
             To view Assignments for a certain course, please enter the course ID:<br />
-            Course Id: <asp:TextBox ID="course_Id" runat="server" Height="16px" Width="141px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
+            Course Id: <asp:TextBox ID="course_Id" runat="server" Height="16px" Width="40px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
              
             <br />
             <asp:Button ID="ViewAssign1" runat="server" Onclick="ViewAssign" Text="Check Assignments" />
@@ -61,7 +61,7 @@
             <br />
             <br />
             To check obtained Certificates for a specific course, please enter Course ID:<br />
-            Course Id: <asp:TextBox ID="course_Id0" runat="server" Height="16px" Width="141px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
+            Course Id: <asp:TextBox ID="course_Id0" runat="server" Height="16px" Width="30px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
              
             <br />
             <asp:Button ID="CheckCertificates" runat="server" Onclick="Certificates" Text="Check Certificates" />
