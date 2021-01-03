@@ -77,8 +77,8 @@
         <br>
 		<asp:Literal ID="Literal1" runat="server"></asp:Literal>
 
-		<div id="slist" runat="server">
-		</div>
+	<%--	<div id="slist" runat="server">
+		</div>--%>
 	
 		 <asp:Panel ID="slist" runat="server"></asp:Panel>
 

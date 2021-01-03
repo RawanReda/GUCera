@@ -12,17 +12,18 @@ namespace GUCera
 {
     public partial class InsgradeAssignment : System.Web.UI.Page
     {
+        int courseID;
+        int assno;
+        string type;
+        SqlConnection conn;
+        int id;
+        int sid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int courseID;
-            int assno;
-            string type;
-            SqlConnection conn;
-            int id;
-            int sid;
+            
 
 
-            if (!string.IsNullOrEmpty(Request.QueryString["sid"]))
+            if (!string.IsNullOrEmpty(Request.QueryString["cid"]))
             {
 
 
@@ -30,42 +31,60 @@ namespace GUCera
                 string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 conn = new SqlConnection(connStr);
                 int s = Int32.Parse((String)Request.QueryString["cid"]);
-                int an = Int32.Parse((String)Request.QueryString["assignmentNumber"]);
-                string at = ((String)Request.QueryString["type"]);
-                int sidin = Int32.Parse(((String)Request.QueryString["sid"]));
+                assno = Int32.Parse((String)Request.QueryString["assignmentNumber"]);
+                type = ((String)Request.QueryString["type"]);
+                sid = Int32.Parse(((String)Request.QueryString["sid"]));
                 courseID = s;
-                assno = an;
-                type = at;
-                sid = sidin;
 
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM StudentTakeAssignment WHERE cid =" + courseID + "AND sid =" + sid + "AND assignmentNumber =" + assno + "AND assignmenttype =" + type, conn);
-                cmd.CommandType = CommandType.Text;
-
-                conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
-
-                if (rdr.Read())
-                {
-                    conn.Close();
-                    conn.Open();
-                    rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
-                    rdr.Read();
-                    head.Text =
+                head.Text =
                             "<p>CourseID " + courseID + "</p>" +
-                            "<p>Assignment#" + assno + " of Type:" + type + "</p>" +
-                            "Update Grade of: " +
-                            "<p> StudentID " + sid + "</p>";
-
-
-                    conn.Close();
-
-
-
-                }
+                            "Assignment#" + assno + " of type:" + type +
+                            "<p> Update Grade of: " +
+                            "StudentID " + sid + "</p>";
             }
-            else Response.Redirect("No Student Data was found");
+            else Response.Redirect("No Data was found");
 
+        }
+
+
+        protected void Confirm(object sender, EventArgs e)
+        {
+
+            //obtain connection info and create sql connection to database
+            string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+            conn = new SqlConnection(connStr);
+
+            //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
+            SqlCommand cmd = new SqlCommand("InstructorgradeAssignmentOfAStudent", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            id = (int)Session["field1"];
+            String gr = TextBox1.Text;
+
+            cmd.Parameters.Add(new SqlParameter("@instrId", id));
+            cmd.Parameters.Add(new SqlParameter("@sid", sid));
+            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+            cmd.Parameters.Add(new SqlParameter("@assignmentNumber", assno));
+            cmd.Parameters.Add(new SqlParameter("@type", type));
+            cmd.Parameters.Add(new SqlParameter("@grade", gr));
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+
+                msg.Text = "<p style='color: green'> Grade Updated Successfully</p>";
+
+            }
+
+            catch (SqlException ex)
+            {
+                msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+
+
+            }
 
 
 

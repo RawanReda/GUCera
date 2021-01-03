@@ -113,6 +113,12 @@ namespace GUCera
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
+            //if (!rdr.Read())
+            //{
+            //    Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
+            //}
+            //else { 
+
             while (rdr.Read())
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
@@ -140,9 +146,8 @@ namespace GUCera
 
                 Button MyButtonA = new Button();
                 MyButtonA.UseSubmitBehavior = false;
-                MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString() + "&sid" + sid.ToString() + "&assignmentNumber=" + asN.ToString() + "&type=" + asT.ToString();
+                MyButtonA.PostBackUrl = "InsgradeAssignment.aspx?cid=" + cid.ToString() + "&sid=" + sid.ToString() + "&assignmentNumber=" + asN.ToString() + "&type=" + asT.ToString();
                 MyButtonA.Text = "Edit Grade";
-                MyButtonA.OnClientClick = "editGrade";
 
 
                 Literal line = new Literal();
@@ -160,22 +165,20 @@ namespace GUCera
 
 
             }
+            
 
-            if (!rdr.Read())
-            {
-                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
-            }
+
 
 
 
 
         }
 
-        protected void editGrade(object sender, EventArgs e)
-        {
-            Response.Write("Edit");
+        //protected void editGrade(object sender, EventArgs e)
+        //{
+        //    Response.Write("Edit");
 
-        }
+        //}
 
     }
 }
