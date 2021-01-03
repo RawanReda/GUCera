@@ -43,12 +43,14 @@ namespace GUCera
 
         protected void Feedback(object sender, EventArgs e)
         {
-
+            Response.Redirect("StudentAddFeedback.aspx", true);
         }
 
         protected void Certificates(object sender, EventArgs e)
         {
-
+            int id1 = Int16.Parse(course_Id.Text);
+            Session["CertificateCourseId"] = id1;
+            Response.Redirect("StudentViewCertificates.aspx", true);
         }
 
         protected void ViewAssign(object sender, EventArgs e)
@@ -60,12 +62,12 @@ namespace GUCera
 
         protected void SubmitAssign(object sender, EventArgs e)
         {
-
+            Response.Redirect("StudentSubmitAssignment.aspx", true);
         }
 
         protected void CheckGrade(object sender, EventArgs e)
         {
-
+            Response.Redirect("StudentViewAssignGrade.aspx", true);
         }
 
         protected void course_Id_TextChanged(object sender, EventArgs e)

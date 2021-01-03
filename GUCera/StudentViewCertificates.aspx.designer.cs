@@ -11,7 +11,7 @@ namespace GUCera
 {
 
 
-    public partial class StudentViewAssignments
+    public partial class StudentViewCertificates
     {
 
         /// <summary>

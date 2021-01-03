@@ -25,43 +25,48 @@ namespace GUCera
 
             //IF the output is a table, then we can read the records one at a time
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-           
-            while (rdr.Read())
+            if (rdr.HasRows)
             {
-                //Get the value of the attribute name in the Company table
-                int AssignNo = rdr.GetOrdinal("number");
-                //Get the value of the attribute field in the Company table
-                string AssignType = rdr.GetString(rdr.GetOrdinal("type"));
-                int fullGrade = rdr.GetOrdinal("fullgrade");
-               int weight = rdr.GetOrdinal("weight");
-                DateTime deadline = rdr.GetDateTime(rdr.GetOrdinal("deadline"));
-                string content = rdr.GetString(rdr.GetOrdinal("content"));
+                while (rdr.Read())
+                {
+                    //Get the value of the attribute name in the Company table
+                    int AssignNo = rdr.GetOrdinal("number");
+                    //Get the value of the attribute field in the Company table
+                    string AssignType = rdr.GetString(rdr.GetOrdinal("type"));
+                    int fullGrade = rdr.GetOrdinal("fullgrade");
+                    int weight = rdr.GetOrdinal("weight");
+                    DateTime deadline = rdr.GetDateTime(rdr.GetOrdinal("deadline"));
+                    string content = rdr.GetString(rdr.GetOrdinal("content"));
 
-                //Create a new label and add it to the HTML form
-                Label AssignNo1 = new Label();
-                AssignNo1.Text = "Assignment Number: "+ AssignNo + " , ";
-                form1.Controls.Add(AssignNo1);
+                    //Create a new label and add it to the HTML form
+                    Label AssignNo1 = new Label();
+                    AssignNo1.Text = "Assignment Number: " + AssignNo + " , ";
+                    form1.Controls.Add(AssignNo1);
 
-                Label AssignType1 = new Label();
-                AssignType1.Text = "Assignment Type: " + AssignType + " , ";
-                form1.Controls.Add(AssignType1);
+                    Label AssignType1 = new Label();
+                    AssignType1.Text = "Assignment Type: " + AssignType + " , ";
+                    form1.Controls.Add(AssignType1);
 
-                Label FG1 = new Label();
-                FG1.Text = "Full grade: " + fullGrade + " , ";
-                form1.Controls.Add(FG1);
+                    Label FG1 = new Label();
+                    FG1.Text = "Full grade: " + fullGrade + " , ";
+                    form1.Controls.Add(FG1);
 
-                Label W1 = new Label();
-                AssignType1.Text = "Full weight: "+weight + " , ";
-                form1.Controls.Add(W1);
+                    Label W1 = new Label();
+                    AssignType1.Text = "Full weight: " + weight + " , ";
+                    form1.Controls.Add(W1);
 
-                Label D1 = new Label();
-                D1.Text = "Deadline: " + deadline + " , ";
-                form1.Controls.Add(D1);
+                    Label D1 = new Label();
+                    D1.Text = "Deadline: " + deadline + " , ";
+                    form1.Controls.Add(D1);
 
-                Label C1 = new Label();
-                C1.Text = "Content: "+content + "  <br /> <br />";
-                form1.Controls.Add(C1);
+                    Label C1 = new Label();
+                    C1.Text = "Content: " + content + "  <br /> <br />";
+                    form1.Controls.Add(C1);
 
+                }
+            }
+            else {
+                NoEntries.Text = "No assignments at the moment or you are not registered in this course.";
             }
            
            

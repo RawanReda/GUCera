@@ -8,6 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <asp:Literal ID="NoEntries" runat="server"></asp:Literal>
+
     </form>
 </body>
 </html>

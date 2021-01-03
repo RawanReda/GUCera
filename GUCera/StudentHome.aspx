@@ -48,10 +48,8 @@
             <br />
             <br />
             To submit an Assignment, please enter the required info:<br />
-           Assignment Type: <asp:TextBox ID="AssignType1" runat="server" Width="73px"  ></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assignment Number: <asp:TextBox ID="AssignNum1" runat="server" Width="73px"  ></asp:TextBox>
-            <br />
 &nbsp;<asp:Button ID="SubmitAssign1" runat="server" Onclick="SubmitAssign" Text="Submit Assignment" />
+
             <br />
             <br />
             Check Assignment grade:<br />
@@ -62,7 +60,10 @@
             <asp:Button ID="CourseFeedback" runat="server" Onclick="Feedback" Text="Add Feedback" />
             <br />
             <br />
-            Check obtained Certificates:<br />
+            To check obtained Certificates for a specific course, please enter Course ID:<br />
+            Course Id: <asp:TextBox ID="course_Id0" runat="server" Height="16px" Width="141px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
+             
+            <br />
             <asp:Button ID="CheckCertificates" runat="server" Onclick="Certificates" Text="Check Certificates" />
             <br />
             <br />

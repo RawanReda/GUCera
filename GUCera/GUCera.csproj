@@ -79,9 +79,13 @@
     <Content Include="instructorHome.aspx" />
     <Content Include="InstructorRegistration.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="StudentAddFeedback.aspx" />
     <Content Include="StudentHome.aspx" />
     <Content Include="StudentRegistration.aspx" />
+    <Content Include="StudentSubmitAssignment.aspx" />
+    <Content Include="StudentViewAssignGrade.aspx" />
     <Content Include="StudentViewAssignments.aspx" />
+    <Content Include="StudentViewCertificates.aspx" />
     <Content Include="StudentViewMyProfile.aspx" />
     <Content Include="vFeedback.aspx" />
     <Content Include="ViewMyPromoCodes.aspx" />
@@ -173,6 +177,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentAddFeedback.aspx.cs">
+      <DependentUpon>StudentAddFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAddFeedback.aspx.designer.cs">
+      <DependentUpon>StudentAddFeedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentHome.aspx.cs">
       <DependentUpon>StudentHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,12 +198,33 @@
     <Compile Include="StudentRegistration.aspx.designer.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StudentSubmitAssignment.aspx.cs">
+      <DependentUpon>StudentSubmitAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentSubmitAssignment.aspx.designer.cs">
+      <DependentUpon>StudentSubmitAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViewAssignGrade.aspx.cs">
+      <DependentUpon>StudentViewAssignGrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentViewAssignGrade.aspx.designer.cs">
+      <DependentUpon>StudentViewAssignGrade.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentViewAssignments.aspx.cs">
       <DependentUpon>StudentViewAssignments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentViewAssignments.aspx.designer.cs">
       <DependentUpon>StudentViewAssignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViewCertificates.aspx.cs">
+      <DependentUpon>StudentViewCertificates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentViewCertificates.aspx.designer.cs">
+      <DependentUpon>StudentViewCertificates.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentViewMyProfile.aspx.cs">
       <DependentUpon>StudentViewMyProfile.aspx</DependentUpon>
