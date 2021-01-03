@@ -25,7 +25,7 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            int id = Int16.Parse(ID.Text);
+         //   int id = Int16.Parse(ID.Text);
             string number = Number.Text;
             string cardholdername = CHName.Text;
             DateTime expirydate = DateTime.Parse(EXDate.Text);
@@ -35,7 +35,7 @@ namespace GUCera
             addcd.CommandType = CommandType.StoredProcedure;
 
 
-            addcd.Parameters.Add(new SqlParameter("@sid", id));
+            addcd.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
             
             addcd.Parameters.Add(new SqlParameter("@number", number));
 

@@ -47,15 +47,17 @@ namespace GUCera
 
                 string pass = rdr.GetString(rdr.GetOrdinal("password"));
 
-          //      Boolean g = rdr.GetBoolean(rdr.GetOrdinal("gender"));
+           //    SqlDbType.Binary.GetType g = rdr.GetSqlBinary(rdr.GetOrdinal("gender"));
 
                 string email = rdr.GetString(rdr.GetOrdinal("email"));
 
                string address = rdr.GetString(rdr.GetOrdinal("address"));
 
                 Label lbl_id1 = new Label();
-                lbl_id1.Text = "ID : " +id1 ;
+                lbl_id1.Text = "ID : " + id1;
                 form1.Controls.Add(lbl_id1);
+
+                
 
                 Label lbl_fn = new Label();
                 lbl_fn.Text = "   First Name : " + fn;

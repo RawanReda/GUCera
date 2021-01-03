@@ -11,10 +11,6 @@
         <div>
             Please Enter Credit Card Details :<br />
             <br />
-            ID :<br />
-            <br />
-            <asp:TextBox ID="ID" runat="server"></asp:TextBox>
-            <br />
             <br />
             Number :<br />
             <br />
