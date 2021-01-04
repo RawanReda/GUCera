@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -47,7 +48,12 @@ namespace GUCera
 
                 string pass = rdr.GetString(rdr.GetOrdinal("password"));
 
-           //    SqlDbType.Binary.GetType g = rdr.GetSqlBinary(rdr.GetOrdinal("gender"));
+                //int gender = Convert.ToInt32(rdr.GetSqlBinary(rdr.GetOrdinal("gender")).ToString(),16);
+                //int gender=  int.Parse((rdr.GetSqlBinary(rdr.GetOrdinal("gender"))).ToString(), System.Globalization.NumberStyles.HexNumber);
+                //var gender = rdr.GetSqlBinary(rdr.GetOrdinal("gender")).Value;
+                //var gender = rdr.GetSqlBinary(rdr.GetOrdinal("gender"));
+
+                //SqlDbType.Binary.GetType g = rdr.GetSqlBinary(rdr.GetOrdinal("gender"));
 
                 string email = rdr.GetString(rdr.GetOrdinal("email"));
 
@@ -56,8 +62,6 @@ namespace GUCera
                 Label lbl_id1 = new Label();
                 lbl_id1.Text = "ID : " + id1;
                 form1.Controls.Add(lbl_id1);
-
-                
 
                 Label lbl_fn = new Label();
                 lbl_fn.Text = "   First Name : " + fn;
@@ -75,12 +79,16 @@ namespace GUCera
                 lbl_e.Text = "   Email : " + email;
                 form1.Controls.Add(lbl_e);
 
+                //Label lbl_gender = new Label();
+                //lbl_gender.Text = gender.ToString();
+                //form1.Controls.Add(lbl_gender);
+
                 Label lbl_add = new Label();
                 lbl_add.Text = "   Address : " + address;
                 form1.Controls.Add(lbl_add);
 
                 Label lbl_gpa = new Label();
-                lbl_gpa.Text = "   GPA : " + gpa;
+                lbl_gpa.Text = "   GPA : " + gpa +"<br></br>";
                 form1.Controls.Add(lbl_gpa);
 
             }
