@@ -33,15 +33,36 @@ namespace GUCera
             SqlCommand adminAcceptProc = new SqlCommand("AdminAcceptRejectCourse", conn);
             adminAcceptProc.CommandType = CommandType.StoredProcedure;
 
+            /*SqlCommand AdminViewNonAcceptedCourses = new SqlCommand("AdminViewNonAcceptedCourses", conn);
+            AdminViewNonAcceptedCourses.CommandType = CommandType.StoredProcedure;
+
+            conn.Open();
+
+            SqlDataReader rdr = AdminViewNonAcceptedCourses.ExecuteReader(CommandBehavior.CloseConnection);
+            int tempid;
+            while (rdr.Read())
+            { 
+                int courseid = rdr.GetInt32(rdr.GetOrdinal("id")); // mesh sha8ala
+                string courseName = rdr.GetString(rdr.GetOrdinal("name"));
+                
+                if (TextBox1.Text.Equals(courseName))
+                {
+                    cid = courseid;
+                }
+            }*/
+
             adminAcceptProc.Parameters.Add("@adminid", aid);
             adminAcceptProc.Parameters.Add("@courseId", cid);
 
             conn.Open();
             adminAcceptProc.ExecuteNonQuery();
             conn.Close();
+            Label1.Text = "You accepted a course";
+            //Response.Write("You accepted a course");
+            // Response.Redirect("Admin Page.aspx", true);
 
-            Response.Write("You accepted a course");
-           // Response.Redirect("Admin Page.aspx", true);
+
+
         }
     }
 }

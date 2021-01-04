@@ -72,6 +72,8 @@
     <Content Include="AddCreditCard.aspx" />
     <Content Include="Admin Page.aspx" />
     <Content Include="AdminAllCourses.aspx" />
+    <Content Include="AdminCreatePromo.aspx" />
+    <Content Include="AdminIssuePromo.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="EnrollInACourse.aspx" />
     <Content Include="inscourseUpdate.aspx" />
@@ -121,6 +123,20 @@
     </Compile>
     <Compile Include="AdminAllCourses.aspx.designer.cs">
       <DependentUpon>AdminAllCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreatePromo.aspx.cs">
+      <DependentUpon>AdminCreatePromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCreatePromo.aspx.designer.cs">
+      <DependentUpon>AdminCreatePromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminIssuePromo.aspx.cs">
+      <DependentUpon>AdminIssuePromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminIssuePromo.aspx.designer.cs">
+      <DependentUpon>AdminIssuePromo.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllCourses.aspx.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>

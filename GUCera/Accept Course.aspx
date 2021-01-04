@@ -9,12 +9,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Course Id:<br />
+            Course ID:<br />
             <br />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Accept" OnClick="Button1_Click" />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>

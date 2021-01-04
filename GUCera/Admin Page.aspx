@@ -21,10 +21,13 @@
             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Accept Course.aspx">Accept A Course</asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink4" runat="server">Create Promocode</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/AdminCreatePromo.aspx">Create Promocode</asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink5" runat="server">Issue A Promocode</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminIssuePromo.aspx">Issue A Promocode</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink6" runat="server">Add Phone Number</asp:HyperLink>
         </div>
     </form>
 </body>
