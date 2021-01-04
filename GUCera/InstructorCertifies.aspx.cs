@@ -44,12 +44,14 @@ namespace GUCera
             //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
             SqlCommand cmd = new SqlCommand("InstructorIssueCertificateToStudent", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-
-            int student =Int32.Parse(inputID.Text);
+            if (inputID.Text == "") { msg.Text = "<p style = 'color:red' > Please Enter a StudentID </p>"; }
+            else
+            {
+                int student =Int32.Parse(inputID.Text);
 
             int id = (int)Session["field1"];
 
-            if (inputID.Text == "") { msg.Text = "< p style = 'color:red' > Please Enter a StudentID </ p >"; } else { 
+           
             //Add input of procedure
             cmd.Parameters.Add(new SqlParameter("@cid", courseID));
             cmd.Parameters.Add(new SqlParameter("@sid", student));
@@ -63,16 +65,15 @@ namespace GUCera
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                msg.Text = "<p style='color: green'> Certified! </p>";
+ //               msg.Text = "<p style='color: green'> Certified! </p>";
 
 
-                SqlCommand cmd2 = new SqlCommand("SELECT * FROM StudentCertifyCourse WHERE sid =" + student, conn);
-                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd2 = new SqlCommand("SELECT * FROM StudentCertifyCourse WHERE (sid =" + student +" AND cid ="+ courseID +")", conn);
 
                 conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+                SqlDataReader rdr = cmd2.ExecuteReader(CommandBehavior.SingleRow);
 
-                if (rdr.Read())
+                if (rdr.HasRows)
                 {
 
                     msg.Text = "<p style='color: green'> Certified! </p>";
@@ -80,12 +81,12 @@ namespace GUCera
                 }
                 else
                 {
-                    msg.Text = " <p style ='color: Red'> Can't Certify this Student </p> ";
+                    msg.Text = " <p style ='color: Red'> Can't certify this Student because he/she hasn't taken or completed the course </p> ";
                 }
                 conn.Close();
             }
             catch(SqlException ex) {
-                    msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+                    msg.Text = ("<p style='color:red'> Already Certified  </p>");
 
                 }
 
