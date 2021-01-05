@@ -36,51 +36,7 @@ namespace GUCera
                 //Byte[] acceptedArr = (Byte[])rdr.GetSqlBinary((rdr.GetOrdinal("accepted"))); // mesh sha8ala
                 bool accepted = (bool)((rdr.GetSqlBoolean(rdr.GetOrdinal("accepted")).IsNull) ? false : true);
 
-                //bool accepted;
-                //if(acceptedArr[0] == 0)
-                //{
-                //    accepted = false;
-                //}
-                //else
-                //{
-                //    accepted = true;
-                //}
-                //bool accepted; // mesh sha8ala
-                /*if(rdr == null && ( rdr.GetBoolean(rdr.GetOrdinal("accepted")) == null || rdr.GetOrdinal("accepted") == null))
-                {
-                    accepted = false;
-                }
-                else
-                {
-                    accepted = true;
-                }
-
-                    /* try // mesh sha8ala bardo
-                     {
-                         if (rdr.GetOrdinal("accepted") == null || rdr.GetBoolean(rdr.GetOrdinal("accepted")) == null)
-                         {
-                             accepted = false;
-                         }
-                         else
-                         {
-                             if (rdr.GetInt16(rdr.GetOrdinal("accepted")) == 1 && rdr.GetBoolean(rdr.GetOrdinal("accepted")) != null) //mesh sha8ala
-                             {
-                                 accepted = true;
-
-                             }
-                             else
-                             {
-                                 accepted = false;
-                             }
-                         }
-                     }
-                     catch (Exception)
-                     {
-                         accepted = false;
-                     }*/
-
-
-                    Label lbl_courseName = new Label();
+                Label lbl_courseName = new Label();
                 lbl_courseName.Text = "name: " +  courseName + ",                  ";
                 form1.Controls.Add(lbl_courseName);
 
