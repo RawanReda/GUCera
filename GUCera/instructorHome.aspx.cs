@@ -107,65 +107,75 @@ namespace GUCera
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-
-            while (rdr.Read())
+            Literal l2 = new Literal();
+            if (!rdr.HasRows)
             {
-                int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
-                string cname = rdr.GetString(rdr.GetOrdinal("name"));
-                int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
-                //String des = "";
 
-                title.Text = "<h3> My Accepted Courses </h3>";
+                l2.Text = "No Accepted Courses Yet";
+                CourseList.Controls.Add(l2);
+            }
+            else
+            {
+                l2.Text = "";
+                while (rdr.Read())
+                {
+                    int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
+                    string cname = rdr.GetString(rdr.GetOrdinal("name"));
+                    int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
+                    //String des = "";
 
-                Panel card = new Panel();
-                card.CssClass = "cards";
+                    title.Text = "<h3> My Accepted Courses </h3>";
 
-
-                Button MyButtonU = new Button();
-                MyButtonU.UseSubmitBehavior = false;
-                MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
-                MyButtonU.Text = "Update Course description/content";
-
-
-                Button MyButtonF = new Button();
-                MyButtonF.UseSubmitBehavior = false;
-                MyButtonF.PostBackUrl = "vFeedback.aspx?cid=" + cid.ToString();
-                MyButtonF.Text = "View Feedback";
+                    Panel card = new Panel();
+                    card.CssClass = "cards";
 
 
-                Button MyButtonA = new Button();
-                MyButtonA.UseSubmitBehavior = false;
-                MyButtonA.PostBackUrl = "InstructorAssignments.aspx?cid=" + cid.ToString();
-                MyButtonA.Text = "Assignments";
-
-                Button MyButtonC = new Button();
-                MyButtonC.UseSubmitBehavior = false;
-                MyButtonC.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
-                MyButtonC.Text = "Issue a Certificate to a Student";
-
-                Literal l1 = new Literal();
-                
-                l1.Text = "<h4>" + "CourseID " + cid + "</h4>"+
-                 "<div > Name: " + cname + "</div>" +
-                 "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
-               
-
-                //Label lbl_desc = new Label();
-                //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + des + "</div>";
-                //card.Controls.Add(lbl_desc);
-    
-                Label line = new Label();
-                line.Text = "<hr>";
-
-                //card.Controls.Add(MyButtonU);
-                card.Controls.Add(l1);
-                card.Controls.Add(MyButtonF);
-                card.Controls.Add(MyButtonA);
-                card.Controls.Add(MyButtonC);
-                card.Controls.Add(line);
-                CourseList.Controls.Add(card);
+                    Button MyButtonU = new Button();
+                    MyButtonU.UseSubmitBehavior = false;
+                    MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
+                    MyButtonU.Text = "Update Course description/content";
 
 
+                    Button MyButtonF = new Button();
+                    MyButtonF.UseSubmitBehavior = false;
+                    MyButtonF.PostBackUrl = "vFeedback.aspx?cid=" + cid.ToString();
+                    MyButtonF.Text = "View Feedback";
+
+
+                    Button MyButtonA = new Button();
+                    MyButtonA.UseSubmitBehavior = false;
+                    MyButtonA.PostBackUrl = "InstructorAssignments.aspx?cid=" + cid.ToString();
+                    MyButtonA.Text = "Assignments";
+
+                    Button MyButtonC = new Button();
+                    MyButtonC.UseSubmitBehavior = false;
+                    MyButtonC.PostBackUrl = "InstructorCertifies.aspx?cid=" + cid.ToString();
+                    MyButtonC.Text = "Issue a Certificate to a Student";
+
+                    Literal l1 = new Literal();
+
+                    l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
+                     "<div > Name: " + cname + "</div>" +
+                     "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
+
+
+                    //Label lbl_desc = new Label();
+                    //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + des + "</div>";
+                    //card.Controls.Add(lbl_desc);
+
+                    Label line = new Label();
+                    line.Text = "<hr>";
+
+                    //card.Controls.Add(MyButtonU);
+                    card.Controls.Add(l1);
+                    card.Controls.Add(MyButtonF);
+                    card.Controls.Add(MyButtonA);
+                    card.Controls.Add(MyButtonC);
+                    card.Controls.Add(line);
+                    CourseList.Controls.Add(card);
+
+
+                }
             }
 
 
