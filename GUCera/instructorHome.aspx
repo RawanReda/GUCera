@@ -19,12 +19,12 @@
 <body>
     <form id="form1" runat="server">
         <div >
-            <asp:Label ID="Name1" runat="server" Text=""></asp:Label>
-
+            <asp:Label ID="Name1" runat="server" Text=""></asp:Label> <br>
         </div>
-      
+		
+        <asp:TextBox ID="mob" runat="server"></asp:TextBox><asp:Button ID="addno" runat="server" Text="Add Mobile Number" OnClick="addno_Click" /> <br><br>
         <div>
-			 <details>
+		<details>
         <summary>Add a Course</summary>
         <p>
                  
