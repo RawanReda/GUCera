@@ -111,7 +111,7 @@ namespace GUCera
             if (!rdr.HasRows)
             {
 
-                l2.Text = "No Accepted Courses Yet";
+                l2.Text = "<p style='color : Red'> No Accepted Courses Yet</p>";
                 CourseList.Controls.Add(l2);
             }
             else
@@ -122,7 +122,26 @@ namespace GUCera
                     int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
                     string cname = rdr.GetString(rdr.GetOrdinal("name"));
                     int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
-                    //String des = "";
+                    //String cnt = "";
+                    SqlConnection conn2 = new SqlConnection(connStr);
+
+                    SqlCommand cmd2 = new SqlCommand("SELECT * FROM Course Where id=" + cid, conn2);
+                    cmd2.CommandType = CommandType.Text;
+                    
+                    conn2.Open();
+                    SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
+                    rdr2.Read();
+                    String courseContent;
+                    try
+                    {
+                        courseContent = rdr2.GetString(rdr2.GetOrdinal("content"));
+                    }
+                    catch {
+                        courseContent = "--";
+                    }
+                    conn2.Close();
+
+
 
                     title.Text = "<h3> My Accepted Courses </h3>";
 
@@ -133,7 +152,7 @@ namespace GUCera
                     Button MyButtonU = new Button();
                     MyButtonU.UseSubmitBehavior = false;
                     MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
-                    MyButtonU.Text = "Update Course description/content";
+                    MyButtonU.Text = "Update Course Content";
 
 
                     Button MyButtonF = new Button();
@@ -155,19 +174,17 @@ namespace GUCera
                     Literal l1 = new Literal();
 
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
-                     "<div > Name: " + cname + "</div>" +
-                     "<div style='margin-bottom: 17px;'> Credit Hours: " + ch + "</div>";
+                     "<div> Name: " + cname + "</div>" +
+                     "<div> Credit Hours: " + ch + "</div>"+
+                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
 
-
-                    //Label lbl_desc = new Label();
-                    //lbl_desc.Text = "<div style='margin-bottom: 17px;'> Description " + des + "</div>";
-                    //card.Controls.Add(lbl_desc);
-
+                   
                     Label line = new Label();
                     line.Text = "<hr>";
 
-                    //card.Controls.Add(MyButtonU);
+                   
                     card.Controls.Add(l1);
+                    card.Controls.Add(MyButtonU);
                     card.Controls.Add(MyButtonF);
                     card.Controls.Add(MyButtonA);
                     card.Controls.Add(MyButtonC);

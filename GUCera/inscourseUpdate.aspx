@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Update Course</title>
     <style type="text/css">
         #TextArea1 {
             height: 82px;
@@ -28,7 +28,7 @@
             <asp:Button ID="Button1" runat="server" Text="Confirm" Onclick="updateContent" />
 
             </div>
-            <div>
+           <%-- <div>
             <h4>Update Description</h4>
 
             <asp:TextBox ID="desc" runat="server"></asp:TextBox>
@@ -36,7 +36,7 @@
             <asp:Button ID="Button2" runat="server" Text="Confirm" Onclick="updateDescription" />
          
 
-            </div>
+            </div>--%>
 
             <asp:Literal ID="msg" runat="server"></asp:Literal>
 

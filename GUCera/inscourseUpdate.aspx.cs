@@ -64,12 +64,17 @@ namespace GUCera
             //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
             SqlCommand cmd = new SqlCommand("UpdateCourseContent", conn);
             cmd.CommandType = CommandType.StoredProcedure;
+            if (cont.Text == "")
+            {
+                msg.Text = "<p style='color: red'> Please enter course content</p>";
+            }
+            else { 
 
             id = (int)Session["field1"];
             String conten = cont.Text;
 
             cmd.Parameters.Add(new SqlParameter("@instrId", id));
-            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+            cmd.Parameters.Add(new SqlParameter("@courseId", courseID));
             cmd.Parameters.Add(new SqlParameter("@content", conten));
 
             conn.Open();
@@ -77,39 +82,39 @@ namespace GUCera
             conn.Close();
 
 
-            msg.Text = "<p style='color: green'> Content Updated Successfully</p>";
+            msg.Text = "<p style='color: green'> Course content updated Successfully!</p>";
 
 
-
-
-
-        }
-
-        protected void updateDescription(object sender, EventArgs e)
-        {
-            //obtain connection info and create sql connection to database
-            string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
-            conn = new SqlConnection(connStr);
-
-            //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
-            SqlCommand cmd = new SqlCommand("UpdateCourseDescription", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            id = (int)Session["field1"];
-            String des = desc.Text;
-
-            cmd.Parameters.Add(new SqlParameter("@instrId", id));
-            cmd.Parameters.Add(new SqlParameter("@cid", courseID));
-            cmd.Parameters.Add(new SqlParameter("@courseDescription", des));
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-
-            msg.Text = "<p style='color: green'> Description Updated Successfully</p>";
+            }
 
 
         }
+
+        //protected void updateDescription(object sender, EventArgs e)
+        //{
+        //    //obtain connection info and create sql connection to database
+        //    string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+        //    conn = new SqlConnection(connStr);
+
+        //    //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
+        //    SqlCommand cmd = new SqlCommand("UpdateCourseDescription", conn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    id = (int)Session["field1"];
+        //    String des = desc.Text;
+
+        //    cmd.Parameters.Add(new SqlParameter("@instrId", id));
+        //    cmd.Parameters.Add(new SqlParameter("@cid", courseID));
+        //    cmd.Parameters.Add(new SqlParameter("@courseDescription", des));
+
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
+
+
+        //    msg.Text = "<p style='color: green'> Description Updated Successfully</p>";
+
+
+        //}
     }
 }
