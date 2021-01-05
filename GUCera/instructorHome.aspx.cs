@@ -75,7 +75,7 @@ namespace GUCera
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    msg.Text = "<p style='color:green '> Course#" + Course_name +" added Successfully! Wait for Admin acceptance. </p>";
+                    msg.Text = "<p style='color:green '>" + Course_name +" added Successfully! Wait for Admin acceptance. </p>";
 
                 }
                 catch (SqlException ex) {
