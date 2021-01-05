@@ -32,7 +32,15 @@ namespace GUCera
                 string courseName = rdr.GetString(rdr.GetOrdinal("name"));
                 int creditHours = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
                 decimal price = rdr.GetDecimal(rdr.GetOrdinal("price"));
-                string content = rdr.GetString(rdr.GetOrdinal("content"));
+                string content;
+                try
+                {
+                     content = rdr.GetString(rdr.GetOrdinal("content"));
+                }
+                catch {
+                     content = "--";
+
+                }
                 //Byte[] acceptedArr = (Byte[])rdr.GetSqlBinary((rdr.GetOrdinal("accepted"))); // mesh sha8ala
                 bool accepted = (bool)((rdr.GetSqlBoolean(rdr.GetOrdinal("accepted")).IsNull) ? false : true);
 
