@@ -33,16 +33,18 @@ namespace GUCera
                 int creditHours = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
                 decimal price = rdr.GetDecimal(rdr.GetOrdinal("price"));
                 string content = rdr.GetString(rdr.GetOrdinal("content"));
-                Byte[] acceptedArr = (Byte[])rdr.GetSqlBinary((rdr.GetOrdinal("accepted"))); // mesh sha8ala
-                bool accepted;
-                if(acceptedArr[0] == 0)
-                {
-                    accepted = false;
-                }
-                else
-                {
-                    accepted = true;
-                }
+                //Byte[] acceptedArr = (Byte[])rdr.GetSqlBinary((rdr.GetOrdinal("accepted"))); // mesh sha8ala
+                bool accepted = (bool)((rdr.GetSqlBoolean(rdr.GetOrdinal("accepted")).IsNull) ? false : true);
+
+                //bool accepted;
+                //if(acceptedArr[0] == 0)
+                //{
+                //    accepted = false;
+                //}
+                //else
+                //{
+                //    accepted = true;
+                //}
                 //bool accepted; // mesh sha8ala
                 /*if(rdr == null && ( rdr.GetBoolean(rdr.GetOrdinal("accepted")) == null || rdr.GetOrdinal("accepted") == null))
                 {
