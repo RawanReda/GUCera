@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Course ID:<br />
+            Course Name:<br />
             <br />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />

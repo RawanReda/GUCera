@@ -25,31 +25,30 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            int cid = Int16.Parse(TextBox1.Text);
+            string courseName = TextBox1.Text.ToString() ;
+            
+            SqlCommand adminViewCoursestProc = new SqlCommand("AdminViewAllCourses", conn);
+            adminViewCoursestProc.CommandType = CommandType.StoredProcedure;
 
-           // string field1 = (string)(Session["field1"]);
+           
+            SqlDataReader rdr;
+
+            
+
+            SqlCommand cmd = new SqlCommand("select * from Course where name='" + courseName +"'", conn);
+            cmd.CommandType = CommandType.Text;
+         
+            conn.Open();
+            rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+            rdr.Read();
+            int cid =(int)  rdr.GetInt32(rdr.GetOrdinal("id"));
+            conn.Close();
+
             int aid = (int)Session["field1"];
+           
 
             SqlCommand adminAcceptProc = new SqlCommand("AdminAcceptRejectCourse", conn);
             adminAcceptProc.CommandType = CommandType.StoredProcedure;
-
-            /*SqlCommand AdminViewNonAcceptedCourses = new SqlCommand("AdminViewNonAcceptedCourses", conn);
-            AdminViewNonAcceptedCourses.CommandType = CommandType.StoredProcedure;
-
-            conn.Open();
-
-            SqlDataReader rdr = AdminViewNonAcceptedCourses.ExecuteReader(CommandBehavior.CloseConnection);
-            int tempid;
-            while (rdr.Read())
-            { 
-                int courseid = rdr.GetInt32(rdr.GetOrdinal("id")); // mesh sha8ala
-                string courseName = rdr.GetString(rdr.GetOrdinal("name"));
-                
-                if (TextBox1.Text.Equals(courseName))
-                {
-                    cid = courseid;
-                }
-            }*/
 
             adminAcceptProc.Parameters.Add("@adminid", aid);
             adminAcceptProc.Parameters.Add("@courseId", cid);

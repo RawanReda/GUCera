@@ -15,7 +15,7 @@
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminAllCourses.aspx">View All Courses</asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink2" runat="server">View Non-accepted Courses</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AdminNonAcc.aspx">View Non-accepted Courses</asp:HyperLink>
             <br />
             <br />
             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Accept Course.aspx">Accept A Course</asp:HyperLink>
