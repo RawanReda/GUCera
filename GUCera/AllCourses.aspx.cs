@@ -23,6 +23,8 @@ namespace GUCera
             SqlCommand courses = new SqlCommand("availableCourses", conn);
             courses.CommandType = CommandType.StoredProcedure;
 
+       
+
             conn.Open();
 
             //IF the output is a table, then we can read the records one at a time

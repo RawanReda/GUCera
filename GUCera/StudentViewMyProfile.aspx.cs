@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -55,6 +56,31 @@ namespace GUCera
 
                 //SqlDbType.Binary.GetType g = rdr.GetSqlBinary(rdr.GetOrdinal("gender"));
 
+                //   Byte[] gender = (byte[])rdr.GetSqlBinary(rdr.GetOrdinal(" gender"));
+
+                string s = "";
+                Byte[] gender = (byte[])rdr["gender"];
+                for(int i=0; i<gender.Length; i++)
+                {
+                    if (gender[i].Equals(1))
+                        s = "F";
+                    else
+                        if (gender[i].Equals(0))
+                        s = "M";
+                }
+
+            //    long g1 = rdr.GetByte(gender);
+                /*  string g2 = g1.ToString();
+                string gender = Encoding.UTF8.GetString(g1);
+                    if (gender.Equals(1))
+                    {
+                        g2 = "F";
+                    }
+                    else
+                    {
+                        g2 = "M";
+                    }
+    */
                 string email = rdr.GetString(rdr.GetOrdinal("email"));
 
                string address = rdr.GetString(rdr.GetOrdinal("address"));
@@ -79,9 +105,9 @@ namespace GUCera
                 lbl_e.Text = "   Email : " + email;
                 form1.Controls.Add(lbl_e);
 
-                //Label lbl_gender = new Label();
-                //lbl_gender.Text = gender.ToString();
-                //form1.Controls.Add(lbl_gender);
+                Label lbl_gender = new Label();
+                lbl_gender.Text = "   Gender : "+ s;
+                form1.Controls.Add(lbl_gender);
 
                 Label lbl_add = new Label();
                 lbl_add.Text = "   Address : " + address;

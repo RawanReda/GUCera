@@ -31,12 +31,25 @@ namespace GUCera
             SqlCommand enroll = new SqlCommand("enrollInCourse", conn);
             enroll.CommandType = CommandType.StoredProcedure;
 
-        
+            SqlCommand instid = new SqlCommand("select instructorId from Course where id =" + id, conn);
+            instid.CommandType = CommandType.StoredProcedure;
 
             conn.Open();
-            enroll.ExecuteNonQuery();
+            SqlDataReader rdr = instid.ExecuteReader(CommandBehavior.SingleRow);
+            if (rdr.HasRows)
+            {
+                int instructorId = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
+                enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
+                enroll.Parameters.Add(new SqlParameter("@cid", id));
+                enroll.Parameters.Add(new SqlParameter("@instr", instructorId));
+                enroll.ExecuteNonQuery();
+
+            }
             conn.Close();
 
+           
+
+    
 
 
         }
