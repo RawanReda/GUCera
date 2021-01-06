@@ -216,7 +216,7 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Course WHERE instructorId =" + usr, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.Text;
 
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
