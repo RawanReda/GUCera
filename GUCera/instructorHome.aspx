@@ -24,7 +24,7 @@
 		<br>
         Add Mobile Number: 
 		<br>
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br>
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br><hr>
         <div>
 		<details>
         <summary>Add a Course</summary>

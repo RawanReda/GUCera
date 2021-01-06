@@ -296,9 +296,6 @@ namespace GUCera
 
         }
 
-        protected void addno_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }
