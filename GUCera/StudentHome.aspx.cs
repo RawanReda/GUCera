@@ -82,6 +82,12 @@ namespace GUCera
 
         }
 
+        protected void addMobile(object sender, EventArgs e)
+        {
+            Response.Redirect("AddMobileNumber.aspx", true);
+
+        }
+
         //protected void SubmitAssign(object sender, EventArgs e)
         //{
 

@@ -16,6 +16,10 @@
             <asp:Button ID="Button1" runat="server" OnClick="myprofile" Text="my profile" />
             <br />
             <br />
+            Add Mobile Number: <br/>
+            <br/>
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile"/>
+            <br />
             <br />
             All courses accepted by the admin :<br />
             <br />

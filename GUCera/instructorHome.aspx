@@ -22,7 +22,9 @@
             <asp:Label ID="Name1" runat="server" Text=""></asp:Label> <br>
         </div>
 		
-        <asp:TextBox ID="mob" runat="server"></asp:TextBox><asp:Button ID="addno" runat="server" Text="Add Mobile Number" OnClick="addno_Click" /> <br><br>
+        Add Mobile Number: 
+		<br>
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br>
         <div>
 		<details>
         <summary>Add a Course</summary>
@@ -61,7 +63,9 @@
 
 		<div>
 
-			<asp:Button ID="Button2" runat="server" Text="View my Courses" OnClick="viewmyCourses"/>
+		<asp:Button ID="Button2" runat="server" Text="View Accepted Courses" OnClick="viewaccCourses"/>
+		<asp:Button ID="Button3" runat="server" Text="View my Courses" OnClick="viewmyCourses"/>
+
 
 			<br>
 			<br>

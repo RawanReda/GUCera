@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Accept Course.aspx" />
     <Content Include="AddCreditCard.aspx" />
+    <Content Include="AddMobileNumber.aspx" />
     <Content Include="Admin Page.aspx" />
     <Content Include="AdminAllCourses.aspx" />
     <Content Include="AdminCreatePromo.aspx" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddMobileNumber.aspx.cs">
+      <DependentUpon>AddMobileNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMobileNumber.aspx.designer.cs">
+      <DependentUpon>AddMobileNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin Page.aspx.cs">
       <DependentUpon>Admin Page.aspx</DependentUpon>

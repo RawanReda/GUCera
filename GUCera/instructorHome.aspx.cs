@@ -38,6 +38,12 @@ namespace GUCera
             conn.Close();
 
         }
+        protected void addMobile(object sender, EventArgs e)
+        {
+            Response.Redirect("AddMobileNumber.aspx", true);
+
+        }
+
 
 
         protected void addCourse(object sender, EventArgs e)
@@ -89,7 +95,7 @@ namespace GUCera
 
         }
 
-        protected void viewmyCourses(object sender, EventArgs e)
+        protected void viewaccCourses(object sender, EventArgs e)
 
         {
             msg.Text = "";
@@ -194,6 +200,98 @@ namespace GUCera
 
                 }
             }
+
+
+
+
+        }
+
+        //protected void viewmyCourses(object sender, EventArgs e)
+
+        //{
+        //    msg.Text = "";
+
+        //    //Get the information of the connection to the database
+        //    int usr = (int)Session["field1"];
+        //    string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+        //    //create a new connection
+        //    SqlConnection conn = new SqlConnection(connStr);
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM Courses WHERE instructorId = " + usr, conn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    conn.Open();
+        //    SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+        //    Literal l2 = new Literal();
+        //    if (!rdr.HasRows)
+        //    {
+
+        //        l2.Text = "<p style='color : Red'> No Added Courses Yet</p>";
+        //        CourseList.Controls.Add(l2);
+        //    }
+        //    else
+        //    {
+        //        l2.Text = "";
+        //        while (rdr.Read())
+        //        {
+        //            int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
+        //            string cname = rdr.GetString(rdr.GetOrdinal("name"));
+        //            int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
+        //            // String cnt = rdr.GetString(rdr.GetOrdinal("content"));
+
+        //            SqlConnection conn2 = new SqlConnection(connStr);
+
+        //            SqlCommand cmd2 = new SqlCommand("SELECT * FROM Course Where id=" + cid, conn2);
+        //            cmd2.CommandType = CommandType.Text;
+
+        //            conn2.Open();
+        //            SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
+        //            rdr2.Read();
+        //            String courseContent;
+        //            try
+        //            {
+        //                courseContent = rdr2.GetString(rdr2.GetOrdinal("content"));
+        //            }
+        //            catch
+        //            {
+        //                courseContent = "--";
+        //            }
+        //            conn2.Close();
+
+
+
+        //            title.Text = "<h3> My Added Courses </h3>";
+
+        //            Panel card = new Panel();
+        //            card.CssClass = "cards";
+
+
+        //            Button MyButtonU = new Button();
+        //            MyButtonU.UseSubmitBehavior = false;
+        //            MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
+        //            MyButtonU.Text = "Update Course Content";
+
+
+        //            Literal l1 = new Literal();
+
+        //            l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
+        //             "<div> Name: " + cname + "</div>" +
+        //             "<div> Credit Hours: " + ch + "</div>" +
+        //             "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
+
+
+        //            Label line = new Label();
+        //            line.Text = "<hr>";
+
+
+        //            card.Controls.Add(l1);
+        //            card.Controls.Add(MyButtonU);
+        //            card.Controls.Add(line);
+        //            CourseList.Controls.Add(card);
+
+
+        //        }
+        //    }
 
 
 

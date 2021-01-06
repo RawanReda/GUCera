@@ -13,6 +13,9 @@
            
               <br />
 
+            <asp:Literal ID="txt" runat="server"></asp:Literal><br>
+            <asp:Literal ID="redirect" runat="server"></asp:Literal>
+			<br>
 				<div>
                 <table cellpadding="2" >
 	            <tbody>

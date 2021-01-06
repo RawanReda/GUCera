@@ -54,7 +54,7 @@ namespace GUCera
                     studentreg.ExecuteNonQuery();
                     //                    txt.Text = ("<p style='color:green'> Registration Successful </p>");
 
-                    SqlCommand cmd = new SqlCommand("select max(id) as max from Instructor", conn);
+                    SqlCommand cmd = new SqlCommand("select max(id) as max from Student", conn);
                     cmd.CommandType = CommandType.Text;
 
 
@@ -71,7 +71,7 @@ namespace GUCera
                         txt.Text = ("<p style='color:green'> Registration Successful, UserID:  " + uid + "</p>");
                         redirect.Text = "<a href='Login.aspx'> Log-in</a>";
 
-                        Session["field1"] = uid;
+                       // Session["field1"] = uid;
 
 
 

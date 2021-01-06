@@ -27,7 +27,7 @@
             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminIssuePromo.aspx">Issue A Promocode</asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink6" runat="server">Add Phone Number</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/AddMobileNumber.aspx">Add Phone Number</asp:HyperLink>
         </div>
     </form>
 </body>
