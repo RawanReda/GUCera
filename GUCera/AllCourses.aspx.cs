@@ -34,7 +34,7 @@ namespace GUCera
                 string courseName = rdr.GetString(rdr.GetOrdinal("name"));
 
                 Label lbl_CourseName = new Label();
-                lbl_CourseName.Text = courseName;
+                lbl_CourseName.Text = courseName + ",              ";
                 form1.Controls.Add(lbl_CourseName);
 
                 i = 1;
