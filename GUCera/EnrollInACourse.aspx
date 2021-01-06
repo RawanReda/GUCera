@@ -21,10 +21,10 @@
             <asp:TextBox ID="instrid" runat="server"></asp:TextBox>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Enroll" Text="Enroll" />
+            <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>

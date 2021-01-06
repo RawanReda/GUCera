@@ -77,7 +77,9 @@ namespace GUCera
             }
             if(i == 0)
             {
-                Response.Write("You don't have any promocodes.");
+                Label lbl_error = new Label();
+                lbl_error.Text = "You don't have any promocodes.";
+                form1.Controls.Add(lbl_error);
             }
         }
     }

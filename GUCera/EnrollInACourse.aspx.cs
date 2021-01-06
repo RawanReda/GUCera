@@ -36,10 +36,19 @@ namespace GUCera
             enroll.Parameters.Add(new SqlParameter("@cid", courseid));
             enroll.Parameters.Add(new SqlParameter("@instr", instructorid));
 
+            try
+            {
+                conn.Open();
+                enroll.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch
+            {
+                Label lbl_error = new Label();
+                lbl_error.Text = "You are already enrolled in this course or didnt take this course pre-requisite.";
+                form1.Controls.Add(lbl_error);
+            }
 
-            conn.Open();
-            enroll.ExecuteNonQuery();
-            conn.Close();
 
 
 

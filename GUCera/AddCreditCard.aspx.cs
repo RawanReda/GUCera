@@ -66,9 +66,14 @@ namespace GUCera
 
             if (number == "" || cardholdername == "" || EXDate.Text == "" || CVV.Text == "")
             {
-                 Response.Write("Please fill in all fields");
+               // Response.Write("Please fill in all fields");
                 // AddCD.Text = "<p style='color:red '> Please fill in all fields </p>";
-               
+
+                Label lbl_error = new Label();
+                lbl_error.Text = "Please fill in all fields";
+                form1.Controls.Add(lbl_error);
+
+
             }
             else
             {
@@ -82,12 +87,21 @@ namespace GUCera
 
                     conn.Close();
 
-                    Response.Write("Credit card details are added");
+
+
+                    Label lbl_error = new Label();
+                    lbl_error.Text = "Credit card details are added";
+                    form1.Controls.Add(lbl_error);
                 }
                 catch
                 {
-                    Response.Write("You are already added this credit card");
-                }
+
+
+                    Label lbl_error = new Label();
+                    lbl_error.Text = "You are already added this credit card";
+                    form1.Controls.Add(lbl_error);
+                
+            }
             }
 
 

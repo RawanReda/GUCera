@@ -23,7 +23,7 @@ namespace GUCera
             SqlCommand courses = new SqlCommand("availableCourses", conn);
             courses.CommandType = CommandType.StoredProcedure;
 
-       
+            int i = 0;
 
             conn.Open();
 
@@ -36,7 +36,15 @@ namespace GUCera
                 Label lbl_CourseName = new Label();
                 lbl_CourseName.Text = courseName;
                 form1.Controls.Add(lbl_CourseName);
+
+                i = 1;
             }
-        }
+            if (i == 0)
+            {
+                Label lbl_error = new Label();
+                lbl_error.Text = "The Admin has not add any courses yet.";
+                form1.Controls.Add(lbl_error);
+            }
+            }
     }
 }
