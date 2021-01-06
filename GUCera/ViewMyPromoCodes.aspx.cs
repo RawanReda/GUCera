@@ -31,6 +31,12 @@ namespace GUCera
             promocode.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
 
             //Executing the SQLCommand
+
+
+
+            int i = 0;
+
+
             conn.Open();
             SqlDataReader rdr = promocode.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -64,8 +70,14 @@ namespace GUCera
                 lbl_dis.Text = "   Discount : " + discount;
                 form1.Controls.Add(lbl_dis);
 
+
+                i = 1;
                
 
+            }
+            if(i == 0)
+            {
+                Response.Write("You don't have any promocodes.");
             }
         }
     }

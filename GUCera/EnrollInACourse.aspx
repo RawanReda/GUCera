@@ -9,9 +9,19 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Please enter the course id :<br />
+            Please Enter<br />
+&nbsp;<br />
+            The Course ID :<br />
+&nbsp;<br />
+&nbsp;<asp:TextBox ID="cid" runat="server" Height="16px"></asp:TextBox>
             <br />
-            <asp:TextBox ID="en" runat="server"></asp:TextBox>
+            <br />
+            The Admin ID :<br />
+            <br />
+            <asp:TextBox ID="instrid" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <br />
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Enroll" Text="Enroll" />

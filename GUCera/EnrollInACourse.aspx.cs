@@ -26,30 +26,25 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            int id = Int16.Parse(en.Text);
+            int courseid = Int16.Parse(cid.Text);
+            int instructorid = Int16.Parse(instrid.Text);
 
             SqlCommand enroll = new SqlCommand("enrollInCourse", conn);
             enroll.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand instid = new SqlCommand("select instructorId from Course where id =" + id, conn);
-            instid.CommandType = CommandType.StoredProcedure;
+            enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
+            enroll.Parameters.Add(new SqlParameter("@cid", courseid));
+            enroll.Parameters.Add(new SqlParameter("@instr", instructorid));
+
 
             conn.Open();
-            SqlDataReader rdr = instid.ExecuteReader(CommandBehavior.SingleRow);
-            if (rdr.HasRows)
-            {
-                int instructorId = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
-                enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
-                enroll.Parameters.Add(new SqlParameter("@cid", id));
-                enroll.Parameters.Add(new SqlParameter("@instr", instructorId));
-                enroll.ExecuteNonQuery();
-
-            }
+            enroll.ExecuteNonQuery();
             conn.Close();
 
-           
 
-    
+
+
+
 
 
         }

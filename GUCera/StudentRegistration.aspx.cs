@@ -42,12 +42,56 @@ namespace GUCera
             studentreg.Parameters.Add(new SqlParameter("@gender", ((g == "F") ? 1 : 0)));
             studentreg.Parameters.Add(new SqlParameter("@address", add));
 
-            conn.Open();
-            studentreg.ExecuteNonQuery();
-            conn.Close();
+            if (firstn == "" || lastn == "" || pass == "" || em == "" || g == "")
+            {
+                txt.Text = "<p style='color:red '> Please fill in all fields </p>";
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    studentreg.ExecuteNonQuery();
+                    //                    txt.Text = ("<p style='color:green'> Registration Successful </p>");
 
+                    SqlCommand cmd = new SqlCommand("select max(id) as max from Instructor", conn);
+                    cmd.CommandType = CommandType.Text;
+
+
+                    SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+
+                    if (rdr.Read())
+                    {
+                        conn.Close();
+                        conn.Open();
+                        rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+                        rdr.Read();
+                        int uid = rdr.GetInt32(rdr.GetOrdinal("max"));
+                        conn.Close();
+                        txt.Text = ("<p style='color:green'> Registration Successful, UserID:  " + uid + "</p>");
+                        redirect.Text = "<a href='Login.aspx'> Log-in</a>";
+
+                        Session["field1"] = uid;
+
+
+
+                    }
+
+
+                }
+                catch (SqlException ex)
+                {
+                    txt.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+
+
+                }
+            }
 
 
         }
     }
+
+
+
 }
+    
