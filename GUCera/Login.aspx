@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h3>Welcome to our GUCera website :) </h3> <br />
-              Please Log In 
+            <h3>Welcome to our GUCera website :) </h3>
+            
+           <p style="font-weight: bolder">   Please Log In </p>
 				<div>
                 <table cellpadding="2" >
 	            <tbody>
@@ -46,5 +47,4 @@
         </div>
     </form>
 </body>
-
 </html>

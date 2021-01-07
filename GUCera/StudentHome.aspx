@@ -44,13 +44,21 @@
             <asp:Button ID="Button5" runat="server" Onclick="promocodes" Text="promocodes" />
             <br />
             <br />
-            To view Assignments for a certain course, please enter the course ID:<br />
-            Course Id: <asp:TextBox ID="course_Id" runat="server" Height="16px" Width="40px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
-             
-            <br />
-            <asp:Button ID="ViewAssign1" runat="server" Onclick="ViewAssign" Text="Check Assignments" />
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/EnterViewAssignCourse.aspx">View Course Assignment</asp:HyperLink>
             <br />
             <br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StudentSubmitAssignment.aspx">Submit Assignment</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StudentViewAssignGrade.aspx">Check Grade</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/StudentAddFeedback.aspx">Add Course Feedback</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EnterViewCertificateCourse.aspx">View Course Certificate</asp:HyperLink>
+            <br />
+            <%--<br />
             To submit an Assignment, please enter the required info:<br />
 &nbsp;<asp:Button ID="SubmitAssign1" runat="server" Onclick="SubmitAssign" Text="Submit Assignment" />
 
@@ -67,8 +75,10 @@
             To check obtained Certificates for a specific course, please enter Course ID:<br />
             Course Id: <asp:TextBox ID="course_Id0" runat="server" Height="16px" Width="30px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
              
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="CheckCertificates" runat="server" Onclick="Certificates" Text="Check Certificates" />
+             
+            <br />--%>
             <br />
             <br />
             <br />

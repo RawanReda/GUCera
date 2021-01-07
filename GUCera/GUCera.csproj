@@ -78,6 +78,8 @@
     <Content Include="AdminNonAcc.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="EnrollInACourse.aspx" />
+    <Content Include="EnterViewAssignCourse.aspx" />
+    <Content Include="EnterViewCertificateCourse.aspx" />
     <Content Include="inscourseUpdate.aspx" />
     <Content Include="InsgradeAssignment.aspx" />
     <Content Include="InstructorAssignments.aspx" />
@@ -167,6 +169,20 @@
     </Compile>
     <Compile Include="EnrollInACourse.aspx.designer.cs">
       <DependentUpon>EnrollInACourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterViewAssignCourse.aspx.cs">
+      <DependentUpon>EnterViewAssignCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterViewAssignCourse.aspx.designer.cs">
+      <DependentUpon>EnterViewAssignCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterViewCertificateCourse.aspx.cs">
+      <DependentUpon>EnterViewCertificateCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterViewCertificateCourse.aspx.designer.cs">
+      <DependentUpon>EnterViewCertificateCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="inscourseUpdate.aspx.cs">
       <DependentUpon>inscourseUpdate.aspx</DependentUpon>
