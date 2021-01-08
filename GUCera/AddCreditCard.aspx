@@ -35,6 +35,8 @@
             <asp:Button ID="Button1" runat="server" OnClick="add" Text="add" />
             <br />
             <br />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Literal ID="txt" runat="server"></asp:Literal>
             <br />
         </div>
     </form>

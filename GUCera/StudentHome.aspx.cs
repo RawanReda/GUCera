@@ -14,38 +14,21 @@ namespace GUCera
 
         }
 
-        protected void myprofile(object sender, EventArgs e)
-        {
-            Response.Redirect("StudentViewMyProfile.aspx", true);
-        }
+      
 
-        protected void allcourses(object sender, EventArgs e)
-        {
-            Response.Redirect("AllCourses.aspx", true);
-        }
+    
 
-        protected void enroll(object sender, EventArgs e)
-        {
-            Response.Redirect("EnrollInACourse.aspx", true);
-        }
 
-        protected void creditcard(object sender, EventArgs e)
-        {
-            Response.Redirect("AddCreditCard.aspx", true);
-        }
-
-        protected void promocodes(object sender, EventArgs e)
-        {
-            Response.Redirect("ViewMyPromoCodes.aspx", true);
-        }
+     
+     
 
 
 
        
-        protected void Feedback(object sender, EventArgs e)
+       /* protected void Feedback(object sender, EventArgs e)
         {
             Response.Redirect("StudentAddFeedback.aspx", true);
-        }
+        }*/
 
         //protected void Certificates(object sender, EventArgs e)
         //{
@@ -82,11 +65,7 @@ namespace GUCera
 
         //}
 
-        protected void addMobile(object sender, EventArgs e)
-        {
-            Response.Redirect("AddMobileNumber.aspx", true);
-
-        }
+     
 
         //protected void SubmitAssign(object sender, EventArgs e)
         //{

@@ -9,39 +9,24 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Student Home page :<br />
+            <br />
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/StudentViewMyProfile.aspx">View My Profile</asp:HyperLink>
             <br />
             <br />
-            View my profile :<br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="myprofile" Text="my profile" />
-            <br />
-            <br />
-            Add Mobile Number: <br/>
+            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/AddMobileNumber.aspx">Add Mobile Number</asp:HyperLink>
             <br/>
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile"/>
+            <br/>
+            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AllCourses.aspx">View Courses</asp:HyperLink>
             <br />
             <br />
-            All courses accepted by the admin :<br />
-            <br />
-            <asp:Button ID="Button2" runat="server" OnClick="allcourses" Text="all courses" />
+            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/EnrollInACourse.aspx">Enroll In A Course</asp:HyperLink>
             <br />
             <br />
-            <br />
-            Enroll in a course :<br />
-            <br />
-            <asp:Button ID="Button3" runat="server" OnClick="enroll" Text="enroll" />
+            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/AddCreditCard.aspx">Add Credit Card</asp:HyperLink>
             <br />
             <br />
-            <br />
-            Add credit card :<br />
-            <br />
-            <asp:Button ID="Button4" runat="server" OnClick="creditcard" Text="credit card" />
-            <br />
-            <br />
-            <br />
-            View my promocodes :<br />
-            <br />
-            <asp:Button ID="Button5" runat="server" Onclick="promocodes" Text="promocodes" />
+            <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/ViewMyPromoCodes.aspx">View PromoCodes</asp:HyperLink>
             <br />
             <br />
             <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/EnterViewAssignCourse.aspx">View Course Assignment</asp:HyperLink>
@@ -57,6 +42,17 @@
             <br />
             <br />
             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EnterViewCertificateCourse.aspx">View Course Certificate</asp:HyperLink>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <br />
             <%--<br />
             To submit an Assignment, please enter the required info:<br />
