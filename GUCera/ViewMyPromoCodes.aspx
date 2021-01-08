@@ -9,9 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            My PromoCodes :<br />
-            <br />
+            My PromoCodes :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Literal ID="txt" runat="server"></asp:Literal>
+            <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>

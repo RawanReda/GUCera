@@ -58,17 +58,29 @@ namespace GUCera
                 lbl_code.Text = "Code : " + code;
                 form1.Controls.Add(lbl_code);
 
+               // c.Text = code;
+
                 Label lbl_id = new Label();
                 lbl_id.Text = "   IssueDate : " + isuueDate;
                 form1.Controls.Add(lbl_id);
+
+              //  issue.Text = isuueDate + "";
 
                 Label lbl_ed = new Label();
                 lbl_ed.Text = "   ExpiryDate : " + expiryDate;
                 form1.Controls.Add(lbl_ed);
 
+              //  ex.Text = expiryDate + "";
+
                 Label lbl_dis = new Label();
                 lbl_dis.Text = "   Discount : " + discount;
                 form1.Controls.Add(lbl_dis);
+
+                //   d.Text = discount + "";
+
+                Label lbl = new Label();
+                lbl.Text = "                                                  ";
+                form1.Controls.Add(lbl);
 
 
                 i = 1;
