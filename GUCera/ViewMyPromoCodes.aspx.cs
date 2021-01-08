@@ -77,9 +77,11 @@ namespace GUCera
             }
             if(i == 0)
             {
-                Label lbl_error = new Label();
+                /*Label lbl_error = new Label();
                 lbl_error.Text = "You don't have any promocodes.";
-                form1.Controls.Add(lbl_error);
+                form1.Controls.Add(lbl_error);*/
+
+                txt.Text = "<p style='color:red '> You don't have any promocodes. </p>";
             }
         }
     }

@@ -41,9 +41,9 @@ namespace GUCera
             }
             if (i == 0)
             {
-                Label lbl_error = new Label();
-                lbl_error.Text = "The Admin has not add any courses yet.";
-                form1.Controls.Add(lbl_error);
+              
+
+                txt.Text = "<p style='color:red '> The Admin has not added any courses yet. </p>";
             }
             }
     }

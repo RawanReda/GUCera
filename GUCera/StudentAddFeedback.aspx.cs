@@ -24,42 +24,60 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            string Comment= comment.Text;
+             if (comment.Text == "" || course_ID.Text == "")
+                {
+                    SubmitFeedbackMssg.Text = "<p style='color:red '> Please fill in all fields </p>";
+                }
+
+            else { 
           
-            int Course_ID = Int16.Parse(course_ID.Text);
+                string Comment = comment.Text;
+                int Course_ID = 0;
+                if (course_ID.Text != "")
+                {
+                    Course_ID = Int16.Parse(course_ID.Text);
+                }
+            SqlCommand cmd1 = new SqlCommand();// Creating instance of SqlCommand  
+            cmd1.Connection = conn; // set the connection to instance of SqlCommand  
+            cmd1.CommandText = "SELECT* FROM StudentTakeCourse WHERE cid =" + Course_ID + " AND sid =" + Session["field1"] + ""; // set  
+            conn.Open();                                                                                      //the sql command ( Statement )  
+            cmd1.ExecuteNonQuery(); SqlDataReader rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
 
-            SqlCommand cmd = new SqlCommand("addFeedback", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-          
-            cmd.Parameters.Add(new SqlParameter("@comment",Comment));
-            cmd.Parameters.Add(new SqlParameter("@cid", Course_ID));
-            cmd.Parameters.Add(new SqlParameter("@sid", Session["field1"]));
-
-
-            if (Comment == "" || Course_ID.ToString()=="")
+  if (!rdr.HasRows)
             {
-                SubmitFeedbackMssg.Text = "<p style='color:red '> Please fill in all fields </p>";
+                SubmitFeedbackMssg.Text = ("<p style='color:red'> You are not enrolled in this course. ");
+                conn.Close();
             }
             else
             {
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
                     conn.Close();
-                    SubmitFeedbackMssg.Text = ("<p style='color:green'> Feedback Successfully added");
+                SqlCommand cmd = new SqlCommand("addFeedback", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
 
+                cmd.Parameters.Add(new SqlParameter("@comment", Comment));
+                cmd.Parameters.Add(new SqlParameter("@cid", Course_ID));
+                cmd.Parameters.Add(new SqlParameter("@sid", Session["field1"]));
+
+
+             
+                
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        SubmitFeedbackMssg.Text = ("<p style='color:green'> Feedback Successfully added");
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        SubmitFeedbackMssg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+
+
+                    }
 
                 }
-                catch (SqlException ex)
-                {
-                    SubmitFeedbackMssg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
-
-
-                }
-
             }
         }
     }

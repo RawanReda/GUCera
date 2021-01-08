@@ -26,31 +26,41 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            int courseid = Int16.Parse(cid.Text);
-            int instructorid = Int16.Parse(instrid.Text);
-
-            SqlCommand enroll = new SqlCommand("enrollInCourse", conn);
-            enroll.CommandType = CommandType.StoredProcedure;
-
-            enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
-            enroll.Parameters.Add(new SqlParameter("@cid", courseid));
-            enroll.Parameters.Add(new SqlParameter("@instr", instructorid));
-
-            try
+            if (cid.Text == "" || instrid.Text == "")
             {
-                conn.Open();
-                enroll.ExecuteNonQuery();
-                conn.Close();
+                txt.Text = "<p style='color:red '> Please enter all required fields. </p>";
             }
-            catch
+            else
             {
-                Label lbl_error = new Label();
-                lbl_error.Text = "You are already enrolled in this course or didnt take this course pre-requisite.";
-                form1.Controls.Add(lbl_error);
+                int courseid = Int16.Parse(cid.Text);
+                int instructorid = Int16.Parse(instrid.Text);
+
+                SqlCommand enroll = new SqlCommand("enrollInCourse", conn);
+                enroll.CommandType = CommandType.StoredProcedure;
+
+                enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
+                enroll.Parameters.Add(new SqlParameter("@cid", courseid));
+                enroll.Parameters.Add(new SqlParameter("@instr", instructorid));
+
+                txt.Text = "<p style='color:green '> You are successfully enrolled in a new course. </p>";
+
+                try
+                {
+                    conn.Open();
+                    enroll.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch
+                {
+                    /* Label lbl_error = new Label();
+                     lbl_error.Text = "You are already enrolled in this course or didnt take this course pre-requisite.";
+                     form1.Controls.Add(lbl_error);*/
+                    txt.Text = "<p style='color:red '> You are already enrolled in this course. </p>";
+
+                }
+
+
             }
-
-
-
 
 
 

@@ -7,18 +7,15 @@
     <title></title>
 </head>
 <body>
-   <form id="form1" runat="server">
+   <form id="form1" runat="server">   
+       
         <div>
-        
-        Please enter the required info to submit your assignment:<br />
-        <asp:Literal ID="SubmitFeedbackMssg" runat="server"></asp:Literal>
-        <br />
-        <br />
+            <p>
+        <asp:Literal ID="SubmitFeedbackMssg" runat="server"></asp:Literal></p>
+       <p style="font-weight: bolder">Please enter the required info to submit your assignment</p>
             Course ID:<asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
-            <br />
         <br />
             Comment:<asp:TextBox ID="comment" runat="server"></asp:TextBox>
-        <br />
         <br />
         <br />
         <asp:Button ID="FeedbackNow" runat="server" Text="Add Feedback" OnClick="AddNow_Click" />

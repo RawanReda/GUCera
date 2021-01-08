@@ -24,6 +24,8 @@
             <asp:Button ID="Button1" runat="server" OnClick="Enroll" Text="Enroll" />
             <br />
             <br />
+            <asp:Literal ID="txt" runat="server"></asp:Literal>
+            <br />
             <br />
         </div>
     </form>
