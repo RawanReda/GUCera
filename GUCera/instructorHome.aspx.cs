@@ -264,18 +264,13 @@ namespace GUCera
                     card.CssClass = "cards";
 
 
-                    Button MyButtonU = new Button();
-                    MyButtonU.UseSubmitBehavior = false;
-                    MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
-                    MyButtonU.Text = "Update Course Content";
-
 
                     Literal l1 = new Literal();
 
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
                      "<div> Name: " + cname + "</div>" +
-                     "<div> Credit Hours: " + ch + "</div>" +
-                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
+                     "<div> Credit Hours: " + ch + "</div>"; 
+//                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
 
 
                     Label line = new Label();
@@ -283,7 +278,6 @@ namespace GUCera
 
 
                     card.Controls.Add(l1);
-                    card.Controls.Add(MyButtonU);
                     card.Controls.Add(line);
                     CourseList.Controls.Add(card);
 
