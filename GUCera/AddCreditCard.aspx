@@ -20,6 +20,8 @@
             Card Holder Name :<br />
             <br />
             <asp:TextBox ID="CHName" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Literal ID="credit" runat="server"></asp:Literal>
             <br />
             <br />
             Expiry Date :<br />

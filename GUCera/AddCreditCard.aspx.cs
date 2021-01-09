@@ -14,7 +14,7 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int sid = (int)Session["field1"];
         }
 
         protected void add(object sender, EventArgs e)
@@ -33,14 +33,23 @@ namespace GUCera
             //   int id = Int16.Parse(ID.Text);
             string number = Number.Text;
             string cardholdername = CHName.Text;
-            DateTime expirydate = DateTime.Parse(EXDate.Text);
+                SqlCommand addcd = new SqlCommand("addCreditCard", conn);
+                addcd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    DateTime expirydate = DateTime.Parse(EXDate.Text);
+                    addcd.Parameters.Add(new SqlParameter("@expiryDate", expirydate));
+                }
+                catch
+                {
+                    credit.Text = "<p style='color:green '> Please Enter the ExpiryDate in this format Y-M-D. </p>";
+                }
             int cvv = Int16.Parse(CVV.Text);
 
 
-            SqlCommand addcd = new SqlCommand("addCreditCard", conn);
-            addcd.CommandType = CommandType.StoredProcedure;
+           
 
-            addcd.Parameters.Add(new SqlParameter("@expiryDate", expirydate));
+            
             addcd.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
             addcd.Parameters.Add(new SqlParameter("@cvv", cvv));
             addcd.Parameters.Add(new SqlParameter("@number", number));

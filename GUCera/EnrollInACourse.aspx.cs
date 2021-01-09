@@ -15,7 +15,15 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+              int sid = (int)Session["field1"];
 
+            /*if (Session["field1"].get(null))
+            {
+
+                txt.Text = "<p style='color:red '> Please login first. </p>";
+                Response.Redirect("Login.aspx", true);
+            }*/
         }
 
         protected void Enroll(object sender, EventArgs e)
@@ -37,6 +45,7 @@ namespace GUCera
 
                 SqlCommand enroll = new SqlCommand("enrollInCourse", conn);
                 enroll.CommandType = CommandType.StoredProcedure;
+
 
                 enroll.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
                 enroll.Parameters.Add(new SqlParameter("@cid", courseid));

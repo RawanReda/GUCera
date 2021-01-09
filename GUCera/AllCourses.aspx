@@ -10,9 +10,13 @@
     <form id="form1" runat="server">
         <div>
             Courses Page
-            :<br />
+            :&nbsp;&nbsp;
+            <asp:Literal ID="txt1" runat="server"></asp:Literal>
+            <br />
             <br />
             <asp:Literal ID="txt" runat="server"></asp:Literal>
+            <br />
+            <br />
         </div>
     </form>
 </body>
