@@ -16,12 +16,12 @@ namespace GUCera
         protected void Page_Load(object sender, EventArgs e)
         {
            
-              int sid = (int)Session["field1"];
-
-            /*if (Session["field1"].get(null))
+           //   int sid = (int)Session["field1"];
+/*
+            if (((String)Session["field1"]).Equals(null))
             {
 
-                txt.Text = "<p style='color:red '> Please login first. </p>";
+             //   txt.Text = "<p style='color:red '> Please login first. </p>";
                 Response.Redirect("Login.aspx", true);
             }*/
         }
