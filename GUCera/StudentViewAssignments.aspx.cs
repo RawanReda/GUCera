@@ -16,6 +16,13 @@ namespace GUCera
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
 
+           
+
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             SqlCommand cmd = new SqlCommand("viewAssign", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 

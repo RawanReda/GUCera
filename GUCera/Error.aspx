@@ -9,9 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Please log in first:<br />
+            Please Log In First :<br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">log in page</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Log In Page</asp:HyperLink>
         </div>
     </form>
 </body>
