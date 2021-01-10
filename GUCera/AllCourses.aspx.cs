@@ -23,7 +23,10 @@ namespace GUCera
             SqlCommand courses = new SqlCommand("availableCourses", conn);
             courses.CommandType = CommandType.StoredProcedure;
 
-            int sid = (int)Session["field1"];
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
 
             int i = 0;
 

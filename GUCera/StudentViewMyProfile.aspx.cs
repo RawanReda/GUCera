@@ -22,6 +22,11 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             /*create a new SQL command which takes as parameters the name of the stored procedure and
              the SQLconnection name*/
             SqlCommand myprofile = new SqlCommand("viewMyProfile", conn);

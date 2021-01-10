@@ -80,6 +80,7 @@
     <Content Include="EnrollInACourse.aspx" />
     <Content Include="EnterViewAssignCourse.aspx" />
     <Content Include="EnterViewCertificateCourse.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="inscourseUpdate.aspx" />
     <Content Include="InsgradeAssignment.aspx" />
     <Content Include="InstructorAssignments.aspx" />
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="EnterViewCertificateCourse.aspx.designer.cs">
       <DependentUpon>EnterViewCertificateCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="inscourseUpdate.aspx.cs">
       <DependentUpon>inscourseUpdate.aspx</DependentUpon>

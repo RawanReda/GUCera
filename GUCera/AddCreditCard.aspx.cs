@@ -14,7 +14,18 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-      //      int sid = (int)Session["field1"];
+
+            //Get the information of the connection to the database
+            string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+
+            //create a new connection
+            SqlConnection conn = new SqlConnection(connStr);
+
+            if(Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+            //      int sid = (int)Session["field1"];
         }
 
         protected void add(object sender, EventArgs e)

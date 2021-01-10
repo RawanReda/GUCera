@@ -20,6 +20,11 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             /*create a new SQL command which takes as parameters the name of the stored procedure and
              the SQLconnection name*/
             SqlCommand promocode = new SqlCommand("viewPromocode", conn);
@@ -73,14 +78,14 @@ namespace GUCera
               //  ex.Text = expiryDate + "";
 
                 Label lbl_dis = new Label();
-                lbl_dis.Text = "   Discount : " + discount;
+                lbl_dis.Text = "   Discount : " + discount +"<br/>  <br/> ";
                 form1.Controls.Add(lbl_dis);
 
                 //   d.Text = discount + "";
 
-                Label lbl = new Label();
+            /*    Label lbl = new Label();
                 lbl.Text = "                                                  ";
-                form1.Controls.Add(lbl);
+                form1.Controls.Add(lbl);*/
 
 
                 i = 1;
