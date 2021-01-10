@@ -14,7 +14,7 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int sid = (int)Session["field1"];
+      //      int sid = (int)Session["field1"];
         }
 
         protected void add(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace GUCera
             string cardholdername = CHName.Text;
                 SqlCommand addcd = new SqlCommand("addCreditCard", conn);
                 addcd.CommandType = CommandType.StoredProcedure;
+                int j = 0;
                 try
                 {
                     DateTime expirydate = DateTime.Parse(EXDate.Text);
@@ -42,7 +43,8 @@ namespace GUCera
                 }
                 catch
                 {
-                    credit.Text = "<p style='color:green '> Please Enter the ExpiryDate in this format Y-M-D. </p>";
+                    j = 1;
+                    credit.Text = "<p style='color:red '> Please Enter the ExpiryDate in this format Y-M-D. </p>";
                 }
             int cvv = Int16.Parse(CVV.Text);
 
@@ -84,22 +86,25 @@ namespace GUCera
 
 
 
-                       /* Label lbl_error = new Label();
-                        lbl_error.Text = "Credit card details are added";
-                        form1.Controls.Add(lbl_error);*/
-
+                    /* Label lbl_error = new Label();
+                     lbl_error.Text = "Credit card details are added";
+                     form1.Controls.Add(lbl_error);*/
+                    credit.Text = "";
                     txt.Text = "<p style='color:green '> Your credit card details has been added. </p>";
                 }
                     catch
                     {
 
 
-                       /* Label lbl_error = new Label();
-                        lbl_error.Text = "You are already added this credit card";
-                        form1.Controls.Add(lbl_error);*/
-
-                    txt.Text = "<p style='color:red '> This credit card has been added before. </p>";
-
+                    /* Label lbl_error = new Label();
+                     lbl_error.Text = "You are already added this credit card";
+                     form1.Controls.Add(lbl_error);*/
+                    if (j == 0)
+                    {
+                        credit.Text = "";
+                        txt.Text = "<p style='color:red '> This credit card has been added before. </p>";
+                        
+                    }
                 }
                 }
             

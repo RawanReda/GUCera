@@ -42,15 +42,6 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.TextBox CHName;
 
         /// <summary>
-        /// credit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal credit;
-
-        /// <summary>
         /// EXDate control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace GUCera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EXDate;
+
+        /// <summary>
+        /// credit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal credit;
 
         /// <summary>
         /// CVV control.
