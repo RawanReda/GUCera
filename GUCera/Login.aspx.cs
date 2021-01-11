@@ -24,7 +24,11 @@ namespace GUCera
 
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
+            if (ID.Text== "" || Password.Text == "") {
+                error.Text = "<p style='color:red;'> Please fill in all fields </p>";
 
+            }
+            else { 
             //To read the input from the user
             int id = Int16.Parse(ID.Text);
             string password = Password.Text;
@@ -85,6 +89,7 @@ namespace GUCera
             }
         }
 
+        }
         protected void StudentReg(object sender, EventArgs e)
         {
             Response.Redirect("StudentRegistration.aspx", true);
