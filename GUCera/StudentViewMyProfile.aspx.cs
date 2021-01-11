@@ -22,6 +22,11 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             /*create a new SQL command which takes as parameters the name of the stored procedure and
              the SQLconnection name*/
             SqlCommand myprofile = new SqlCommand("viewMyProfile", conn);
@@ -69,7 +74,7 @@ namespace GUCera
                         s = "M";
                 }
 
-            //    long g1 = rdr.GetByte(gender);
+                //    long g1 = rdr.GetByte(gender);
                 /*  string g2 = g1.ToString();
                 string gender = Encoding.UTF8.GetString(g1);
                     if (gender.Equals(1))
@@ -81,42 +86,75 @@ namespace GUCera
                         g2 = "M";
                     }
     */
-                string email = rdr.GetString(rdr.GetOrdinal("email"));
 
-               string address = rdr.GetString(rdr.GetOrdinal("address"));
+                string email;
 
-                Label lbl_id1 = new Label();
+                try
+                {
+                    email = rdr.GetString(rdr.GetOrdinal("email"));
+                }
+                catch
+                {
+                    email = "";
+                }
+
+                string address;
+
+                try
+                {
+                    address = rdr.GetString(rdr.GetOrdinal("address"));
+                }
+                catch
+                {
+                    address = "";
+                }
+                /*Label lbl_id1 = new Label();
                 lbl_id1.Text = "ID : " + id1;
-                form1.Controls.Add(lbl_id1);
+                form1.Controls.Add(lbl_id1);*/
 
-                Label lbl_fn = new Label();
+                id.Text = id1+ "";
+
+                /*Label lbl_fn = new Label();
                 lbl_fn.Text = "   First Name : " + fn;
-                form1.Controls.Add(lbl_fn);
+                form1.Controls.Add(lbl_fn);*/
 
-                Label lbl_ln = new Label();
+                firstn.Text = fn;
+
+                /*Label lbl_ln = new Label();
                 lbl_ln.Text = "   Last Name : " + ln;
-                form1.Controls.Add(lbl_ln);
+                form1.Controls.Add(lbl_ln);*/
 
-                Label lbl_pass = new Label();
+                lastn.Text = ln;
+
+                /*Label lbl_pass = new Label();
                 lbl_pass.Text = "   Password : " + pass;
-                form1.Controls.Add(lbl_pass);
+                form1.Controls.Add(lbl_pass);*/
 
-                Label lbl_e = new Label();
+                password.Text = pass;
+
+              /*  Label lbl_e = new Label();
                 lbl_e.Text = "   Email : " + email;
-                form1.Controls.Add(lbl_e);
+                form1.Controls.Add(lbl_e);*/
 
-                Label lbl_gender = new Label();
+                Email.Text = email;
+
+                /*Label lbl_gender = new Label();
                 lbl_gender.Text = "   Gender : "+ s;
-                form1.Controls.Add(lbl_gender);
+                form1.Controls.Add(lbl_gender);*/
 
-                Label lbl_add = new Label();
+                g.Text = s;
+
+              /*  Label lbl_add = new Label();
                 lbl_add.Text = "   Address : " + address;
-                form1.Controls.Add(lbl_add);
+                form1.Controls.Add(lbl_add);*/
 
-                Label lbl_gpa = new Label();
+                Address.Text = address;
+
+              /*  Label lbl_gpa = new Label();
                 lbl_gpa.Text = "   GPA : " + gpa +"<br></br>";
-                form1.Controls.Add(lbl_gpa);
+                form1.Controls.Add(lbl_gpa);*/
 
+                GPA.Text = gpa + "";
             }
 
     

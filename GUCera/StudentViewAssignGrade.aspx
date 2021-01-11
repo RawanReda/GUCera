@@ -8,11 +8,9 @@
 </head>
 <body>
        <form id="form1" runat="server">
-        <div>
-        </div>
-        Please enter the required info to check your assignment grade:<br />
-        <br />
-        <br />
+       <p style="font-size: medium; font-weight: bolder">&nbsp;</p>
+           <p style="font-size: medium; font-weight: bolder">Please enter the required info to check your assignment grade:</p>
+     
         Assignment Type:<asp:TextBox ID="Assigntype" runat="server"></asp:TextBox>
         <br />
         <br />
@@ -20,12 +18,14 @@
         <br />
         <br />
         Course ID:<asp:TextBox ID="CourseID" runat="server"></asp:TextBox>
+           <br />
         <br />
+         <p > <asp:Literal ID="Grade" runat="server"></asp:Literal></p> 
         <br />
         <asp:Button ID="CheckGrade" runat="server" Text="Check Grade" OnClick="CheckNow_Click" />
            <br />
            <br />
-        <asp:Literal ID="Grade" runat="server"></asp:Literal>
+      <p>  &nbsp;</p>
     </form>
 </body>
 </html>

@@ -18,6 +18,16 @@ namespace GUCera
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+     
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
+
+
+
             if (!string.IsNullOrEmpty(Request.QueryString["cid"]))
             {
 

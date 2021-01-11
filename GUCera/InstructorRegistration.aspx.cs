@@ -72,7 +72,7 @@ namespace GUCera
                         txt.Text = ("<p style='color:green'> Registration Successful, UserID:  " + uid + "</p>");
                         redirect.Text =  "<a href='Login.aspx'> Log-in</a>";
 
-                        //Session["field1"] = uid;
+                       
 
 
 

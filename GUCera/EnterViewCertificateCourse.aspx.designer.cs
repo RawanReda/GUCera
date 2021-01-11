@@ -11,7 +11,7 @@ namespace GUCera
 {
 
 
-    public partial class StudentViewAssignGrade
+    public partial class EnterViewCertificateCourse
     {
 
         /// <summary>
@@ -24,48 +24,30 @@ namespace GUCera
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Assigntype control.
+        /// course_Id0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Assigntype;
+        protected global::System.Web.UI.WebControls.TextBox course_Id0;
 
         /// <summary>
-        /// AssignNo control.
+        /// course_Id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AssignNo;
+        protected global::System.Web.UI.WebControls.Button course_Id;
 
         /// <summary>
-        /// CourseID control.
+        /// Literal1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CourseID;
-
-        /// <summary>
-        /// Grade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Grade;
-
-        /// <summary>
-        /// CheckGrade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CheckGrade;
+        protected global::System.Web.UI.WebControls.Literal Literal1;
     }
 }

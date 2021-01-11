@@ -23,6 +23,11 @@ namespace GUCera
             SqlCommand courses = new SqlCommand("availableCourses", conn);
             courses.CommandType = CommandType.StoredProcedure;
 
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             int i = 0;
 
             conn.Open();
@@ -34,17 +39,113 @@ namespace GUCera
                 string courseName = rdr.GetString(rdr.GetOrdinal("name"));
 
                 Label lbl_CourseName = new Label();
-                lbl_CourseName.Text = courseName;
+                lbl_CourseName.Text = "Course Name  :  " +courseName +"  ";
                 form1.Controls.Add(lbl_CourseName);
+
+                int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
+
+                Label lbl_id = new Label();
+                lbl_id.Text =  "Course Id  :  "+cid + "  ";
+                form1.Controls.Add(lbl_id);
+
+                string ch;
+
+                try
+                {
+                    ch = rdr.GetInt32(rdr.GetOrdinal("creditHours")) + "";
+
+                    Label lbl_ch = new Label();
+                    lbl_ch.Text = "CreditHours  :  " + ch + "  ";
+                    form1.Controls.Add(lbl_ch);
+                }
+                catch
+                {
+                    ch = "";
+                }
+                String cd;
+
+                try
+                {
+                     cd = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+
+                    Label lbl_cd = new Label();
+                    lbl_cd.Text = "courseDescription  :  " + cd + "  ";
+                    form1.Controls.Add(lbl_cd);
+                }
+                catch
+                {
+                    cd = "";
+                }
+
+                string p;
+                try
+                {
+                    p = rdr.GetDecimal(rdr.GetOrdinal("price")) + "";
+
+                    Label lbl_p = new Label();
+                    lbl_p.Text = "Price  :  " + p + "  ";
+                    form1.Controls.Add(lbl_p);
+                }
+                catch
+                {
+                    p = "";
+                }
+
+                string cc;
+
+                try
+                {
+
+                    cc = rdr.GetString(rdr.GetOrdinal("content")) + "";
+
+                    Label lbl_cc = new Label();
+                    lbl_cc.Text = "CourseContent  :  " + cc + "  ";
+                    form1.Controls.Add(lbl_cc);
+
+                }
+                catch
+                {
+                    cc = "";
+                }
+
+                int inst = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
+
+                Label lbl_inst = new Label();
+                lbl_inst.Text = "instructorId  :  " + inst +"<br/>  <br/> ";
+                form1.Controls.Add(lbl_inst);
+
+
+
+
+
+                /*   Label lbl = new Label();
+                   lbl.Text = "<a href='EnrollInACourse.aspx";
+                   form1.Controls.Add(lbl);*/
+
+                /*   using (Button b1 = new Button())
+                   {
+                       Response.Redirect("StudentAddFeedback.aspx", true);
+                   }*/
+
+                /* Button b1 = new Button();
+                 b1.UseSubmitBehavior = false;
+                 b1.PostBackUrl = "EnrollInACourse.aspx";
+                 b1.Text = "Enroll";*/
+
+                //    txt.Text = "<a href='EnrollInACourse.aspx";
+                txt.Text = "<a href='EnrollInACourse.aspx?sid=" + Session["field1"] + "'>Enroll</a>";
+
 
                 i = 1;
             }
             if (i == 0)
             {
-                Label lbl_error = new Label();
-                lbl_error.Text = "The Admin has not add any courses yet.";
-                form1.Controls.Add(lbl_error);
+              
+
+                txt1.Text = "<p style='color:red '> The Admin has not added any courses yet. </p>";
             }
-            }
+       
+        }
+
+        }
     }
-}

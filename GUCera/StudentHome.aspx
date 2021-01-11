@@ -9,48 +9,49 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Student Home page :<br />
+            <br />
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/StudentViewMyProfile.aspx">View My Profile</asp:HyperLink>
             <br />
             <br />
-            View my profile :<br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="myprofile" Text="my profile" />
-            <br />
-            <br />
-            Add Mobile Number: <br/>
+            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/AddMobileNumber.aspx">Add Mobile Number</asp:HyperLink>
             <br/>
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile"/>
+            <br/>
+            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AllCourses.aspx">View Courses And Enroll</asp:HyperLink>
             <br />
             <br />
-            All courses accepted by the admin :<br />
-            <br />
-            <asp:Button ID="Button2" runat="server" OnClick="allcourses" Text="all courses" />
+            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/AddCreditCard.aspx">Add Credit Card</asp:HyperLink>
             <br />
             <br />
-            <br />
-            Enroll in a course :<br />
-            <br />
-            <asp:Button ID="Button3" runat="server" OnClick="enroll" Text="enroll" />
+            <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/ViewMyPromoCodes.aspx">View PromoCodes</asp:HyperLink>
             <br />
             <br />
-            <br />
-            Add credit card :<br />
-            <br />
-            <asp:Button ID="Button4" runat="server" OnClick="creditcard" Text="credit card" />
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/EnterViewAssignCourse.aspx">View Course Assignment</asp:HyperLink>
             <br />
             <br />
-            <br />
-            View my promocodes :<br />
-            <br />
-            <asp:Button ID="Button5" runat="server" Onclick="promocodes" Text="promocodes" />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StudentSubmitAssignment.aspx">Submit Assignment</asp:HyperLink>
             <br />
             <br />
-            To view Assignments for a certain course, please enter the course ID:<br />
-            Course Id: <asp:TextBox ID="course_Id" runat="server" Height="16px" Width="40px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
-             
-            <br />
-            <asp:Button ID="ViewAssign1" runat="server" Onclick="ViewAssign" Text="Check Assignments" />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StudentViewAssignGrade.aspx">Check Grade</asp:HyperLink>
             <br />
             <br />
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/StudentAddFeedback.aspx">Add Course Feedback</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EnterViewCertificateCourse.aspx">View Course Certificate</asp:HyperLink>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <%--<br />
             To submit an Assignment, please enter the required info:<br />
 &nbsp;<asp:Button ID="SubmitAssign1" runat="server" Onclick="SubmitAssign" Text="Submit Assignment" />
 
@@ -67,8 +68,10 @@
             To check obtained Certificates for a specific course, please enter Course ID:<br />
             Course Id: <asp:TextBox ID="course_Id0" runat="server" Height="16px" Width="30px" OnTextChanged="course_Id_TextChanged1"></asp:TextBox>
              
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="CheckCertificates" runat="server" Onclick="Certificates" Text="Check Certificates" />
+             
+            <br />--%>
             <br />
             <br />
             <br />

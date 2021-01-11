@@ -20,6 +20,11 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
             /*create a new SQL command which takes as parameters the name of the stored procedure and
              the SQLconnection name*/
             SqlCommand promocode = new SqlCommand("viewPromocode", conn);
@@ -32,7 +37,7 @@ namespace GUCera
 
             //Executing the SQLCommand
 
-
+            
 
             int i = 0;
 
@@ -46,11 +51,37 @@ namespace GUCera
 
                 string code = rdr.GetString(rdr.GetOrdinal("code"));
 
-                DateTime isuueDate = rdr.GetDateTime(rdr.GetOrdinal("isuueDate"));
+                string isuueDate;
+                try
+                {
+                    isuueDate = rdr.GetDateTime(rdr.GetOrdinal("isuueDate")) + "";
+                }
+                catch
+                {
+                    isuueDate = "";
+                }
 
-                DateTime expiryDate = rdr.GetDateTime(rdr.GetOrdinal("expiryDate"));
+                string expiryDate;
 
-                decimal discount = rdr.GetDecimal(rdr.GetOrdinal("discount"));
+                try
+                {
+                     expiryDate = rdr.GetDateTime(rdr.GetOrdinal("expiryDate")) + "";
+                }
+                catch
+                {
+                    expiryDate = "";
+                }
+
+                string discount;
+
+                try
+                {
+                    discount = rdr.GetDecimal(rdr.GetOrdinal("discount")) + "";
+                }
+                catch
+                {
+                    discount = "";
+                }
 
 
 
@@ -58,17 +89,29 @@ namespace GUCera
                 lbl_code.Text = "Code : " + code;
                 form1.Controls.Add(lbl_code);
 
+               // c.Text = code;
+
                 Label lbl_id = new Label();
                 lbl_id.Text = "   IssueDate : " + isuueDate;
                 form1.Controls.Add(lbl_id);
+
+              //  issue.Text = isuueDate + "";
 
                 Label lbl_ed = new Label();
                 lbl_ed.Text = "   ExpiryDate : " + expiryDate;
                 form1.Controls.Add(lbl_ed);
 
+              //  ex.Text = expiryDate + "";
+
                 Label lbl_dis = new Label();
-                lbl_dis.Text = "   Discount : " + discount;
+                lbl_dis.Text = "   Discount : " + discount +"<br/>  <br/> ";
                 form1.Controls.Add(lbl_dis);
+
+                //   d.Text = discount + "";
+
+            /*    Label lbl = new Label();
+                lbl.Text = "                                                  ";
+                form1.Controls.Add(lbl);*/
 
 
                 i = 1;
@@ -77,9 +120,11 @@ namespace GUCera
             }
             if(i == 0)
             {
-                Label lbl_error = new Label();
+                /*Label lbl_error = new Label();
                 lbl_error.Text = "You don't have any promocodes.";
-                form1.Controls.Add(lbl_error);
+                form1.Controls.Add(lbl_error);*/
+
+                txt.Text = "<p style='color:red '> You don't have any promocodes. </p>";
             }
         }
     }

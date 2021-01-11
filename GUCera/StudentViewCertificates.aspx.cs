@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,13 @@ namespace GUCera
         {
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
+
+            
+
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
 
             SqlCommand cmd = new SqlCommand("viewCertificate", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -31,16 +39,16 @@ namespace GUCera
 
                     DateTime issueDate = rdr.GetDateTime(rdr.GetOrdinal("issueDate"));
 
-                    Label D1 = new Label();
-                    D1.Text = "Certificate issued on: " + issueDate;
-                    form1.Controls.Add(D1);
+                    
+                   NoEntries.Text = "<p style='color:green'  font-weight: bolder> Certificate issued on: " + issueDate;
+                   
 
 
                 }
             }
             else
             {
-                NoEntries.Text = "Student not enrolled in course or did not finish course.";
+                NoEntries.Text = "<p style='color:red'> Student not enrolled in course or did not finish course.";
             }
 
 

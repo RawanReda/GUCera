@@ -19,6 +19,13 @@ namespace GUCera
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
+
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
+
             SqlCommand cmd = new SqlCommand("ViewInstructorProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@instrId", (int)Session["field1"]));
@@ -264,18 +271,13 @@ namespace GUCera
                     card.CssClass = "cards";
 
 
-                    Button MyButtonU = new Button();
-                    MyButtonU.UseSubmitBehavior = false;
-                    MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
-                    MyButtonU.Text = "Update Course Content";
-
 
                     Literal l1 = new Literal();
 
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
                      "<div> Name: " + cname + "</div>" +
-                     "<div> Credit Hours: " + ch + "</div>" +
-                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
+                     "<div> Credit Hours: " + ch + "</div>"; 
+//                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
 
 
                     Label line = new Label();
@@ -283,7 +285,6 @@ namespace GUCera
 
 
                     card.Controls.Add(l1);
-                    card.Controls.Add(MyButtonU);
                     card.Controls.Add(line);
                     CourseList.Controls.Add(card);
 
@@ -296,9 +297,6 @@ namespace GUCera
 
         }
 
-        protected void addno_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

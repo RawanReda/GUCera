@@ -13,7 +13,19 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Get the information of the connection to the database
+            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
 
+            //create a new connection
+            SqlConnection conn = new SqlConnection(connStr);
+
+
+
+
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void CheckNow_Click(object sender, EventArgs e)
@@ -24,6 +36,12 @@ namespace GUCera
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
+
+
+            if (Assigntype.Text == "" || AssignNo.Text == "" || CourseID.Text == "") {
+                Grade.Text = "<p style='color:red '> Please fill in all fields </p>";
+            }
+            else { 
             string AssignT = Assigntype.Text;
             int AssignN = Int16.Parse(AssignNo.Text);
             int Course_ID = Int16.Parse(CourseID.Text);
@@ -38,12 +56,8 @@ namespace GUCera
             SqlParameter grade = cmd.Parameters.Add("@assignGrade ", SqlDbType.Int);
             grade.Direction = ParameterDirection.Output;
 
-            if (AssignT == "" || (AssignN).ToString() == "" || (Course_ID).ToString() == "")
-            {
-               Grade.Text = "<p style='color:red '> Please fill in all fields </p>";
-            }
-            else
-            {
+           
+           
                 try
                 {
                     conn.Open();
@@ -54,7 +68,7 @@ namespace GUCera
                         Grade.Text = ("<p style='color:green'>Assignment grade for the entered information: " + grade.Value);
                     }
                     else {
-                        Grade.Text = ("This assignment has not been graded yet. ");
+                        Grade.Text = ("<p style='color:red'>This assignment has not been graded yet. ");
                     }
 
 

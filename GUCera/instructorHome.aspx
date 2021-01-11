@@ -21,10 +21,10 @@
         <div >
             <asp:Label ID="Name1" runat="server" Text=""></asp:Label> <br>
         </div>
-		
+		<br>
         Add Mobile Number: 
 		<br>
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br>
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br><hr>
         <div>
 		<details>
         <summary>Add a Course</summary>

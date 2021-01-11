@@ -16,13 +16,15 @@
 &nbsp;<asp:TextBox ID="cid" runat="server" Height="16px"></asp:TextBox>
             <br />
             <br />
-            The Admin ID :<br />
+            The Instructor ID :<br />
             <br />
             <asp:TextBox ID="instrid" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Enroll" Text="Enroll" />
             <br />
+            <br />
+            <asp:Literal ID="txt" runat="server"></asp:Literal>
             <br />
             <br />
         </div>

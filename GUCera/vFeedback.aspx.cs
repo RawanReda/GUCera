@@ -16,6 +16,13 @@ namespace GUCera
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["field1"] == null)
+            {
+                Response.Redirect("Error.aspx");
+            }
+
+
             if (!string.IsNullOrEmpty(Request.QueryString["cid"]))
             {
 
@@ -38,24 +45,27 @@ namespace GUCera
                 cmd.Parameters.Add(new SqlParameter("@cid", courseID));
 
                 conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-                if (rdr.Read())
-                {
+                if (!rdr.HasRows) { Response.Write("No Feedback added for this course yet"); }
+                else { 
+                while (rdr.Read()) { 
                     int feedbackN = rdr.GetInt32(rdr.GetOrdinal("number"));
                     string comment = rdr.GetString(rdr.GetOrdinal("comment"));
                     int likes = rdr.GetInt32(rdr.GetOrdinal("numberOfLikes"));
-                   
+
+                    SqlConnection conn2 = new SqlConnection(connStr);
 
                     //before we output the feedback details to the form, we need the course name by using a SQL query
-                    cmd = new SqlCommand("select * from Course where id=" + courseID, conn);
-                    cmd.CommandType = CommandType.Text;
-                    conn.Close();
-                    conn.Open();
-                    rdr = cmd.ExecuteReader(CommandBehavior.SingleRow);
-                    rdr.Read();
-                    String courseName = rdr.GetString(rdr.GetOrdinal("name"));
-                    conn.Close();
+                    SqlCommand cmd2 = new SqlCommand("select * from Course where id=" + courseID, conn2);
+                    cmd2.CommandType = CommandType.Text;
+
+                    conn2.Open();
+                    SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
+                    rdr2.Read();
+                    String courseName = rdr2.GetString(rdr2.GetOrdinal("name"));
+                    conn2.Close();
+                    
 
                     title.Text = "<h2>"+ courseName + "</h2>";
 
@@ -73,12 +83,9 @@ namespace GUCera
 
                     form1.Controls.Add(fb);
 
-
+                    
                 }
-                else
-                {
-                    //if the row has not been found then no course Feedback can be found matching this course id and this userID
-                    Response.Write("No Feedback Found.");
+
                 }
 
             }
