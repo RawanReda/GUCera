@@ -12,7 +12,7 @@
         <div>
             <p>
         <asp:Literal ID="SubmitFeedbackMssg" runat="server"></asp:Literal></p>
-       <p style="font-weight: bolder">Please enter the required info to submit your assignment</p>
+       <p style="font-weight: bolder">Please enter the required information to submit course feedback:</p>
             Course ID:<asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
         <br />
             Comment:<asp:TextBox ID="comment" runat="server"></asp:TextBox>

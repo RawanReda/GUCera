@@ -12,7 +12,7 @@
       
         <asp:Literal ID="SubmitAssignMssg" runat="server"></asp:Literal>
         
-        <p style="font-weight: bolder"> Please enter the required info to submit your assignment</p>
+        <p style="font-weight: bolder"> Please enter the required information to submit your assignment:</p>
       
         Assignment Type:<asp:TextBox ID="Assigntype" runat="server"></asp:TextBox>
         <br />
