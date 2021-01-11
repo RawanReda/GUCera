@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GUCera
@@ -111,12 +107,14 @@ namespace GUCera
                 int inst = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
 
                 Label lbl_inst = new Label();
-                lbl_inst.Text = "instructorId  :  " + inst +"<br/>  <br/> ";
+                lbl_inst.Text = "instructorId  :  " + inst +"  ";
                 form1.Controls.Add(lbl_inst);
 
+                ButtonCreate_Click();
 
-
-
+                Label lbl = new Label();
+                lbl.Text =  "<br/>  <br/> ";
+                form1.Controls.Add(lbl);
 
                 /*   Label lbl = new Label();
                    lbl.Text = "<a href='EnrollInACourse.aspx";
@@ -133,7 +131,7 @@ namespace GUCera
                  b1.Text = "Enroll";*/
 
                 //    txt.Text = "<a href='EnrollInACourse.aspx";
-                txt.Text = "<a href='EnrollInACourse.aspx?sid=" + Session["field1"] + "'>Enroll</a>";
+              //  txt.Text = "<a href='EnrollInACourse.aspx?sid=" + Session["field1"] + "'>Enroll</a>";
 
 
                 i = 1;
@@ -147,5 +145,34 @@ namespace GUCera
        
         }
 
+        private void ButtonCreate_Click()
+        {
+            Button buttonDynamic = new Button
+            {
+                Text = "Enroll",
+                Visible = true,
+            };
+
+            buttonDynamic.Click += ButtonDynamic_Click;
+            //        buttonDynamic.Location = new Point(12, 12);
+
+          //  this.Controls.Add(buttonDynamic);
+            form1.Controls.Add(buttonDynamic);
         }
+
+        private void ButtonCreate_Click(object sender, EventArgs e)
+        {
+            ((Button)sender).Enabled = false;
+
+            
+        }
+
+        private void ButtonDynamic_Click(object sender, EventArgs e)
+        {
+            //  MessageBox.Show("Click event handler!", "Message Box", MessageBoxButtons.OK);
+            Response.Redirect("EnrollInACourse.aspx", true);
+        }
+
+      
     }
+}
