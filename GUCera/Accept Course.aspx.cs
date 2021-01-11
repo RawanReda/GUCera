@@ -45,18 +45,32 @@ namespace GUCera
             conn.Close();
 
             int aid = (int)Session["field1"];
-           
+            //int success =2 ;
 
-            SqlCommand adminAcceptProc = new SqlCommand("AdminAcceptRejectCourse", conn);
+            SqlCommand adminAcceptProc = new SqlCommand("AdminAccRejExt", conn);
             adminAcceptProc.CommandType = CommandType.StoredProcedure;
 
             adminAcceptProc.Parameters.Add("@adminid", aid);
             adminAcceptProc.Parameters.Add("@courseId", cid);
+            //adminAcceptProc.Parameters.Add("@success", success);
+            SqlParameter success = adminAcceptProc.Parameters.Add("@success", SqlDbType.Int);
+            success.Direction = ParameterDirection.Output;
 
             conn.Open();
             adminAcceptProc.ExecuteNonQuery();
             conn.Close();
-            Label1.Text = "You accepted a course";
+            
+            if (success.Value.ToString().Equals("1"))
+            {
+                Label1.Text = "You accepted a course";
+            }
+            else
+            {
+                if (success.Value.ToString().Equals("0"))
+                {
+                    Label1.Text = "This course is already accepted";
+                }
+            }
             //Response.Write("You accepted a course");
             // Response.Redirect("Admin Page.aspx", true);
 

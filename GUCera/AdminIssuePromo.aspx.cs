@@ -21,21 +21,27 @@ namespace GUCera
         {
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
+            if (stid.Text.Equals("") || codeB.Text.Equals(""))
+            {
+                Label1.Text = "Please enter all the required fields";
+            }
+            else //lessa makhalastehash
+            {
+                SqlCommand issuePromo = new SqlCommand("AdminIssuePromocodeToStudent", conn);
+                issuePromo.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand issuePromo = new SqlCommand("AdminIssuePromocodeToStudent", conn);
-            issuePromo.CommandType = CommandType.StoredProcedure;
+                int sid = Int16.Parse(stid.Text);
+                string code = codeB.Text;
 
-            int sid = Int16.Parse(stid.Text);
-            string code = codeB.Text;
+                issuePromo.Parameters.Add("@sid", sid);
+                issuePromo.Parameters.Add("@pid", code);
 
-            issuePromo.Parameters.Add("@sid", sid);
-            issuePromo.Parameters.Add("@pid", code);
-
-            conn.Open();
-            issuePromo.ExecuteNonQuery();
-            conn.Close();
-            Label1.Text = "You issued a promocode";
-            //Response.Write("You issued a promocode");
+                conn.Open();
+                issuePromo.ExecuteNonQuery();
+                conn.Close();
+                Label1.Text = "You issued a promocode";
+                //Response.Write("You issued a promocode");
+            }
         }
     }
 }

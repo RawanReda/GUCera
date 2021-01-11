@@ -23,28 +23,53 @@ namespace GUCera
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
 
-            SqlCommand createPromo = new SqlCommand("AdminCreatePromocode", conn);
+            SqlCommand createPromo = new SqlCommand("AdminCreatePromoExt", conn);
             createPromo.CommandType = CommandType.StoredProcedure;
-
-            string code = CodeB.Text;
-            DateTime issueDate = DateTime.Parse(issueDateB.Text);
-            DateTime expiryDate = DateTime.Parse(expiryDateB.Text);
-            double discount = Double.Parse(discountB.Text);
-            int aid = (int)Session["field1"];
-
-            createPromo.Parameters.Add("@code", code);
-            createPromo.Parameters.Add("@isuueDate", issueDate);
-            createPromo.Parameters.Add("@expiryDate", expiryDate);
-            createPromo.Parameters.Add("@discount", discount);
-            createPromo.Parameters.Add("@adminId", aid);
-
-            conn.Open();
-            createPromo.ExecuteNonQuery();
-            conn.Close();
-            Label1.Text = "You created a promocode";
-            //Response.Write("You created a promocode");
+            if (CodeB.Text.Equals("") || issueDateB.Text.Equals("") || expiryDateB.Text.Equals("") || discountB.Text.Equals(""))
+            {
+                Label1.Text = "Please enter all required fields";
+            }
+            else
+            {
+                string code = CodeB.Text;
+                DateTime issueDate = DateTime.Parse(issueDateB.Text);
+                DateTime expiryDate = DateTime.Parse(expiryDateB.Text);
+                double discount = Double.Parse(discountB.Text);
+                int aid = (int)Session["field1"];
 
 
+                createPromo.Parameters.Add("@code", code);
+                createPromo.Parameters.Add("@isuueDate", issueDate);
+                createPromo.Parameters.Add("@expiryDate", expiryDate);
+                createPromo.Parameters.Add("@discount", discount);
+                createPromo.Parameters.Add("@adminId", aid);
+
+                SqlParameter success = createPromo.Parameters.Add("@success", SqlDbType.Int);
+                success.Direction = ParameterDirection.Output;
+
+
+                conn.Open();
+                createPromo.ExecuteNonQuery();
+                conn.Close();
+
+               
+                    if (success.Value.ToString().Equals("1"))
+                    {
+                        Label1.Text = "This promocode already exists";
+                    }
+                    else
+                    {
+                        if (success.Value.ToString().Equals("2"))
+                        {
+                            Label1.Text = "You successfully created a promocode";
+                        }
+                    }
+                
+
+                //Response.Write("You created a promocode");
+
+
+            }
         }
     }
 }
