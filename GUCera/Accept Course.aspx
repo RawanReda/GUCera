@@ -18,6 +18,9 @@
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin Page.aspx">Back to home page</asp:HyperLink>
         </div>
     </form>
 </body>

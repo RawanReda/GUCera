@@ -25,9 +25,9 @@ namespace GUCera
             {
                 Label1.Text = "Please enter all the required fields";
             }
-            else //lessa makhalastehash
+            else //lessa makhalastehashh
             {
-                SqlCommand issuePromo = new SqlCommand("AdminIssuePromocodeToStudent", conn);
+                SqlCommand issuePromo = new SqlCommand("adminIssueExt", conn);
                 issuePromo.CommandType = CommandType.StoredProcedure;
 
                 int sid = Int16.Parse(stid.Text);
@@ -35,11 +35,38 @@ namespace GUCera
 
                 issuePromo.Parameters.Add("@sid", sid);
                 issuePromo.Parameters.Add("@pid", code);
+                SqlParameter success = issuePromo.Parameters.Add("@success", SqlDbType.Int);
+                success.Direction = ParameterDirection.Output;
 
                 conn.Open();
                 issuePromo.ExecuteNonQuery();
                 conn.Close();
-                Label1.Text = "You issued a promocode";
+                if(success.Value.ToString().Equals("0"))
+                {
+                    Label1.Text = "This promocode doesn't exist";
+                }
+                else
+                {
+                    if (success.Value.ToString().Equals("1"))
+                    {
+                        Label1.Text = "This student id doesn't exist";
+                    }
+                    else
+                    {
+                        if (success.Value.ToString().Equals("2"))
+                        {
+                            Label1.Text = "This student already has this promocode";
+                        }
+                        else
+                        {
+                            if (success.Value.ToString().Equals("3"))
+                            {
+                                Label1.Text = "You successfully issued a promocode to a student";
+                            }
+                        }
+                    }
+                }
+                
                 //Response.Write("You issued a promocode");
             }
         }

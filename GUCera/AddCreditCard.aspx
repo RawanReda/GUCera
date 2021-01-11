@@ -11,6 +11,8 @@
         <div>
             Please Enter Credit Card Details :<br />
             <br />
+            <asp:Literal ID="error" runat="server"></asp:Literal>
+            <br />
             <br />
             Number :<br />
             <br />
