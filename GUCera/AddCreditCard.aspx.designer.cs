@@ -33,6 +33,15 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.TextBox Number;
 
         /// <summary>
+        /// no control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal no;
+
+        /// <summary>
         /// CHName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace GUCera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CHName;
+
+        /// <summary>
+        /// name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal name;
 
         /// <summary>
         /// EXDate control.
@@ -67,6 +85,15 @@ namespace GUCera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CVV;
+
+        /// <summary>
+        /// c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal c;
 
         /// <summary>
         /// Button1 control.

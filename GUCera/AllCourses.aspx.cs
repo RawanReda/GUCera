@@ -48,29 +48,65 @@ namespace GUCera
                 lbl_id.Text =  "Course Id  :  "+cid + "  ";
                 form1.Controls.Add(lbl_id);
 
-                int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
+                string ch;
 
-                Label lbl_ch = new Label();
-                lbl_ch.Text = "CreditHours  :  "+ch + "  ";
-                form1.Controls.Add(lbl_ch);
+                try
+                {
+                    ch = rdr.GetInt32(rdr.GetOrdinal("creditHours")) + "";
 
-                String cd = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+                    Label lbl_ch = new Label();
+                    lbl_ch.Text = "CreditHours  :  " + ch + "  ";
+                    form1.Controls.Add(lbl_ch);
+                }
+                catch
+                {
+                    ch = "";
+                }
+                String cd;
 
-                Label lbl_cd = new Label();
-                lbl_cd.Text = "courseDescription  :  " + cd + "  ";
-                form1.Controls.Add(lbl_cd);
+                try
+                {
+                     cd = rdr.GetString(rdr.GetOrdinal("courseDescription"));
 
-                decimal p = rdr.GetDecimal(rdr.GetOrdinal("price"));
+                    Label lbl_cd = new Label();
+                    lbl_cd.Text = "courseDescription  :  " + cd + "  ";
+                    form1.Controls.Add(lbl_cd);
+                }
+                catch
+                {
+                    cd = "";
+                }
 
-                Label lbl_p = new Label();
-                lbl_p.Text = "Price  :  " + p + "  ";
-                form1.Controls.Add(lbl_p);
+                string p;
+                try
+                {
+                    p = rdr.GetDecimal(rdr.GetOrdinal("price")) + "";
 
-                String cc = rdr.GetString(rdr.GetOrdinal("content"));
+                    Label lbl_p = new Label();
+                    lbl_p.Text = "Price  :  " + p + "  ";
+                    form1.Controls.Add(lbl_p);
+                }
+                catch
+                {
+                    p = "";
+                }
 
-                Label lbl_cc = new Label();
-                lbl_cc.Text = "CourseContent  :  " + cc + "  ";
-                form1.Controls.Add(lbl_cc);
+                string cc;
+
+                try
+                {
+
+                    cc = rdr.GetString(rdr.GetOrdinal("content")) + "";
+
+                    Label lbl_cc = new Label();
+                    lbl_cc.Text = "CourseContent  :  " + cc + "  ";
+                    form1.Controls.Add(lbl_cc);
+
+                }
+                catch
+                {
+                    cc = "";
+                }
 
                 int inst = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
 

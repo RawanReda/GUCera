@@ -51,11 +51,37 @@ namespace GUCera
 
                 string code = rdr.GetString(rdr.GetOrdinal("code"));
 
-                DateTime isuueDate = rdr.GetDateTime(rdr.GetOrdinal("isuueDate"));
+                string isuueDate;
+                try
+                {
+                    isuueDate = rdr.GetDateTime(rdr.GetOrdinal("isuueDate")) + "";
+                }
+                catch
+                {
+                    isuueDate = "";
+                }
 
-                DateTime expiryDate = rdr.GetDateTime(rdr.GetOrdinal("expiryDate"));
+                string expiryDate;
 
-                decimal discount = rdr.GetDecimal(rdr.GetOrdinal("discount"));
+                try
+                {
+                     expiryDate = rdr.GetDateTime(rdr.GetOrdinal("expiryDate")) + "";
+                }
+                catch
+                {
+                    expiryDate = "";
+                }
+
+                string discount;
+
+                try
+                {
+                    discount = rdr.GetDecimal(rdr.GetOrdinal("discount")) + "";
+                }
+                catch
+                {
+                    discount = "";
+                }
 
 
 

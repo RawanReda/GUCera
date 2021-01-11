@@ -74,7 +74,7 @@ namespace GUCera
                         s = "M";
                 }
 
-            //    long g1 = rdr.GetByte(gender);
+                //    long g1 = rdr.GetByte(gender);
                 /*  string g2 = g1.ToString();
                 string gender = Encoding.UTF8.GetString(g1);
                     if (gender.Equals(1))
@@ -86,10 +86,28 @@ namespace GUCera
                         g2 = "M";
                     }
     */
-                string email = rdr.GetString(rdr.GetOrdinal("email"));
 
-               string address = rdr.GetString(rdr.GetOrdinal("address"));
+                string email;
 
+                try
+                {
+                    email = rdr.GetString(rdr.GetOrdinal("email"));
+                }
+                catch
+                {
+                    email = "";
+                }
+
+                string address;
+
+                try
+                {
+                    address = rdr.GetString(rdr.GetOrdinal("address"));
+                }
+                catch
+                {
+                    address = "";
+                }
                 /*Label lbl_id1 = new Label();
                 lbl_id1.Text = "ID : " + id1;
                 form1.Controls.Add(lbl_id1);*/

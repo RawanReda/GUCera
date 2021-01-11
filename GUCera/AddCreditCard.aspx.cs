@@ -42,11 +42,24 @@ namespace GUCera
             }
             else { 
             //   int id = Int16.Parse(ID.Text);
-            string number = Number.Text;
-            string cardholdername = CHName.Text;
+
+               
+                if(Number.Text.Length > 15)
+                {
+                    no.Text = "<p style='color:red '> Please enter the number less than 15, otherwise it will be truncated. </p>";
+                }
+
+                if (CHName.Text.Length > 16)
+                {
+                    name.Text = "<p style='color:red '> Please enter the name less than 16, otherwise it will be truncated. </p>";
+                }
+
+                string number = Number.Text;
+                string cardholdername = CHName.Text;
                 SqlCommand addcd = new SqlCommand("addCreditCard", conn);
                 addcd.CommandType = CommandType.StoredProcedure;
                 int j = 0;
+                int x = 0;
                 try
                 {
                     DateTime expirydate = DateTime.Parse(EXDate.Text);
@@ -57,14 +70,23 @@ namespace GUCera
                     j = 1;
                     credit.Text = "<p style='color:red '> Please Enter the ExpiryDate in this format Y-M-D. </p>";
                 }
-            int cvv = Int16.Parse(CVV.Text);
+
+                try
+                {
+
+                    int cvv = Int16.Parse(CVV.Text);
+                    addcd.Parameters.Add(new SqlParameter("@cvv", cvv));
+                }
+                catch
+                {
+                    x = 1;
+                    c.Text = "<p style='color:red '> Please Enter 3 numbers only. </p>";
+                }
 
 
-           
 
+                addcd.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
             
-            addcd.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
-            addcd.Parameters.Add(new SqlParameter("@cvv", cvv));
             addcd.Parameters.Add(new SqlParameter("@number", number));
             addcd.Parameters.Add(new SqlParameter("@cardHolderName", cardholdername));
 
@@ -100,7 +122,10 @@ namespace GUCera
                     /* Label lbl_error = new Label();
                      lbl_error.Text = "Credit card details are added";
                      form1.Controls.Add(lbl_error);*/
+                    no.Text = "";
+                    name.Text = "";
                     credit.Text = "";
+                    c.Text = "";
                     txt.Text = "<p style='color:green '> Your credit card details has been added. </p>";
                 }
                     catch
@@ -110,9 +135,10 @@ namespace GUCera
                     /* Label lbl_error = new Label();
                      lbl_error.Text = "You are already added this credit card";
                      form1.Controls.Add(lbl_error);*/
-                    if (j == 0)
+                    if (j == 0 && x ==0)
                     {
                         credit.Text = "";
+                        c.Text = "";
                         txt.Text = "<p style='color:red '> This credit card has been added before. </p>";
                         
                     }
