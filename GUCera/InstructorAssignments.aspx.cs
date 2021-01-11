@@ -109,12 +109,14 @@ namespace GUCera
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    msg.Text = "<p style='color:green '> Assignment#"+ num + "of type: "+type+" added Successfully! </p>";
+                    msg.Text = "<p style='color:green '> Assignment#"+ num + " of type: "+type+" added Successfully! </p>";
 
 
                 }
                 catch (SqlException ex)
                 {
+
+                    if (ex.Message.Contains("duplicate key")){msg.Text = "<p style='color:red'> Error: This assignment is already added for this course</p>"; }
                     msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 

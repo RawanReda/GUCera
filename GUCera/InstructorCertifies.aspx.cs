@@ -72,7 +72,6 @@ namespace GUCera
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
- //               msg.Text = "<p style='color: green'> Certified! </p>";
 
 
                 SqlCommand cmd2 = new SqlCommand("SELECT * FROM StudentCertifyCourse WHERE (sid =" + student +" AND cid ="+ courseID +")", conn);
@@ -93,6 +92,7 @@ namespace GUCera
                 conn.Close();
             }
             catch(SqlException ex) {
+
                     msg.Text = ("<p style='color:red'> Already Certified  </p>");
 
                 }

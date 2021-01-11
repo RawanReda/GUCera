@@ -42,7 +42,7 @@
 			            <td> <asp:TextBox ID="chours" runat="server"></asp:TextBox><br /></td>
 		            </tr>
 		            <tr>
-			            <td><asp:Label ID="Label3" runat="server" Text="Price:"></asp:Label> </td>
+			            <td><asp:Label ID="Label3" runat="server" Text="Price:" type="number"></asp:Label> </td>
 			            <td> <asp:TextBox ID="price" runat="server"></asp:TextBox> </td>
 		            </tr> 
                      <tr>
