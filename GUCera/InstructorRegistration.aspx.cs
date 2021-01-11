@@ -82,6 +82,8 @@ namespace GUCera
                 }
                 catch (SqlException ex)
                 {
+                    if (ex.Message.Contains("duplicate key")) { txt.Text = "<p style='color:red'> This email is already used</p>"; } 
+                    else
                     txt.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 

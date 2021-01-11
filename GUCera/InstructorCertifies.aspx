@@ -13,7 +13,7 @@
                 Issue a Certificate to a Student taking this course</h2>
 
             <p>Student ID </p>
-            <asp:TextBox ID="inputID" runat="server"></asp:TextBox>
+            <asp:TextBox ID="inputID" runat="server" required></asp:TextBox>
             <br><br>
                         <asp:Literal ID="msg" runat="server"></asp:Literal>
 

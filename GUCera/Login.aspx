@@ -17,12 +17,12 @@
 	            <tbody>
 		            <tr>
 			            <td><asp:Label ID="usrID" runat="server" Text="ID:"  ></asp:Label>  </td>
-			            <td> <asp:TextBox ID="ID" runat="server" type="number"></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="ID" runat="server" type="number" ></asp:TextBox> <br /> </td>
 		            </tr>
 					
 		            <tr>
 			            <td> <asp:Label ID="lbl_password" runat="server" Text="Password:"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="Password" runat="server" TextMode="Password"  ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="Password" runat="server" TextMode="Password" ></asp:TextBox><br /></td>
 		            </tr>
 		       	
 		            <tr>

@@ -29,7 +29,7 @@
 		            
 					<tr>
 			            <td>Number</td>
-			            <td> <asp:TextBox ID="ano" runat="server"  type="number" ></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="ano" runat="server"  type="number"  ></asp:TextBox> <br /> </td>
 		            </tr>
 		            <tr>
 			            <td> Type</td>
@@ -38,12 +38,12 @@
 					
 					 <tr>
 			            <td> <asp:Label ID="lbl_grade" runat="server" Text="Full Grade"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="full" runat="server" type="number" ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="full" runat="server" type="number"  ></asp:TextBox><br /></td>
 		            </tr>
 					
 					<tr>
 			            <td> Weight</td>
-			            <td>   <asp:TextBox ID="wgt" runat="server" MaxLength="3" type="number"></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="wgt" runat="server" MaxLength="3" ></asp:TextBox><br /></td>
 		            </tr>
 					
 					<tr>
@@ -54,7 +54,7 @@
 		            </tr>
 					
 					<tr>
-			            <td> <asp:Label ID="lbl_content" runat="server" Text="Content"  ></asp:Label> </td>
+			            <td> <asp:Label ID="lbl_content" runat="server" Text="Content"   ></asp:Label> </td>
 			            <td>   <asp:TextBox ID="cnt" runat="server" Height="104px" Width="356px" TextMode="MultiLine" Rows="10" ></asp:TextBox><br /></td>
 		            </tr>
 					

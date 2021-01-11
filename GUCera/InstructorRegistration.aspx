@@ -19,28 +19,28 @@
 	            <tbody>
 		            <tr>
 			            <td><asp:Label ID="Label1" runat="server" Text="First Name:"  ></asp:Label>  </td>
-			            <td> <asp:TextBox ID="firstname" runat="server"   ></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="firstname" runat="server"  required ></asp:TextBox> <br /> </td>
 		            </tr>
 					<tr>
 			            <td><asp:Label ID="Label2" runat="server" Text="Last Name:"  ></asp:Label>  </td>
-			            <td> <asp:TextBox ID="lastname" runat="server"   ></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="lastname" runat="server" required  ></asp:TextBox> <br /> </td>
 		            </tr>
 		            <tr>
 			            <td> <asp:Label ID="lbl_password" runat="server" Text="Password:"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="password" runat="server" TextMode="Password"  ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="password" runat="server" TextMode="Password" required ></asp:TextBox><br /></td>
 		            </tr>
 		            <tr>
 			            <td><asp:Label ID="lbl_email" runat="server" Text="Email:"  ></asp:Label> </td>
-			            <td> <asp:TextBox ID="email" runat="server"   ></asp:TextBox> <br /></td>
+			            <td> <asp:TextBox ID="email" runat="server" required  ></asp:TextBox> <br /></td>
 		            </tr>
 		            <tr>
 			            <td><asp:Label ID="lbl_g" runat="server" Text="Gender(M/F):"  ></asp:Label></td>
-			            <td><asp:TextBox ID="gender" runat="server"></asp:TextBox> <br /></td>
+			            <td><asp:TextBox ID="gender" runat="server" required></asp:TextBox> <br /></td>
 						
 		            </tr>
 					<tr>
 			            <td><asp:Label ID="lbl_add" runat="server" Text="Address:"  ></asp:Label> </td>
-			            <td> <asp:TextBox ID="address" runat="server"  ></asp:TextBox> <br /></td>
+			            <td> <asp:TextBox ID="address" runat="server" required ></asp:TextBox> <br /></td>
 		            </tr>
 					
 					

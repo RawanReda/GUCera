@@ -116,7 +116,8 @@ namespace GUCera
                 catch (SqlException ex)
                 {
 
-                    if (ex.Message.Contains("duplicate key")){msg.Text = "<p style='color:red'> Error: This assignment is already added for this course</p>"; }
+                    if (ex.Message.Contains("duplicate key")){msg.Text = "<p style='color:red'> This assignment is already added for this course</p>"; }
+                    else
                     msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 
@@ -148,13 +149,14 @@ namespace GUCera
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-            //if (!rdr.Read())
-            //{
-            //    Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
-            //}
-            //else { 
+            if (!rdr.HasRows)
+            {
+                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
+            }
+           
+               
 
-            while (rdr.Read())
+                while (rdr.Read())
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
                 int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
@@ -202,18 +204,9 @@ namespace GUCera
             }
             
 
-
-
-
-
-
         }
 
-        //protected void editGrade(object sender, EventArgs e)
-        //{
-        //    Response.Write("Edit");
-
-        //}
+ 
 
     }
 }

@@ -51,9 +51,7 @@ namespace GUCera
             //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
             SqlCommand cmd = new SqlCommand("InstructorIssueCertificateToStudent", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            if (inputID.Text == "") { msg.Text = "<p style = 'color:red' > Please Enter a StudentID </p>"; }
-            else
-            {
+         
                 int student =Int32.Parse(inputID.Text);
 
             int id = (int)Session["field1"];
@@ -87,23 +85,32 @@ namespace GUCera
                 }
                 else
                 {
-                    msg.Text = " <p style ='color: Red'> Can't certify this Student because he/she hasn't taken or completed the course </p> ";
-                }
-                conn.Close();
+                        conn.Close();
+                        SqlCommand cmd3 = new SqlCommand("SELECT * FROM Student WHERE id=" + student, conn);
+
+                        conn.Open();
+                        SqlDataReader rdr2 = cmd3.ExecuteReader(CommandBehavior.SingleRow);
+
+                        if (rdr2.HasRows) {
+                             msg.Text = " <p style ='color: Red'> Can't certify this Student because he/she hasn't taken or completed the course </p> ";
+
+                        }
+
+                        else
+                        msg.Text = " <p style ='color: Red'> This is not a student</p> ";
+                    }
+                    conn.Close();
             }
             catch(SqlException ex) {
-
+                    if (ex.Message.Contains("duplicate")) { 
                     msg.Text = ("<p style='color:red'> Already Certified  </p>");
+                    }
+                    else msg.Text = "<p style='color:red'>"+ ex.Message+ "</p>";
 
                 }
 
             }
-
-
-
-
 
 
         }
     }
-}

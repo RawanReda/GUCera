@@ -55,6 +55,7 @@ namespace GUCera
 
         protected void addCourse(object sender, EventArgs e)
         {
+            title.Text = "";
             //Get the information of the connection to the database
             int usr = (int)Session["field1"];
             string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
