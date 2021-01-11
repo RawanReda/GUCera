@@ -40,8 +40,8 @@ namespace GUCera
             {
                 txt.Text = "<p style='color:red '> Please enter all required fields. </p>";
             }
-            else { 
-            //   int id = Int16.Parse(ID.Text);
+            else {
+                //   int id = Int16.Parse(ID.Text);
 
                
                 if(Number.Text.Length > 15)
@@ -86,7 +86,7 @@ namespace GUCera
 
 
                 addcd.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
-            
+                
             addcd.Parameters.Add(new SqlParameter("@number", number));
             addcd.Parameters.Add(new SqlParameter("@cardHolderName", cardholdername));
 
@@ -112,21 +112,22 @@ namespace GUCera
 
                     try
                     {
+                    if (no.Text != "" || name.Text != "")
+                    {
                         conn.Open();
                         addcd.ExecuteNonQuery();
-
                         conn.Close();
-
-
-
+                        credit.Text = "";
+                        c.Text = "";
+                        txt.Text = "<p style='color:green '> Your credit card details has been added. </p>";
+                    }
+                    
                     /* Label lbl_error = new Label();
                      lbl_error.Text = "Credit card details are added";
                      form1.Controls.Add(lbl_error);*/
-                    no.Text = "";
-                    name.Text = "";
-                    credit.Text = "";
-                    c.Text = "";
-                    txt.Text = "<p style='color:green '> Your credit card details has been added. </p>";
+                 //   no.Text = "";
+                  //  name.Text = "";
+                   
                 }
                     catch
                     {
@@ -143,6 +144,8 @@ namespace GUCera
                         
                     }
                 }
+             
+
                 }
             
 
