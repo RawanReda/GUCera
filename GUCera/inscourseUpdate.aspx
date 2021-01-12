@@ -18,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style='text-align:center'>
+        <div >
             <asp:Literal ID="redir" runat="server"></asp:Literal>
             <asp:Literal ID="title" runat="server"></asp:Literal>
 
@@ -33,7 +33,7 @@
             <asp:Button ID="Button2" runat="server" Text="Confirm" Onclick="updateDescription" />
 
             </div>
-
+            <hr>
 
             <div>
             <h4>Update Content</h4>

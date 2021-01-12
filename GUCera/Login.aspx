@@ -5,10 +5,29 @@
 <%--<html xmlns="http://www.w3.org/1999/xhtml">--%>
 <head runat="server">
     <title>Log-in</title>
+
+	<style>
+
+	    .logincard {
+	    
+		
+			Position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -80%);
+			border: 5px solid lightgray;
+			padding: 10px;
+			background-color: lightgrey;
+			/* box-shadow: 0.25px 0.5px; */
+			box-shadow: 7px 10px 11px 0px rgb(139 137 137 / 15%);
+		}
+
+
+	</style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="logincard">
             <h3>Welcome to our GUCera website :) </h3>
             
            <p style="font-weight: bolder">   Please Log In </p>
