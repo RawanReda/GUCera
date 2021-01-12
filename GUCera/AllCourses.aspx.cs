@@ -38,13 +38,13 @@ namespace GUCera
                 lbl_CourseName.Text = "Course Name  :  " +courseName +"  ";
                 form1.Controls.Add(lbl_CourseName);
 
-                int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
+               /* int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
 
                 Label lbl_id = new Label();
                 lbl_id.Text =  "Course Id  :  "+cid + "  ";
-                form1.Controls.Add(lbl_id);
+                form1.Controls.Add(lbl_id);*/
 
-                string ch;
+              /*  string ch;
 
                 try
                 {
@@ -57,7 +57,7 @@ namespace GUCera
                 catch
                 {
                     ch = "";
-                }
+                }*/
                 String cd;
 
                 try
@@ -65,7 +65,7 @@ namespace GUCera
                      cd = rdr.GetString(rdr.GetOrdinal("courseDescription"));
 
                     Label lbl_cd = new Label();
-                    lbl_cd.Text = "courseDescription  :  " + cd + "  ";
+                    lbl_cd.Text = "Course Description  :  " + cd + "  ";
                     form1.Controls.Add(lbl_cd);
                 }
                 catch
@@ -79,14 +79,14 @@ namespace GUCera
                     p = rdr.GetDecimal(rdr.GetOrdinal("price")) + "";
 
                     Label lbl_p = new Label();
-                    lbl_p.Text = "Price  :  " + p + "  ";
+                    lbl_p.Text = "Price  :  " + p + "       ";
                     form1.Controls.Add(lbl_p);
                 }
                 catch
                 {
                     p = "";
                 }
-
+/*
                 string cc;
 
                 try
@@ -102,13 +102,13 @@ namespace GUCera
                 catch
                 {
                     cc = "";
-                }
+                }*/
 
-                int inst = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
+               /* int inst = rdr.GetInt32(rdr.GetOrdinal("instructorId"));
 
                 Label lbl_inst = new Label();
                 lbl_inst.Text = "instructorId  :  " + inst +"  ";
-                form1.Controls.Add(lbl_inst);
+                form1.Controls.Add(lbl_inst);*/
 
                 ButtonCreate_Click();
 
