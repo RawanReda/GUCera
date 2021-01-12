@@ -278,7 +278,7 @@ namespace GUCera
                         desc = "--";
                     }
 
-                    conn.Close();
+                 
 
 
 
@@ -307,6 +307,7 @@ namespace GUCera
 
 
                 }
+                conn.Close();
             }
 
 
