@@ -21,22 +21,30 @@
         <div style='text-align:center'>
             <asp:Literal ID="redir" runat="server"></asp:Literal>
             <asp:Literal ID="title" runat="server"></asp:Literal>
-            <div>
-            <h4>Update Content</h4>
-            <asp:TextBox ID="cont" runat="server"></asp:TextBox>
-                <br>
-            <asp:Button ID="Button1" runat="server" Text="Confirm" Onclick="updateContent" />
 
-            </div>
-           <%-- <div>
+
+            
+            <div>
             <h4>Update Description</h4>
 
-            <asp:TextBox ID="desc" runat="server"></asp:TextBox>
-            <br>
+            <asp:TextBox ID="desc" runat="server" TextMode="MultiLine" Rows="20" Height="147px" Width="444px" ></asp:TextBox>
+             <br>
+             <br>
             <asp:Button ID="Button2" runat="server" Text="Confirm" Onclick="updateDescription" />
-         
 
-            </div>--%>
+            </div>
+
+
+            <div>
+            <h4>Update Content</h4>
+            <asp:TextBox ID="cont" runat="server" TextMode="MultiLine" Rows="20" Height="147px" Width="444px"></asp:TextBox>
+                <br>
+                  <br>
+            <asp:Button ID="Button1" runat="server" Text="Confirm" Onclick="updateContent" />
+              
+
+            </div>
+
 
             <asp:Literal ID="msg" runat="server"></asp:Literal>
 

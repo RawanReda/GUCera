@@ -150,13 +150,29 @@ namespace GUCera
                     SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
                     rdr2.Read();
                     String courseContent;
+                    String desc;
+
                     try
                     {
                         courseContent = rdr2.GetString(rdr2.GetOrdinal("content"));
+
                     }
                     catch {
                         courseContent = "--";
                     }
+
+
+                    try
+                    {
+                        desc = rdr2.GetString(rdr2.GetOrdinal("courseDescription"));
+
+
+                    }
+                    catch
+                    {
+                        desc = "--";
+                    }
+
                     conn2.Close();
 
 
@@ -170,7 +186,7 @@ namespace GUCera
                     Button MyButtonU = new Button();
                     MyButtonU.UseSubmitBehavior = false;
                     MyButtonU.PostBackUrl = "inscourseUpdate.aspx?cid=" + cid.ToString();
-                    MyButtonU.Text = "Update Course Content";
+                    MyButtonU.Text = "Update Content & Description";
 
 
                     Button MyButtonF = new Button();
@@ -193,12 +209,15 @@ namespace GUCera
 
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
                      "<div> Name: " + cname + "</div>" +
-                     "<div> Credit Hours: " + ch + "</div>"+
-                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
+                     "<div> Credit Hours: " + ch + "</div>" +
+                     "<div> Description: " + desc + "</div>" +
+                    "<div  style='margin-bottom: 17px;'> Content: " + courseContent + "</div>";
+                 
 
-                   
+
                     Label line = new Label();
                     line.Text = "<hr>";
+
 
                    
                     card.Controls.Add(l1);
@@ -247,26 +266,19 @@ namespace GUCera
                     int cid = rdr.GetInt32(rdr.GetOrdinal("id"));
                     string cname = rdr.GetString(rdr.GetOrdinal("name"));
                     int ch = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
-                    //String cnt = rdr.GetString(rdr.GetOrdinal("content"));
+                    
+                    String desc;
 
-                    SqlConnection conn2 = new SqlConnection(connStr);
-
-                    SqlCommand cmd2 = new SqlCommand("SELECT * FROM Course Where id=" + cid, conn2);
-                    cmd2.CommandType = CommandType.Text;
-
-                    conn2.Open();
-                    SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
-                    rdr2.Read();
-                    String courseContent;
                     try
                     {
-                        courseContent = rdr2.GetString(rdr2.GetOrdinal("content"));
+                        desc = rdr.GetString(rdr.GetOrdinal("courseDescription"));
                     }
                     catch
                     {
-                        courseContent = "--";
+                        desc = "--";
                     }
-                    conn2.Close();
+
+                    conn.Close();
 
 
 
@@ -281,8 +293,8 @@ namespace GUCera
 
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
                      "<div> Name: " + cname + "</div>" +
-                     "<div> Credit Hours: " + ch + "</div>"; 
-//                     "<div style='margin-bottom: 17px;'> Content: " + courseContent + "</div>"; ;
+                     "<div> Credit Hours: " + ch + "</div>" +
+                     "<div style='margin-bottom: 17px;'> Description: " + desc + "</div>" ;
 
 
                     Label line = new Label();
