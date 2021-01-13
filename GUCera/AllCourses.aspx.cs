@@ -65,7 +65,7 @@ namespace GUCera
                      cd = rdr.GetString(rdr.GetOrdinal("courseDescription"));
 
                     Label lbl_cd = new Label();
-                    lbl_cd.Text = "courseDescription  :  " + cd + "  ";
+                    lbl_cd.Text = "Course Description  :  " + cd + "  ";
                     form1.Controls.Add(lbl_cd);
                 }
                 catch
@@ -79,7 +79,7 @@ namespace GUCera
                     p = rdr.GetDecimal(rdr.GetOrdinal("price")) + "";
 
                     Label lbl_p = new Label();
-                    lbl_p.Text = "Price  :  " + p + "  ";
+                    lbl_p.Text = "Price  :  " + p + "       ";
                     form1.Controls.Add(lbl_p);
                 }
                 catch

@@ -75,7 +75,7 @@ namespace GUCera
                     /* Label lbl_error = new Label();
                      lbl_error.Text = "You are already enrolled in this course or didnt take this course pre-requisite.";
                      form1.Controls.Add(lbl_error);*/
-                    txt.Text = "<p style='color:red '> You are already enrolled in this course. </p>";
+                    txt.Text = "<p style='color:red '> Error. </p>";
 
                 }
 
