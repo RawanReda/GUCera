@@ -34,6 +34,8 @@ namespace GUCera
                 int s = Int32.Parse((String)Request.QueryString["cid"]);
                 courseID = s;
 
+                h.InnerText = "Certify a student taking the course of ID: "+ courseID;
+
 
 
             }
@@ -92,18 +94,18 @@ namespace GUCera
                         SqlDataReader rdr2 = cmd3.ExecuteReader(CommandBehavior.SingleRow);
 
                         if (rdr2.HasRows) {
-                             msg.Text = " <p style ='color: Red'> Can't certify this Student because he/she hasn't taken or completed the course </p> ";
+                             msg.Text = " <p style ='color: Red'> Can't certify this Student because he/she hasn't taken or completed the course.</p> ";
 
                         }
 
                         else
-                        msg.Text = " <p style ='color: Red'> This is not a student</p> ";
+                        msg.Text = " <p style ='color: Red'> This is not a student.</p> ";
                     }
                     conn.Close();
             }
             catch(SqlException ex) {
                     if (ex.Message.Contains("duplicate")) { 
-                    msg.Text = ("<p style='color:red'> Already Certified  </p>");
+                    msg.Text = ("<p style='color:red'> Already Certified. </p>");
                     }
                     else msg.Text = "<p style='color:red'>"+ ex.Message+ "</p>";
 

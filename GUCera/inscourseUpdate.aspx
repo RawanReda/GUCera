@@ -25,25 +25,26 @@
 
             
             <div>
-            <h4>Update Description</h4>
+            <h4>Description</h4>
 
             <asp:TextBox ID="desc" runat="server" TextMode="MultiLine" Rows="20" Height="147px" Width="444px" ></asp:TextBox>
              <br>
              <br>
-            <asp:Button ID="Button2" runat="server" Text="Confirm" Onclick="updateDescription" />
+            <asp:Button ID="Button2" runat="server" Text="Update" Onclick="updateDescription" />
 
             </div>
             <hr>
 
             <div>
-            <h4>Update Content</h4>
+            <h4>Content</h4>
             <asp:TextBox ID="cont" runat="server" TextMode="MultiLine" Rows="20" Height="147px" Width="444px"></asp:TextBox>
                 <br>
                   <br>
-            <asp:Button ID="Button1" runat="server" Text="Confirm" Onclick="updateContent" />
+            <asp:Button ID="Button1" runat="server" Text="Update" Onclick="updateContent" />
               
 
             </div>
+            </hr>
 
 
             <asp:Literal ID="msg" runat="server"></asp:Literal>

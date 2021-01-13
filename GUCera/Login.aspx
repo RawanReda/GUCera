@@ -18,7 +18,6 @@
 			border: 5px solid lightgray;
 			padding: 10px;
 			background-color: lightgrey;
-			/* box-shadow: 0.25px 0.5px; */
 			box-shadow: 7px 10px 11px 0px rgb(139 137 137 / 15%);
 		}
 
@@ -28,7 +27,14 @@
 <body>
     <form id="form1" runat="server">
         <div class="logincard">
-            <h3>Welcome to our GUCera website :) </h3>
+            <h3>
+
+				<span >Welcome to our</span>
+    <span style="color:black">G</span><span style="color:red">U</span><span style="color:yellow">C</span><span >era website :)</span>
+
+
+
+            </h3>
             
            <p style="font-weight: bolder">   Please Log In </p>
 				<div>

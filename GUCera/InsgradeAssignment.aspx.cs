@@ -94,7 +94,7 @@ namespace GUCera
 
                 catch (SqlException ex)
                 {
-                    if (ex.Message.Contains("data type numeric")) { msg.Text = ("<p style='color:red'> Entered Value is Too Big</p>"); }
+                    if (ex.Message.Contains("data type numeric")) { msg.Text = ("<p style='color:red'> Entered Value is too Big</p>"); }
                     else
                     msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 

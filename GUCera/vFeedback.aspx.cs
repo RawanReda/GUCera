@@ -47,7 +47,7 @@ namespace GUCera
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-                if (!rdr.HasRows) { Response.Write("No Feedback added for this course yet"); }
+                if (!rdr.HasRows) { Response.Write("<p style='color:darkgreen'> No Feedback added for this course yet </p>"); }
                 else { 
                 while (rdr.Read()) { 
                     int feedbackN = rdr.GetInt32(rdr.GetOrdinal("number"));
