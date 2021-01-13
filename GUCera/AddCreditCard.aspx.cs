@@ -112,8 +112,8 @@ namespace GUCera
 
                     try
                     {
-               //   if (no.Text != "" || name.Text != "")
-                 //   {
+                  //if (no.Text != "" || name.Text != "")
+                   // {
                         conn.Open();
                         addcd.ExecuteNonQuery();
                         conn.Close();
