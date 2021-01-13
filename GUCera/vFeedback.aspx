@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
        <p style="background-color:darkgrey">
         <asp:Literal ID="redir" runat="server"></asp:Literal></p>
-      <h2>Feedbacks </h2>
+      <h2>Feedback </h2>
        <asp:Literal ID="title" runat="server"></asp:Literal>
 
     </form>

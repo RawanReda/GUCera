@@ -94,7 +94,7 @@ namespace GUCera
                 }
                 catch (SqlException ex) {
 
-                    if (ex.Message.Contains("UNIQUE KEY")) { msg.Text = "<p style='color:red'>A course already exists with this name <p>"; }
+                    if (ex.Message.Contains("UNIQUE KEY")) { msg.Text = "<p style='color:red'>A course with this name already exists.<p>"; }
                     else if (ex.Message.Contains("data type numeric")) { msg.Text = "<p style='color:red'> Cannot add course with price more than 9999 <p>"; }
                     else
                     msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
