@@ -33,7 +33,16 @@
 		            </tr>
 		            <tr>
 			            <td> Type</td>
-			            <td> <asp:TextBox ID="ty" runat="server" ></asp:TextBox><br /></td>
+			          <%--  <td> <asp:TextBox ID="ty" runat="server" ></asp:TextBox><br /></td>--%>
+						<td> <asp:DropDownList ID="DropDownList1" runat="server" Height="23px" Width="164px">
+
+							<asp:listitem text="Exam" value="1"></asp:listitem>
+							 <asp:listitem text="Project" value="2"></asp:listitem>
+							 <asp:listitem text="Quiz"  value="3"></asp:listitem>
+
+
+						     </asp:DropDownList><br /></td>
+
 		            </tr>
 					
 					 <tr>

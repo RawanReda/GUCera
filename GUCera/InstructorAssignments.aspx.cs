@@ -77,7 +77,10 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            if (ano.Text == "" || ty.Text == "" || full.Text == "" || wgt.Text == "" || dead.Text == "" || cnt.Text == "")
+
+         
+
+            if (ano.Text == "" ||  full.Text == "" || wgt.Text == "" || dead.Text == "" || cnt.Text == "")
             {
                 msg.Text = "<p style='color:red '> Please fill in all fields </p>";
             }
@@ -85,7 +88,8 @@ namespace GUCera
             {
                 id = (int)Session["field1"];
                 int num = int.Parse(ano.Text);
-                string type = ty.Text.ToString();
+                //string type = ty.Text.ToString();
+                String type = DropDownList1.SelectedItem.Text.ToString();
                 int fullgrade = int.Parse(full.Text);
                 decimal weight = decimal.Parse(wgt.Text);
                 DateTime deadline = DateTime.Parse(dead.Text.ToString());
@@ -206,7 +210,7 @@ namespace GUCera
 
         }
 
- 
-
+      
+    
     }
 }
