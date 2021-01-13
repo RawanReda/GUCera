@@ -8,6 +8,10 @@
 </head>
 <body> 
     <form id="form1" runat="server">
+        Course ID:
+        <asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Enter" OnClick="Button1_Click" />
+        <br />
         <asp:Literal  ID="NoEntries" runat="server"></asp:Literal>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
    <Columns>

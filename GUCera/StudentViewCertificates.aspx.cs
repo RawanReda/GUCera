@@ -38,7 +38,7 @@ namespace GUCera
                     DateTime issueDate = rdr.GetDateTime(rdr.GetOrdinal("issueDate"));
 
                     
-                   NoEntries.Text = "<p style='color:green'  font-weight: bolder> Certificate issued on: " + issueDate;
+                   NoEntries.Text = "<p style='color:red' > Certificate issued on: </p>" + issueDate;
                    
 
 
@@ -46,7 +46,7 @@ namespace GUCera
             }
             else
             {
-                NoEntries.Text = "<p style='color:red'> Student not enrolled in course or did not finish course.";
+                NoEntries.Text = "<p style='color:red'> Student not enrolled in course or did not finish course.</p>";
             }
 
 

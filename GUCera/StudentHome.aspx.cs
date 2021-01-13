@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -24,6 +25,23 @@ namespace GUCera
             if (Session["field1"] == null)
             {
                 Response.Redirect("Error.aspx");
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("ViewMyProfile", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", (int)Session["field1"]));
+
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (rdr.Read())
+                {
+                    string Firstn = rdr.GetString(rdr.GetOrdinal("firstName"));
+                    string Lastn = rdr.GetString(rdr.GetOrdinal("lastName"));
+                    string Name = Firstn + " " + Lastn;
+                    StName.Text = "<h2> Hello, " + Name + "! </h2>";
+                }
             }
         }
 

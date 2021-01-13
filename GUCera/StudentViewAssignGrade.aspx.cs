@@ -53,14 +53,14 @@ namespace GUCera
             cmd.Parameters.Add(new SqlParameter("@assignnumber", AssignN));
             cmd.Parameters.Add(new SqlParameter("@cid", Course_ID));
             cmd.Parameters.Add(new SqlParameter("@sid", Session["field1"]));
-            SqlParameter grade = cmd.Parameters.Add("@assignGrade ", SqlDbType.Decimal,5);
-            cmd.Parameters["assignGrade"].Precision = 5;
-            cmd.Parameters["assignGrade"].Scale = 2;
+            SqlParameter grade = 
+                    cmd.Parameters.Add(new SqlParameter("@assignGrade ", SqlDbType.Decimal) {
+                    Precision = 5, Scale = 2 });
 
-            grade.Direction = ParameterDirection.Output;
 
-           
-           
+                grade.Direction = ParameterDirection.Output;
+
+
                 try
                 {
                     conn.Open();

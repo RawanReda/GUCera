@@ -24,6 +24,15 @@ namespace GUCera
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// StName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal StName;
+
+        /// <summary>
         /// HyperLink6 control.
         /// </summary>
         /// <remarks>
