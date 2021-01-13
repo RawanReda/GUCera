@@ -210,7 +210,8 @@ namespace GUCera
                     l1.Text = "<h4>" + "CourseID " + cid + "</h4>" +
                      "<div> Name: " + cname + "</div>" +
                      "<div> Credit Hours: " + ch + "</div>" +
-                     "<div> Description: " + desc + "</div>" +
+                     //"<details><summary style='cursor: pointer;'>Description</summary>" + "<p>"+desc +"</p></details>"+
+                    "<div> Description: " + desc + "</div>" +
                     "<div  style='margin-bottom: 17px;'> Content: " + courseContent + "</div>";
                  
 
