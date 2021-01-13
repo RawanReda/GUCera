@@ -77,7 +77,10 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            if (ano.Text == "" || ty.Text == "" || full.Text == "" || wgt.Text == "" || dead.Text == "" || cnt.Text == "")
+
+         
+
+            if (ano.Text == "" ||  full.Text == "" || wgt.Text == "" || dead.Text == "" || cnt.Text == "")
             {
                 msg.Text = "<p style='color:red '> Please fill in all fields </p>";
             }
@@ -85,7 +88,8 @@ namespace GUCera
             {
                 id = (int)Session["field1"];
                 int num = int.Parse(ano.Text);
-                string type = ty.Text.ToString();
+                //string type = ty.Text.ToString();
+                String type = DropDownList1.SelectedItem.Text.ToString();
                 int fullgrade = int.Parse(full.Text);
                 decimal weight = decimal.Parse(wgt.Text);
                 DateTime deadline = DateTime.Parse(dead.Text.ToString());
@@ -109,12 +113,15 @@ namespace GUCera
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    msg.Text = "<p style='color:green '> Assignment#"+ num + "of type: "+type+" added Successfully! </p>";
+                    msg.Text = "<p style='color:green '> Assignment#"+ num + " of type: "+type+" added Successfully! </p>";
 
 
                 }
                 catch (SqlException ex)
                 {
+
+                    if (ex.Message.Contains("duplicate key")){msg.Text = "<p style='color:red'> This assignment is already added for this course</p>"; }
+                    else
                     msg.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 
@@ -146,13 +153,14 @@ namespace GUCera
             conn.Open();
             SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-            //if (!rdr.Read())
-            //{
-            //    Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
-            //}
-            //else { 
+            if (!rdr.HasRows)
+            {
+                Literal1.Text = "<p style='color: Red'> No submissions for this course yet. </p>";
+            }
+           
+               
 
-            while (rdr.Read())
+                while (rdr.Read())
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
                 int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
@@ -200,18 +208,9 @@ namespace GUCera
             }
             
 
-
-
-
-
-
         }
 
-        //protected void editGrade(object sender, EventArgs e)
-        //{
-        //    Response.Write("Edit");
-
-        //}
-
+      
+    
     }
 }

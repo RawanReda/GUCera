@@ -27,21 +27,21 @@ namespace GUCera
             }
         }
 
-      
-
-    
-
-
-     
-     
 
 
 
-       
-       /* protected void Feedback(object sender, EventArgs e)
-        {
-            Response.Redirect("StudentAddFeedback.aspx", true);
-        }*/
+
+
+
+
+
+
+
+
+        /* protected void Feedback(object sender, EventArgs e)
+         {
+             Response.Redirect("StudentAddFeedback.aspx", true);
+         }*/
 
         //protected void Certificates(object sender, EventArgs e)
         //{
@@ -70,7 +70,7 @@ namespace GUCera
 
         //protected void course_Id_TextChanged(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //protected void course_Id_TextChanged1(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace GUCera
 
         //}
 
-     
+
 
         //protected void SubmitAssign(object sender, EventArgs e)
         //{

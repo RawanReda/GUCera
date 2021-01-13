@@ -16,27 +16,27 @@
             <br />
             Number :<br />
             <br />
-            <asp:TextBox ID="Number" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Number" runat="server" MaxLength ="15"></asp:TextBox>
             <asp:Literal ID="no" runat="server"></asp:Literal>
             <br />
             <br />
             Card Holder Name :<br />
             <br />
-            <asp:TextBox ID="CHName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="CHName" runat="server" MaxLength="16"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Literal ID="name" runat="server"></asp:Literal>
             <br />
             <br />
             Expiry Date :<br />
             <br />
-            <asp:TextBox ID="EXDate" runat="server"></asp:TextBox>
+            <asp:TextBox ID="EXDate" runat="server" MaxLength="10"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Literal ID="credit" runat="server"></asp:Literal>
             <br />
             <br />
             CVV :<br />
             <br />
-            <asp:TextBox ID="CVV" runat="server"></asp:TextBox>
+            <asp:TextBox ID="CVV" runat="server" MaxLength ="3"></asp:TextBox>
             <asp:Literal ID="c" runat="server"></asp:Literal>
             <br />
             <br />

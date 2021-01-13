@@ -29,21 +29,30 @@
 		            
 					<tr>
 			            <td>Number</td>
-			            <td> <asp:TextBox ID="ano" runat="server"   ></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="ano" runat="server"  type="number"  ></asp:TextBox> <br /> </td>
 		            </tr>
 		            <tr>
 			            <td> Type</td>
-			            <td>   <asp:TextBox ID="ty" runat="server" ></asp:TextBox><br /></td>
+			          <%--  <td> <asp:TextBox ID="ty" runat="server" ></asp:TextBox><br /></td>--%>
+						<td> <asp:DropDownList ID="DropDownList1" runat="server" Height="23px" Width="164px">
+
+							<asp:listitem text="Exam" value="1"></asp:listitem>
+							 <asp:listitem text="Project" value="2"></asp:listitem>
+							 <asp:listitem text="Quiz"  value="3"></asp:listitem>
+
+
+						     </asp:DropDownList><br /></td>
+
 		            </tr>
 					
 					 <tr>
 			            <td> <asp:Label ID="lbl_grade" runat="server" Text="Full Grade"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="full" runat="server" ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="full" runat="server" type="number"  ></asp:TextBox><br /></td>
 		            </tr>
 					
 					<tr>
 			            <td> Weight</td>
-			            <td>   <asp:TextBox ID="wgt" runat="server" ></asp:TextBox><br /></td>
+			            <td>   <asp:TextBox ID="wgt" runat="server" MaxLength="3" ></asp:TextBox><br /></td>
 		            </tr>
 					
 					<tr>
@@ -54,8 +63,8 @@
 		            </tr>
 					
 					<tr>
-			            <td> <asp:Label ID="lbl_content" runat="server" Text="Content"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="cnt" runat="server" Height="104px" Width="356px" ></asp:TextBox><br /></td>
+			            <td> <asp:Label ID="lbl_content" runat="server" Text="Content"   ></asp:Label> </td>
+			            <td>   <asp:TextBox ID="cnt" runat="server" Height="104px" Width="356px" TextMode="MultiLine" Rows="10" ></asp:TextBox><br /></td>
 		            </tr>
 					
 					

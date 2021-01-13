@@ -17,7 +17,10 @@
             <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/AddMobileNumber.aspx">Add Mobile Number</asp:HyperLink>
             <br/>
             <br/>
-            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AllCourses.aspx">View Courses And Enroll</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AllCourses.aspx">All Courses</asp:HyperLink>
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/EnrollInACourse.aspx">Enroll</asp:HyperLink>
             <br />
             <br />
             <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/AddCreditCard.aspx">Add Credit Card</asp:HyperLink>

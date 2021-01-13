@@ -63,11 +63,13 @@ namespace GUCera
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
-                    msg.Text = "<p style='color:green'> Added Succesfully!</p>";
+                    msg.Text = "<p style='color:green'> Added Succesfully! </p>";
                 }
-                catch
+                catch(SqlException ex)
                 {
-                    msg.Text = "<p style='color:red'> ERROR </p>";
+                    if (ex.Message.Contains("duplicate key")) {msg.Text="<p style='color:red'>You've already added this number </p>"; }
+                    else
+                    msg.Text = ex.Message;
 
                 }
             }

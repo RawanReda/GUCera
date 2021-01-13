@@ -84,44 +84,69 @@ namespace GUCera
             cmd.Parameters.Add(new SqlParameter("@courseId", courseID));
             cmd.Parameters.Add(new SqlParameter("@content", conten));
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
 
-            msg.Text = "<p style='color: green'> Course content updated Successfully!</p>";
-
+                    msg.Text = "<p style='color: green'> Course content updated Successfully!</p>";
+                }
+                catch (SqlException ex){
+                    msg.Text = "<p style='color: red'>" + ex.Message+"</p>";
+                }
 
             }
 
 
         }
 
-        //protected void updateDescription(object sender, EventArgs e)
-        //{
-        //    //obtain connection info and create sql connection to database
-        //    string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
-        //    conn = new SqlConnection(connStr);
+        protected void updateDescription(object sender, EventArgs e)
+        {
+            //obtain connection info and create sql connection to database
+            string connStr = ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+            conn = new SqlConnection(connStr);
 
-        //    //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
-        //    SqlCommand cmd = new SqlCommand("UpdateCourseDescription", conn);
-        //    cmd.CommandType = CommandType.StoredProcedure;
+            //create a new SQL command which takes as parameters the name of the stored procedure and the SQLconnection name
+            SqlCommand cmd = new SqlCommand("UpdateCourseDescription", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-        //    id = (int)Session["field1"];
-        //    String des = desc.Text;
+            id = (int)Session["field1"];
 
-        //    cmd.Parameters.Add(new SqlParameter("@instrId", id));
-        //    cmd.Parameters.Add(new SqlParameter("@cid", courseID));
-        //    cmd.Parameters.Add(new SqlParameter("@courseDescription", des));
+            if (desc.Text == "")
+            {
+                msg.Text = "<p style='color: red'>  Please fill the description </p>";
+            }
+            else
+            {
+                String des = desc.Text;
 
-        //    conn.Open();
-        //    cmd.ExecuteNonQuery();
-        //    conn.Close();
+                cmd.Parameters.Add(new SqlParameter("@instrId", id));
+                cmd.Parameters.Add(new SqlParameter("@courseId", courseID));
+                cmd.Parameters.Add(new SqlParameter("@courseDescription", des));
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
 
 
-        //    msg.Text = "<p style='color: green'> Description Updated Successfully</p>";
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
 
-        //}
+                    msg.Text = "<p style='color: green'> Course description updated Successfully!</p>";
+                }
+                catch (SqlException ex)
+                {
+                    msg.Text = "<p style='color: red'>" + ex.Message + "</p>";
+                }
+            }
+
+
+        }
     }
 }

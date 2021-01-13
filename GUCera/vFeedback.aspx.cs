@@ -77,6 +77,7 @@ namespace GUCera
                        "<div style='background-color:lightgrey; margin:4px;padding-left: 8px;'>" +
                        "<h3> Feedback #" + feedbackN + "</h3>" +
                        " Comment: " + comment +
+                       "<br>"+
                        " Number of Likes: " + likes +
                        "<hr>" +
                        "</div>";

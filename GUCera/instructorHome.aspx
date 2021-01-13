@@ -19,12 +19,18 @@
 <body>
     <form id="form1" runat="server">
         <div >
-            <asp:Label ID="Name1" runat="server" Text=""></asp:Label> <br>
+            <asp:Label ID="Name1" runat="server" Text=""></asp:Label> 
         </div>
 		<br>
-        Add Mobile Number: 
-		<br>
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br><hr>
+        <details>
+			<summary> Mobile Number </summary>
+			<br>
+			
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br>
+
+		</details>
+		
+		<hr>
         <div>
 		<details>
         <summary>Add a Course</summary>
@@ -35,15 +41,15 @@
 	            <tbody>
 		            <tr>
 			            <td><asp:Label ID="Label1" runat="server" Text="Course Name:"></asp:Label>  </td>
-			            <td> <asp:TextBox ID="cname" runat="server"></asp:TextBox> <br /> </td>
+			            <td> <asp:TextBox ID="cname" runat="server" ></asp:TextBox> <br /> </td>
 		            </tr>
 		            <tr>
 			            <td> <asp:Label ID="Label2" runat="server" Text="Credit Hours:"></asp:Label> </td>
-			            <td> <asp:TextBox ID="chours" runat="server"></asp:TextBox><br /></td>
+			            <td> <asp:TextBox ID="chours" runat="server" ></asp:TextBox><br /></td>
 		            </tr>
 		            <tr>
-			            <td><asp:Label ID="Label3" runat="server" Text="Price:"></asp:Label> </td>
-			            <td> <asp:TextBox ID="price" runat="server"></asp:TextBox> </td>
+			            <td><asp:Label ID="Label3" runat="server" Text="Price:" type="number"></asp:Label> </td>
+			            <td> <asp:TextBox ID="price" runat="server" ></asp:TextBox> </td>
 		            </tr> 
                      <tr>
 			            <td><asp:Button ID="Button1" runat="server" Text="Add Course" OnClick="addCourse"/></td>
