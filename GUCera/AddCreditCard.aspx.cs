@@ -112,15 +112,15 @@ namespace GUCera
 
                     try
                     {
-                    if (no.Text != "" || name.Text != "")
-                    {
+               //     if (no.Text != "" || name.Text != "")
+                 //   {
                         conn.Open();
                         addcd.ExecuteNonQuery();
                         conn.Close();
                         credit.Text = "";
                         c.Text = "";
                         txt.Text = "<p style='color:green '> Your credit card details has been added. </p>";
-                    }
+                 //   }
                     
                     /* Label lbl_error = new Label();
                      lbl_error.Text = "Credit card details are added";
