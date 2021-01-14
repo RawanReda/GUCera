@@ -68,10 +68,10 @@ namespace GUCera
                     conn.Close();
                     if (grade.Value.ToString() != "")
                     {
-                        Grade.Text = ("<p style='color:green'>Assignment grade for the entered information: " + grade.Value);
+                        Grade.Text = ("Assignment grade for the entered information: " + grade.Value);
                     }
                     else {
-                        Grade.Text = ("<p style='color:red'>This assignment has not been graded yet. ");
+                        Grade.Text = ("<p style='color:red'; font-size:20px>This assignment has not been graded yet. ");
                     }
 
 
@@ -79,7 +79,7 @@ namespace GUCera
                 }
                 catch (SqlException ex)
                 {
-                    Grade.Text = ("<p style='color:red'> Error:" + ex.Number + " " + ex.Message + "</p>");
+                    Grade.Text = ("<p style='color:red'; font-size:20px> Error:" + ex.Number + " " + ex.Message + "</p>");
 
 
                 }

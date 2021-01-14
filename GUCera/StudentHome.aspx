@@ -41,7 +41,7 @@
             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/StudentAddFeedback.aspx">Add Course Feedback</asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EnterViewCertificateCourse.aspx">View Course Certificate</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/StudentViewCertificates.aspx">View Course Certificate</asp:HyperLink>
             <br />
             <br />
             <br />

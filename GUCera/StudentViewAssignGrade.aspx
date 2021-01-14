@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+        <style>
+        h1 {
+  color: black;
+  font-size: 20px;
+}</style>
 <head runat="server">
     <title></title>
 </head>
@@ -20,12 +25,13 @@
         Course ID:<asp:TextBox ID="CourseID" runat="server"></asp:TextBox>
            <br />
         <br />
-         <p > <asp:Literal ID="Grade" runat="server"></asp:Literal></p> 
-        <br />
         <asp:Button ID="CheckGrade" runat="server" Text="Check Grade" OnClick="CheckNow_Click" />
            <br />
            <br />
-      <p>  &nbsp;</p>
+           <h1>
+           <asp:Literal ID="Grade" runat="server"></asp:Literal></h1>
+           <br />
+  
     </form>
 </body>
 </html>

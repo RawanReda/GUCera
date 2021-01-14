@@ -51,15 +51,6 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.TextBox CourseID;
 
         /// <summary>
-        /// Grade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Grade;
-
-        /// <summary>
         /// CheckGrade control.
         /// </summary>
         /// <remarks>
@@ -67,5 +58,14 @@ namespace GUCera
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CheckGrade;
+
+        /// <summary>
+        /// Grade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Grade;
     }
 }
