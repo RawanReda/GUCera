@@ -28,8 +28,8 @@ justify-content:center;
   
         }
     </style>
-<%--<head runat="server">--%>
-    <title></title>
+<head runat="server">
+    <title>StudentHomePage </title>
 </head>
 <body>
     <form id="form1" runat="server">

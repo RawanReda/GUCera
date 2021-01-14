@@ -22,43 +22,59 @@ namespace GUCera
             AdminNonAcc.CommandType = CommandType.StoredProcedure;
 
             conn.Open();
+            SqlDataAdapter sqlDa = new SqlDataAdapter(AdminNonAcc);
 
-            SqlDataReader rdr = AdminNonAcc.ExecuteReader(CommandBehavior.CloseConnection);
-
-            while (rdr.Read())
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            if (dt.Rows.Count == 0)
             {
-                string courseName = rdr.GetString(rdr.GetOrdinal("name"));
-                int creditHours = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
-                decimal price = rdr.GetDecimal(rdr.GetOrdinal("price"));
-                string content;
-                try
-                {
-                     content = rdr.GetString(rdr.GetOrdinal("content"));
-
-                }
-                catch {
-                    content = "--";
-                }
-               
-
-                Label lbl_courseName = new Label();
-                lbl_courseName.Text = "name: " + courseName + ",                  ";
-                form1.Controls.Add(lbl_courseName);
-
-                Label lbl_creditHours = new Label();
-                lbl_creditHours.Text = "  credit hours: " + creditHours + ",                  ";
-                form1.Controls.Add(lbl_creditHours);
-
-                Label lbl_price = new Label();
-                lbl_price.Text = "  price: " + price + ",                  ";
-                form1.Controls.Add(lbl_price);
-
-                Label lbl_content = new Label();
-                lbl_content.Text = "  content: " + content + "  <br /> <br />";
-                form1.Controls.Add(lbl_content);
-
-
+                //sqlDa.DataSource = null;
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+                Literal1.Text = "<p style='color:red '> No courses.";
             }
+            else
+            {
+                Literal1.Text = "";
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+            //SqlDataReader rdr = AdminNonAcc.ExecuteReader(CommandBehavior.CloseConnection);
+
+            //while (rdr.Read())
+            //{
+            //    string courseName = rdr.GetString(rdr.GetOrdinal("name"));
+            //    int creditHours = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
+            //    decimal price = rdr.GetDecimal(rdr.GetOrdinal("price"));
+            //    string content;
+            //    try
+            //    {
+            //         content = rdr.GetString(rdr.GetOrdinal("content"));
+
+            //    }
+            //    catch {
+            //        content = "--";
+            //    }
+
+
+            //    Label lbl_courseName = new Label();
+            //    lbl_courseName.Text = "name: " + courseName + ",                  ";
+            //    form1.Controls.Add(lbl_courseName);
+
+            //    Label lbl_creditHours = new Label();
+            //    lbl_creditHours.Text = "  credit hours: " + creditHours + ",                  ";
+            //    form1.Controls.Add(lbl_creditHours);
+
+            //    Label lbl_price = new Label();
+            //    lbl_price.Text = "  price: " + price + ",                  ";
+            //    form1.Controls.Add(lbl_price);
+
+            //    Label lbl_content = new Label();
+            //    lbl_content.Text = "  content: " + content + "  <br /> <br />";
+            //    form1.Controls.Add(lbl_content);
+
+
+            //}
         }
     }
 }
