@@ -18,8 +18,7 @@
 			border: 5px solid lightgray;
 			padding: 10px;
 			background-color: lightgrey;
-			box-shadow: 7px 10px 11px 0px rgb(139 137 137 / 15%);
-		}
+	
 
 
 	</style>

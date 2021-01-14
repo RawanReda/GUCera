@@ -14,6 +14,7 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            theDiv.Visible = false; 
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
 
@@ -22,34 +23,70 @@ namespace GUCera
                 Response.Redirect("Error.aspx");
             }
 
-            SqlCommand cmd = new SqlCommand("viewCertificate", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add(new SqlParameter("@cid", Session["CertificateCourseId"]));
-            cmd.Parameters.Add(new SqlParameter("@sid", (Session["field1"]).ToString()));
-            conn.Open();
+        }
 
-            SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            if (rdr.HasRows)
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (course_ID.Text == "")
             {
-                while (rdr.Read())
-                {
+                NoEntries.Text = ("<p style='color:red'> Please enter a course ID. ");
 
-                    DateTime issueDate = rdr.GetDateTime(rdr.GetOrdinal("issueDate"));
-
-                    
-                   NoEntries.Text = "<p style='color:red' > Certificate issued on: </p>" + issueDate;
-                   
-
-
-                }
             }
             else
             {
-                NoEntries.Text = "<p style='color:red'> Student not enrolled in course or did not finish course.</p>";
+                int id1 = Int16.Parse(course_ID.Text);
+                Session["CertificateCourseId"] = id1;
+                //Response.Redirect("StudentViewCertificates.aspx", true);
+                string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
+                SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
+
+                SqlCommand cmd = new SqlCommand("viewCertificate", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@cid", Session["CertificateCourseId"]));
+                cmd.Parameters.Add(new SqlParameter("@sid", (Session["field1"]).ToString()));
+                conn.Open();
+
+                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (rdr.HasRows)
+                {
+                    DateTime issueDate = new DateTime(2019, 05, 09, 9, 15, 0);
+                    while (rdr.Read())
+                    { 
+                        theDiv.Visible = true;
+                        issueDate = rdr.GetDateTime(rdr.GetOrdinal("issueDate"));
+                        }
+                    conn.Close();
+                    conn.Open();
+                        SqlCommand cmd1 = new SqlCommand("ViewMyProfile", conn);
+                        cmd1.CommandType = CommandType.StoredProcedure;
+                        cmd1.Parameters.Add(new SqlParameter("@id", (int)Session["field1"]));
+                        SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+                        
+                    string Name = "";
+                        while (rdr1.Read())
+                        {
+                            string Firstn = rdr1.GetString(rdr1.GetOrdinal("firstName"));
+                            string Lastn = rdr1.GetString(rdr1.GetOrdinal("lastName"));
+                            Name = Firstn + " " + Lastn;
+                           
+                        }
+                        NoEntries.Text = "";
+                    Literal1.Text = "This certificate is for " + Name + " for course ID " + course_ID.Text 
+                    + ",issued on: " + issueDate;
+
+
+
+                    
+                }
+                else
+                {
+                    theDiv.Visible = false;
+                    NoEntries.Text = "<p style='color:red'> Student not enrolled in course or did not finish course.";
+                }
+
             }
-
-
         }
     }
 }

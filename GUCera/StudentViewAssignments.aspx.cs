@@ -13,6 +13,7 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new System.Data.SqlClient.SqlConnection(connStr);
 

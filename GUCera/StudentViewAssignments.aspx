@@ -3,11 +3,17 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+     <style>
+        h1 {
+  color: black;
+  font-size: 30px;
+}</style>
 <head runat="server">
     <title></title>
 </head>
 <body> 
     <form id="form1" runat="server">
+        <h1> Please enter a course ID:</h1>
         Course ID:
         <asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Enter" OnClick="Button1_Click" />

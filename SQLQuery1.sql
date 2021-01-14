@@ -1,4 +1,6 @@
-﻿use GUCera; 
-exec DefineAssignmentOfCourseOfCertianType 15, 1, 6, 'project', 10, 20, '2/2/2023', 'easy'; 
-exec InstructorgradeAssignmentOfAStudent 15, 14, 1, 1, 'quiz', 99; 
-exec InstructorgradeAssignmentOfAStudent 15, 14, 1, 1, 'project', 99; 
+﻿use gucera;
+
+insert into Assignment(cid,number, type) values(2, 1,'exam');
+insert into Assignment(cid,number, type) values(2, 1,'project');
+insert into Assignment(cid,number, type) values(4, 1,'exam');
+insert into Assignment(cid,number, type) values(4, 1,'project');
