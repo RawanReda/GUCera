@@ -9,16 +9,23 @@
 	<style>
 
 	    .logincard {
-	    
-		
-			Position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -80%);
-			border: 5px solid lightgray;
-			padding: 10px;
-			background-color: lightgrey;
-	
+	        Position: absolute;
+	        left: 50%;
+	        top: 50%;
+	        transform: translate(-50%, -80%);
+	        border: 5px solid lightgray;
+	        padding: 10px;
+	        background-color: lightgrey;
+	    }
+
+	/*	
+	    body {
+	        background-image: url('images/loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+	    }
+	*/
 
 
 	</style>

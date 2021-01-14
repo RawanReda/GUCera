@@ -22,6 +22,13 @@
 			box-shadow: 7px 10px 11px 0px rgb(139 137 137 / 15%);
 		}
 
+	/*	
+		   body {
+	        background-image: url('images/bg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+	    }*/
 
 	</style>
 </head>

@@ -13,7 +13,8 @@
             <asp:Literal ID="head" runat="server"></asp:Literal>
             <br>
             <br>
-            <asp:TextBox ID="TextBox1" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" required Width="117px"></asp:TextBox>
+            <asp:Literal ID="Literal2" runat="server"></asp:Literal>
             <br>
             <br>
             <asp:Button ID="Button1" runat="server" Text="Confirm" OnClick="Button1_Click" />
