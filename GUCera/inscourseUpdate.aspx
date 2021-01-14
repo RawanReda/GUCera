@@ -14,12 +14,27 @@
             height: 79px;
             width: 265px;
         }
+         .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+              height: 10px;
+        line-height: 10px;
+        padding: 15px;        
+        
+        }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div >
+            <p class="h">
             <asp:Literal ID="redir" runat="server"></asp:Literal>
+                </p>
             <asp:Literal ID="title" runat="server"></asp:Literal>
 
 

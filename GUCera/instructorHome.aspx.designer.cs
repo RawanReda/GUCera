@@ -33,6 +33,15 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.Label Name1;
 
         /// <summary>
+        /// a control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl a;
+
+        /// <summary>
         /// Button6 control.
         /// </summary>
         /// <remarks>

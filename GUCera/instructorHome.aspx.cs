@@ -47,6 +47,41 @@ namespace GUCera
 
             conn.Close();
 
+
+            SqlCommand cmd2 = new SqlCommand("SELECT * FROM UserMobileNumber WHERE id =" + ((int)Session["field1"]), conn);
+            cmd2.CommandType = CommandType.Text;
+
+
+            conn.Open();
+            try
+            {
+                a.InnerText = "Tel.: ";
+                SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
+                if (!rdr2.HasRows) { a.InnerText = ""; }
+                else
+                {
+                    while (rdr2.Read())
+                    {
+                        string mobile = rdr2.GetString(rdr2.GetOrdinal("mobileNumber"));
+                        Literal p = new Literal();
+                        p.Text = mobile + "/";
+
+                        a.Controls.Add(p);
+
+
+                    }
+                }
+
+
+                conn.Close();
+            }
+            catch {
+              
+
+            }
+
+
+
         }
         protected void addMobile(object sender, EventArgs e)
         {
