@@ -42,6 +42,15 @@ namespace GUCera
             int i = 0;
 
 
+            /*DataTable db = new DataTable();
+
+            db.Columns.Add("Code", typeof(string));
+            db.Columns.Add("IssueDate", typeof(string));
+            db.Columns.Add("ExpiryDate", typeof(string));
+            db.Columns.Add("Discount", typeof(string));*/
+
+
+
             conn.Open();
             SqlDataReader rdr = promocode.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -83,8 +92,8 @@ namespace GUCera
                     discount = "";
                 }
 
-
-
+                
+                
                 Label lbl_code = new Label();
                 lbl_code.Text = "Code : " + code;
                 form1.Controls.Add(lbl_code);
@@ -93,7 +102,7 @@ namespace GUCera
 
                 Label lbl_id = new Label();
                 lbl_id.Text = "   IssueDate : " + isuueDate;
-                form1.Controls.Add(lbl_id);
+               form1.Controls.Add(lbl_id);
 
               //  issue.Text = isuueDate + "";
 
@@ -105,7 +114,14 @@ namespace GUCera
 
                 Label lbl_dis = new Label();
                 lbl_dis.Text = "   Discount : " + discount +"<br/>  <br/> ";
-                form1.Controls.Add(lbl_dis);
+               form1.Controls.Add(lbl_dis);
+
+
+               /* db.Rows.Add(code, isuueDate, expiryDate, discount);*/
+               // Label lbl = new Label();
+              //  lbl.Text = db +"";
+                //form1.Controls.Add(lbl_dis);
+                
 
                 //   d.Text = discount + "";
 
