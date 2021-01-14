@@ -145,8 +145,9 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("InstructorViewAssignmentsStudents", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
+            id = (int)Session["field1"];
             //inputs
-            cmd.Parameters.Add(new SqlParameter("@instrId", 1));
+            cmd.Parameters.Add(new SqlParameter("@instrId", id));
             cmd.Parameters.Add(new SqlParameter("@cid", courseID));
 
 
@@ -159,14 +160,36 @@ namespace GUCera
             }
            
                
-
+                
                 while (rdr.Read())
             {
                 int sid = rdr.GetInt32(rdr.GetOrdinal("sid"));
                 int cid = rdr.GetInt32(rdr.GetOrdinal("cid"));
                 int asN = rdr.GetInt32(rdr.GetOrdinal("assignmentNumber"));
                 string asT = rdr.GetString(rdr.GetOrdinal("assignmenttype"));
-                Decimal gr = rdr.GetDecimal(rdr.GetOrdinal("grade"));
+                Decimal gr;
+                int fullG;
+
+                try
+                {
+                     gr = rdr.GetDecimal(rdr.GetOrdinal("grade"));
+                }
+                catch {
+                     gr = 0;
+                }
+
+
+            
+                SqlConnection conn3 = new SqlConnection(connStr);
+                SqlCommand cmd3 = new SqlCommand("SELECT * FROM Assignment WHERE cid=" + cid + " AND number=" + asN + " AND type = '"+ asT +"'", conn3);
+                cmd3.CommandType = CommandType.Text;
+                conn3.Open();
+                SqlDataReader rdr3 = cmd3.ExecuteReader(CommandBehavior.SingleRow);
+                rdr3.Read();
+                fullG = rdr3.GetInt32(rdr3.GetOrdinal("fullGrade"));
+
+                conn3.Close();
+
 
                 Literal1.Text = "";
 
@@ -180,7 +203,7 @@ namespace GUCera
                 "<p> StudentID " + sid + "</p>" +
                 "<p> Assignment# " + asN + "</p>" +
                 "<p> Assignment Type: " + asT + "</p>" +
-                "<p> Student Grade: " + gr + "</p>" +
+                "<p> Student Grade: " + gr + "/" + fullG + "</p>" +
                 "</div>";
 
 

@@ -26,6 +26,8 @@ namespace GUCera
             }
 
 
+            title.Text = "";
+
             SqlCommand cmd = new SqlCommand("ViewInstructorProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@instrId", (int)Session["field1"]));
@@ -41,6 +43,7 @@ namespace GUCera
 
                 Name1.Text = "<h2> Hello, " + Name + "! </h2>";
             }
+
 
             conn.Close();
 
