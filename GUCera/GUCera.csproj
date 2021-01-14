@@ -90,6 +90,7 @@
     <Content Include="Login.aspx" />
     <Content Include="StudentAddFeedback.aspx" />
     <Content Include="StudentHome.aspx" />
+    <Content Include="StudentHomePage.jpg" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="StudentSubmitAssignment.aspx" />
     <Content Include="StudentViewAssignGrade.aspx" />
