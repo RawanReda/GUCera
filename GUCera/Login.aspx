@@ -18,14 +18,14 @@
 	        background-color: lightgrey;
 	    }
 
-	/*	
+		
 	    body {
 	        background-image: url('images/loginbg.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
 	    }
-	*/
+	
 
 
 	</style>
