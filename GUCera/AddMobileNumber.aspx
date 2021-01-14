@@ -4,12 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+       <style>
+        h1 {
+  color: black;
+  font-size: 20px;
+}
+            </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>Type Number to Add:</h1>
         <div>
-            Type Number to Add: <br/>
             <br/>
             <asp:TextBox ID="TextBox1" runat="server" MaxLength="11" required/>
              <br/>

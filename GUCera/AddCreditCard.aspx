@@ -4,13 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+      <style>
+        h1 {
+  color: black;
+  font-size: 20px;
+}
+            </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1> Please Enter Credit Card Details :</h1>
         <div>
-            Please Enter Credit Card Details :<br />
-            <br />
             <asp:Literal ID="error" runat="server"></asp:Literal>
             <br />
             <br />

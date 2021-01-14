@@ -4,12 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style>
+        h1 {
+  color: blue;
+  font-size: 20px;
+}
+            </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1> My PromoCodes :</h1>
         <div>
-            My PromoCodes :
             <asp:Literal ID="txt" runat="server"></asp:Literal>
         </div>
 

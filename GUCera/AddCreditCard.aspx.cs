@@ -68,7 +68,7 @@ namespace GUCera
                 catch
                 {
                     j = 1;
-                    credit.Text = "<p style='color:red '> Please Enter the ExpiryDate in this format Y-M-D. </p>";
+                    credit.Text = "<p style='color:red '> Please Enter the ExpiryDate in this format D/M/Y. </p>";
                 }
 
                 try
