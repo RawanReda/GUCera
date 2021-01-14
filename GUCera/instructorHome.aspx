@@ -42,7 +42,7 @@
 			<summary> Mobile Number </summary>
 			<br>
 			
-            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px"/> <br><br>
+            <asp:Button ID="Button6" runat="server" Text="Add" OnClick="addMobile" Width="167px" BorderStyle="None"/> <br><br>
 
 		</details>
 		
@@ -85,8 +85,8 @@
 
 		<div>
 
-		<asp:Button ID="Button2" runat="server" Text="View Accepted Courses" OnClick="viewaccCourses"/>
-		<asp:Button ID="Button3" runat="server" Text="View my Courses" OnClick="viewmyCourses"/>
+		<asp:Button ID="Button2" runat="server" Text="View Accepted Courses" OnClick="viewaccCourses" BorderStyle="None"/>
+		<asp:Button ID="Button3" runat="server" Text="View my Courses" OnClick="viewmyCourses" BorderStyle="None" Width="206px"/>
 
 
 			<br>

@@ -77,8 +77,8 @@
 		            <tr>
 
 			            <td>
-							<br><asp:Button ID="Button1" runat="server" OnClick="Registration" Text="sign-up" /></td>
-			            <td> </td>
+							</td>
+			            <td style="text-align:right"><br><asp:Button ID="Button1" runat="server" OnClick="Registration" Text="Register" /> </td>
 		            </tr>
 	            </tbody>
             </table>

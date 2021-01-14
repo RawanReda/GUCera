@@ -28,6 +28,12 @@
 	  
 
 
+	    .auto-style1 {
+            width: 136px;
+        }
+	  
+
+
 	</style>
 </head>
 <body>
@@ -48,22 +54,22 @@
 	            <tbody>
 		            <tr>
 			            <td><asp:Label ID="usrID" runat="server" Text="ID:"  ></asp:Label>  </td>
-			            <td> <asp:TextBox ID="ID" runat="server" type="number" ></asp:TextBox> <br /> </td>
+			            <td class="auto-style1"> <asp:TextBox ID="ID" runat="server" type="number" ></asp:TextBox> <br /> </td>
 		            </tr>
 					
 		            <tr>
 			            <td> <asp:Label ID="lbl_password" runat="server" Text="Password:"  ></asp:Label> </td>
-			            <td>   <asp:TextBox ID="Password" runat="server" TextMode="Password" ></asp:TextBox><br /></td>
+			            <td class="auto-style1">   <asp:TextBox ID="Password" runat="server" TextMode="Password" ></asp:TextBox><br /></td>
 		            </tr>
 		       	
 		            <tr>
-			            <td><asp:Button ID="signin" runat="server" OnClick="login" Text="Log in" /></td>
-			            <td> </td>
+			            <td></td>
+			            <td style="text-align:right" class="auto-style1"> <asp:Button ID="signin" runat="server" OnClick="login" Text="Log in" Height="25px" Width="93px" /></td>
 		            </tr>
 					
 					<tr>
-			            <td><asp:Button ID="Button1" runat="server" OnClick="InstructorReg" Text="Register as an Instructor" /></td>
-			            <td> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as an Student" /><br /></td>
+			            <td><asp:Button ID="Button1" runat="server" OnClick="InstructorReg" Text="Register as an Instructor" BorderStyle="None" /></td>
+			            <td class="auto-style1" style="text-align:right"> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as an Student" BorderStyle="None" /><br /></td>
 		            </tr>
                     
 					
