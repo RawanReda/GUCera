@@ -81,7 +81,6 @@
     <Content Include="EnterViewAssignCourse.aspx" />
     <Content Include="EnterViewCertificateCourse.aspx" />
     <Content Include="Error.aspx" />
-    <Content Include="Images\loginbg.jpg" />
     <Content Include="inscourseUpdate.aspx" />
     <Content Include="InsgradeAssignment.aspx" />
     <Content Include="InstructorAssignments.aspx" />
