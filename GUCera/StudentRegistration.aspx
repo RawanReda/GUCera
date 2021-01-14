@@ -23,13 +23,13 @@
 		}
 
 		
-/*		   body {
-	        background-image: url('images/bg.jpg');
+
+	    body {
+	        background-image: url('bg1.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
 	    }
-*/
 
 	</style>
 </head>

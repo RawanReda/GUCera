@@ -14,11 +14,21 @@
 
 	    }
 
+		
+	    .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px black
+	    }
+
 	</style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div >
+        <div class="h" >
             <asp:Label ID="Name1" runat="server" Text=""></asp:Label> 
         </div>
 		<br>
