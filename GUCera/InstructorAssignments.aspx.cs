@@ -60,7 +60,7 @@ namespace GUCera
             }
             else Response.Redirect("No Course Data was found");
             msg.Text = "";
-            redir.Text = "<a href='instructorHome.aspx'> Home </a>";
+            redir.Text = "<a href='instructorHome.aspx' style='color:white'> Home </a>";
 
         }
 
