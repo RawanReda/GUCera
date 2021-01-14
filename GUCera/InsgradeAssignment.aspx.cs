@@ -18,6 +18,7 @@ namespace GUCera
         SqlConnection conn;
         int id;
         int sid;
+        int fullG;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -48,6 +49,20 @@ namespace GUCera
                             "StudentID " + sid + "</p>";
 
                 Literal1.Text = "<a href='InstructorAssignments.aspx?cid="+courseID+"'>Back</a>";
+
+
+                SqlConnection conn3 = new SqlConnection(connStr);
+                SqlCommand cmd3 = new SqlCommand("SELECT * FROM Assignment WHERE cid=" + courseID + " AND number=" + assno + " AND type = '" + type + "'", conn3);
+                cmd3.CommandType = CommandType.Text;
+                conn3.Open();
+                SqlDataReader rdr3 = cmd3.ExecuteReader(CommandBehavior.SingleRow);
+                rdr3.Read();
+                fullG = rdr3.GetInt32(rdr3.GetOrdinal("fullGrade"));
+                conn3.Close();
+
+
+                Literal2.Text = "/" + fullG;
+
             }
             else Response.Redirect("No Data was found");
 
@@ -79,6 +94,7 @@ namespace GUCera
                 cmd.Parameters.Add(new SqlParameter("@assignmentNumber", assno));
                 cmd.Parameters.Add(new SqlParameter("@type", type));
                 cmd.Parameters.Add(new SqlParameter("@grade", gr));
+
 
                 try
                 {
