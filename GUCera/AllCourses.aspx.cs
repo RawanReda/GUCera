@@ -140,7 +140,7 @@ namespace GUCera
                 
                 // form1.Controls.Add(lbl_inst);
 
-                form1.Controls.Add(course);
+                  form1.Controls.Add(course);
 
                /* Label lbl = new Label();
                  lbl.Text =  "<br/>  <br/>";
