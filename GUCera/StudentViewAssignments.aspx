@@ -6,7 +6,7 @@
      <style>
         h1 {
   color: black;
-  font-size: 30px;
+  font-size: 20px;
 }</style>
 <head runat="server">
     <title></title>

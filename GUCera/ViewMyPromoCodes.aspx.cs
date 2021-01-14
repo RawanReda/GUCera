@@ -36,7 +36,6 @@ namespace GUCera
             promocode.Parameters.Add(new SqlParameter("@sid", (int)Session["field1"]));
 
             //Executing the SQLCommand
-
             int i = 0;
             conn.Open();
             SqlDataAdapter sqlDa = new SqlDataAdapter(promocode);

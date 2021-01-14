@@ -23,7 +23,6 @@ text-align:center;
 display: flex;
 justify-content:center;
 line-height:300px;    
-
 }
 
     </style>
