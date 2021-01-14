@@ -40,7 +40,7 @@ namespace GUCera
                     string Firstn = rdr.GetString(rdr.GetOrdinal("firstName"));
                     string Lastn = rdr.GetString(rdr.GetOrdinal("lastName"));
                     string Name = Firstn + " " + Lastn;
-                    StName.Text = "<h2> Hello, " + Name + "! </h2>";
+                    StName.Text = " Hello, " + Name + "! ";
                 }
             }
         }

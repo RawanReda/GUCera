@@ -25,7 +25,7 @@
 			background-attachment: fixed;
 			background-size: cover;
 	    }
-	
+	  
 
 
 	</style>

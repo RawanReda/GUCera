@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <style>
+        p {
+            color: black;
+  font-size: 20px;
+        }
+    </style>
 <head runat="server">
     <title></title>
 </head>
