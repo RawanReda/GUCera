@@ -21,7 +21,7 @@
 			background-attachment: fixed;
 			background-size: cover;
 			color: white;
-			text-shadow: 0.5px 0.5px black
+			text-shadow: 0.5px 0.5px #0000004d
 	    }
 
 	</style>
