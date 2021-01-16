@@ -69,7 +69,7 @@
 					
 					<tr>
 			            <td><asp:Button ID="Button1" runat="server" OnClick="InstructorReg" Text="Register as an Instructor" BorderStyle="None" /></td>
-			            <td class="auto-style1" style="text-align:right"> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as an Student" BorderStyle="None" /><br /></td>
+			            <td class="auto-style1" style="text-align:right"> <asp:Button ID="Button2" runat="server" OnClick="StudentReg" Text="Register as a Student" BorderStyle="None" /><br /></td>
 		            </tr>
                     
 					
