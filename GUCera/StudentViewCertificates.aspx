@@ -49,11 +49,6 @@ background-image: url("certificate.jpg");
 			<span id ="a" runat="server"> </span>
 			
         </div>
-         <h1> Please enter a course ID:</h1>
-       
-          Course ID:
-        <asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Enter" OnClick="Button1_Click" />
         
           
           <br />

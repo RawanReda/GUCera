@@ -31,10 +31,6 @@
 			<span id ="a" runat="server"> </span>
 			
         </div>
-        <h1> Please enter a course ID:</h1>
-        Course ID:
-        <asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Enter" OnClick="Button1_Click" />
         <br />
         <asp:Literal  ID="NoEntries" runat="server"></asp:Literal>
             <br />
@@ -49,6 +45,19 @@
         <asp:BoundField DataField="weight" HeaderText="Weight" />
         <asp:BoundField DataField="deadline" HeaderText="Deadline" />
        <asp:BoundField DataField="content" HeaderText="Content" />
+       <asp:TemplateField HeaderText="Submit Status"> 
+           <ItemTemplate> 
+            <asp:Label ID="Label1" runat="server" >
+          <%# Check(Eval("type").ToString(), Eval("number").ToString(), Eval("cid").ToString()) %>
+        </asp:Label> </ItemTemplate> </asp:TemplateField>
+        <asp:TemplateField HeaderText="Check Grade"> 
+           <ItemTemplate> 
+
+            <asp:Label ID="lblCalc" runat="server" >
+          <%# Calculate(Eval("type").ToString(), Eval("number").ToString(), Eval("cid").ToString(), Eval("fullGrade").ToString()) %>
+        </asp:Label>
+           </ItemTemplate>
+            </asp:TemplateField>
  
        </Columns>
             <EditRowStyle BackColor="#2461BF" />
