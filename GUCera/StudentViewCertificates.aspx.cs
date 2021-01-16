@@ -73,8 +73,19 @@ namespace GUCera
                            
                         }
                         NoEntries.Text = "";
-                    Literal1.Text = "This certificate is for " + Name + " for course ID " + course_ID.Text 
-                    + ",issued on: " + issueDate;
+                    SqlConnection conn2 = new SqlConnection(connStr);
+
+                    //before we output the feedback details to the form, we need the course name by using a SQL query
+                    SqlCommand cmd2 = new SqlCommand("select * from Course where id=" + id1, conn2);
+                    cmd2.CommandType = CommandType.Text;
+
+                    conn2.Open();
+                    SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.SingleRow);
+                    rdr2.Read();
+                    String courseName = rdr2.GetString(rdr2.GetOrdinal("name"));
+                    conn2.Close();
+                    Literal1.Text = "Congratulations " + Name +" for completing "+courseName+ " on " 
+                    + " " + issueDate;
 
 
 

@@ -77,6 +77,7 @@
     <Content Include="AdminIssuePromo.aspx" />
     <Content Include="AdminNonAcc.aspx" />
     <Content Include="AllCourses.aspx" />
+    <Content Include="certificate.jpg" />
     <Content Include="EnrollInACourse.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="inscourseUpdate.aspx" />

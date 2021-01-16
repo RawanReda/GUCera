@@ -11,6 +11,7 @@
   font-size: 20px;
 }
 .card {
+
     background-color: yellow;
 height: 300px;
 font-size:20px;
@@ -22,7 +23,8 @@ border: 8px solid black;
 text-align:center;
 display: flex;
 justify-content:center;
-line-height:300px;    
+line-height:300px;   
+background-image: url("certificate.jpg");
 }
            .h {
 	        background-image: url('loginbg.jpg');
