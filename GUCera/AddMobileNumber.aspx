@@ -9,11 +9,28 @@
   color: black;
   font-size: 20px;
 }
+                .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 5px;        
+        
+        }
             </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+                 <div class="h" >
+           GUCera
+			<span id ="a" runat="server"> </span>
+			
+        </div>
         <h1>Type Number to Add:</h1>
         <div>
             <br/>

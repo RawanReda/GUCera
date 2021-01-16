@@ -9,11 +9,28 @@
   color: black;
   font-size: 20px;
 }
+                .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 5px;        
+        
+        }
             </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+           <div class="h" >
+             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StudentHome.aspx" ForeColor="White">Home</asp:HyperLink>
+			<span id ="a" runat="server"> </span>
+			
+        </div>
         <h1> Please Enter Credit Card Details :</h1>
         <div>
             <asp:Literal ID="error" runat="server"></asp:Literal>

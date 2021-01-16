@@ -12,14 +12,30 @@
   color: black;
   font-size: 20px;
 }
+                   .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 5px;        
+        
+        }
         </style>
 <head runat="server">
     <title></title>
 </head>
 <body>
        <form id="form1" runat="server">
-       <p style="font-size: medium; font-weight: bolder">&nbsp;</p>
-           <p style="font-size: medium; font-weight: bolder">Please enter the required info to check your assignment grade:</p>
+            <div class="h" >
+             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StudentHome.aspx" ForeColor="White">Home</asp:HyperLink>
+			<span id ="a" runat="server"> </span>
+			
+        </div>
+       <p style=" font-weight: bolder">&nbsp;Please enter the required info to check your assignment grade:</p>
      
         Assignment Type:<asp:TextBox ID="Assigntype" runat="server"></asp:TextBox>
         <br />

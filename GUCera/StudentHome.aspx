@@ -27,13 +27,30 @@ text-align:center;
 justify-content:center;
   
         }
+        	
+	  .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 2px;        
+        
+        }
     </style>
 <head runat="server">
     <title>StudentHomePage </title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <p><asp:Literal ID="StName" runat="server"></asp:Literal></p>
+        
+             <p><asp:Literal ID="StName" runat="server"></asp:Literal></p>
+           
+			
+       
         <div class="options">
            
             <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/StudentViewMyProfile.aspx" ForeColor="White">View My Profile</asp:HyperLink>

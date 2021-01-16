@@ -6,16 +6,33 @@
 <head runat="server">
         <style>
         h1 {
-  color: blue;
+  color: black;
   font-size: 20px;
 }
+                   .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 5px;        
+        
+        }
             </style>
     <title></title>
 </head>
 <body style="height: 325px">
     <form id="form1" runat="server">
+         <div class="h" >
+             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StudentHome.aspx" ForeColor="White">Home</asp:HyperLink>
+			<span id ="a" runat="server"> </span>
+			
+        </div>
          <h1> My Profile</h1>
-         <div style="font-family: 'Arial Rounded MT Bold'; font-size: medium; font-weight: lighter; font-style: oblique; color: #FFFFFF; background-color: #000080; height: 302px; width: 354px;">
+         <div style=" font-size: medium; font-weight: lighter; font-style: oblique; color: #FFFFFF; background-color: #000080; height: 302px; width: 354px;">
             &nbsp;&nbsp;&nbsp;&nbsp;
              <br />
 &nbsp;&nbsp;&nbsp;&nbsp;

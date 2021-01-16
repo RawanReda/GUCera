@@ -79,7 +79,7 @@ namespace GUCera
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
-                        SubmitFeedbackMssg.Text = ("<p style='color:green'> Feedback Successfully added");
+                        SubmitFeedbackMssg.Text = ("<p style='color:green'> Feedback Successfully added!");
 
                     }
                     catch (SqlException ex)

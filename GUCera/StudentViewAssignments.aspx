@@ -7,18 +7,37 @@
         h1 {
   color: black;
   font-size: 20px;
-}</style>
+}
+            .h {
+	        background-image: url('loginbg.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			color: white;
+			text-shadow: 0.5px 0.5px #0000004d;
+/*            height: 10px;
+			line-height: 10px;
+*/			padding: 5px;        
+        
+        }
+     </style>
 <head runat="server">
     <title></title>
 </head>
 <body> 
     <form id="form1" runat="server">
+            <div class="h" >
+             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StudentHome.aspx" ForeColor="White">Home</asp:HyperLink>
+			<span id ="a" runat="server"> </span>
+			
+        </div>
         <h1> Please enter a course ID:</h1>
         Course ID:
         <asp:TextBox ID="course_ID" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Enter" OnClick="Button1_Click" />
         <br />
         <asp:Literal  ID="NoEntries" runat="server"></asp:Literal>
+            <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
    <Columns>
