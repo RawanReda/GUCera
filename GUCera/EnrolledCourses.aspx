@@ -3,12 +3,36 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <head runat="server">
+    <style>
+        .Background 
+{
+    background-color:Gray;
+    filter:alpha(opacity=40);
+    opacity:0.4;
+}
+.Pnl 
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:300px;
+    height:100px;
+    text-align:center;
+    background-color:White;
+    border:solid 3px black;
+        }
+    </style>
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server">
+<body>     
+
+    <form id="form1" runat="server">    <asp:ScriptManager ID="ToolkitScriptManager1" runat="server">
+</asp:ScriptManager>
         <div>
+    
             <asp:Literal ID="Literal1" runat="server"></asp:Literal>
               <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
@@ -36,8 +60,34 @@
        </ItemTemplate>
 
        </asp:TemplateField> 
-      
-
+<asp:TemplateField HeaderText="Delete">
+<ItemTemplate>
+<asp:LinkButton ID="lnkDel" runat="server" 
+                CommandName="Delete" Text="Delete"/>
+    
+<asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" 
+                           runat="server" 
+                           TargetControlID="lnkDel"
+                           DisplayModalPopupID="ModalPopupExtender1"/>
+                                        
+<asp:ModalPopupExtender ID="ModalPopupExtender1" 
+                        runat="server"
+                        TargetControlID="lnkDel"
+                        PopupControlID="pnlModal"
+                        BackgroundCssClass="Background"
+                        OkControlID="btnYes"
+                        CancelControlID="btnNo"
+                        />
+ 
+<asp:Panel runat="Server" ID="pnlModal" CssClass="Pnl">
+<br />         
+Do you want to delete this record
+<br /><br />
+<asp:Button ID="btnYes" runat="server" Text="Yes"/>
+<asp:Button ID="btnNo" runat="server" Text="No"/>
+</asp:Panel>
+</ItemTemplate>
+</asp:TemplateField>
        </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
